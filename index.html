@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friendship Blood Donor Alliance | Every Blood Donor is a Life Saver</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body data-theme="light">
+
+  <!-- ==============================
+       Floating Blood Background
+       Dark mode এ animated blood drop effect show হবে
+  =============================== -->
+  <div class="blood-bg" id="bloodBg"></div>
+
+
+  <!-- ==============================
+       Header Section
+       Navbar + Logo + Navigation Menu
+  =============================== -->
+  <header>
+
+    <nav>
+
+      <!-- Website Logo -->
+      <div class="logo">
+
+        <i class="fas fa-tint"></i>
+
+        <span>Blood Donor Alliance</span>
+
+      </div>
+
+
+      <!-- Navigation Links -->
+      <!-- onclick দিয়ে smooth scroll navigation -->
+      <div class="nav-links">
+
+        <a
+          href="#home"
+          class="active"
+          onclick="navigateToSection(this)"
+        >
+          Home
+        </a>
+
+        <a
+          href="#donors"
+          onclick="navigateToSection(this)"
+        >
+          Donors
+        </a>
+
+        <a
+          href="#about"
+          onclick="navigateToSection(this)"
+        >
+          About Us
+        </a>
+
+        <a
+          href="#contact"
+          onclick="navigateToSection(this)"
+        >
+          Contact Us
+        </a>
+
+        <a
+          href="#developer"
+          onclick="navigateToSection(this)"
+        >
+          Developer
+        </a>
+
+      </div>
+
+
+      <!-- Right Side Buttons -->
+      <div
+        style="
+          display:flex;
+          align-items:center;
+          gap:15px;
+        "
+      >
+
+        <!-- Theme Toggle Button -->
+        <!-- Light / Dark mode switch -->
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+        >
+
+          <i class="fas fa-moon"></i>
+
+        </button>
+
+
+        <!-- Become Donor Button -->
+        <button
+          style="
+            background:var(--red);
+            padding:12px 28px;
+            border: 2px solid #ff0d0d;
+            border-radius: 30px;
+            color:white;
+            font-weight:600;
+          "
+        >
+
+          Become a Donor
+
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ==============================
+       Hero Section
+       Main heading + stats + search
+  =============================== -->
+  <section
+    id="home"
+    class="hero"
+  >
+
+    <!-- Main Heading -->
+    <h1>
+
+      The
+      <span>Largest Blood </span>
+      Donor Network
+
+    </h1>
+
+
+    <!-- Hero Description -->
+    <p>
+
+      Connecting local donor groups,
+      teams, foundations, and heroes
+      to save lives together.
+
+      <br>
+
+      Search by name, location or blood group
+      and connect with active donors near you.
+
+    </p>
+
+
+    <!-- Statistics Section -->
+    <div class="stats">
+
+      <!-- Active Donor Count -->
+      <div class="stat-item">
+
+        <span
+          class="stat-number"
+          data-target="1248"
+        >
+          0
+        </span>
+
+        +
+
+        <br>
+
+        Active Donors
+
+      </div>
+
+
+      <!-- Lives Saved Count -->
+      <div class="stat-item">
+
+        <span
+          class="stat-number"
+          data-target="12750"
+        >
+          0
+        </span>
+
+        +
+
+        <br>
+
+        Lives Saved
+
+      </div>
+
+
+      <!-- Happy Patients Count -->
+      <div class="stat-item">
+
+        <span
+          class="stat-number"
+          data-target="3980"
+        >
+          0
+        </span>
+
+        +
+
+        <br>
+
+        Happy Patients
+
+      </div>
+
+    </div>
+
+
+    <!-- ==============================
+         Search Bar Section
+         Donor search inputs
+    =============================== -->
+    <div class="search-bar">
+
+      <!-- Search By Name -->
+      <input
+        type="text"
+        id="searchName"
+        placeholder="Search by name..."
+        onkeypress="
+          if(event.key === 'Enter')
+          filterDonors()
+        "
+      >
+
+
+      <!-- Search By Location -->
+      <input
+        type="text"
+        id="searchLocation"
+        placeholder="Search by location..."
+        onkeypress="
+          if(event.key === 'Enter')
+          filterDonors()
+        "
+      >
+
+
+      <!-- Blood Group Select -->
+      <select
+        id="bloodGroup"
+        onchange="filterDonors()"
+      >
+
+        <option value="">
+          All Blood Groups
+        </option>
+
+        <option>A+</option>
+        <option>A-</option>
+
+        <option>B+</option>
+        <option>B-</option>
+
+        <option>O+</option>
+        <option>O-</option>
+
+        <option>AB+</option>
+        <option>AB-</option>
+
+      </select>
+
+
+      <!-- Search Button -->
+      <button onclick="filterDonors()">
+
+        Search
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       Donor Section
+       Available donor cards
+  =============================== -->
+  <section id="donors">
+
+    <!-- Section Heading -->
+    <h2 class="donors-heading">
+
+      Available
+      <span style="color:var(--red)">
+        Donors
+      </span>
+
+    </h2>
+
+
+    <!-- Dynamic Donor Card Container -->
+    <div
+      class="cards"
+      id="cardsContainer"
+    ></div>
+
+
+    <!-- See More Button -->
+    <div
+      class="see-more-container"
+      id="seeMoreContainer"
+      style="display:none;"
+    >
+
+      <button
+        onclick="loadMoreDonors()"
+        class="see-more-btn"
+      >
+
+        <span>
+          See More Donors
+        </span>
+
+        <i class="fas fa-chevron-down"></i>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       About Section
+       Mission & platform information
+  =============================== -->
+  <section
+    id="about"
+    class="about section-animate"
+  >
+
+    <!-- Section Heading -->
+    <h2>
+
+      About
+      <span>Us</span>
+
+    </h2>
+
+
+    <!-- About Content -->
+    <div class="about-content">
+
+      <!-- Mission -->
+      <div>
+
+        <h3
+          style="
+            color:var(--red);
+            margin-bottom:15px;
+          "
+        >
+
+          Our Mission
+
+        </h3>
+
+        <p>
+
+          We are committed to saving lives
+          by connecting voluntary blood donors
+          with patients in need through a fast,
+          transparent, and reliable platform.
+
+        </p>
+
+      </div>
+
+
+      <!-- Why Choose Us -->
+      <div>
+
+        <h3
+          style="
+            color:var(--red);
+            margin-bottom:15px;
+          "
+        >
+
+          Why Choose Us?
+
+        </h3>
+
+        <p>
+
+          Real-time donor availability •
+          Verified profiles •
+          Easy contact •
+          Emergency support •
+          Nationwide coverage across Bangladesh.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       Contact Section
+       Emergency & general contact info
+  =============================== -->
+  <section
+    id="contact"
+    class="contact section-animate"
+  >
+
+    <!-- Section Heading -->
+    <h2>
+
+      Contact
+      <span>Us</span>
+
+    </h2>
+
+
+    <div class="contact-content">
+
+      <!-- Emergency Contact -->
+      <div>
+
+        <h3 style="color:var(--red);">
+
+          Emergency Support
+
+        </h3>
+
+        <p>
+
+          <strong>Phone:</strong>
+          +880 1711-223344
+
+          <br>
+
+          <strong>Hotline:</strong>
+          +880 1911-556677
+
+        </p>
+
+      </div>
+
+
+      <!-- General Inquiry -->
+      <div>
+
+        <h3 style="color:var(--red);">
+
+          General Inquiry
+
+        </h3>
+
+        <p>
+
+          <strong>Email:</strong>
+          info@blooddonor.network
+
+          <br>
+
+          <strong>Address:</strong>
+          Dhaka, Bangladesh
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       Developer Section
+       Developer profile information
+  =============================== -->
+  <section
+    id="developer"
+    class="developer"
+  >
+
+    <!-- Section Heading -->
+    <h2>
+
+      App
+      <span>Developer</span>
+
+    </h2>
+
+
+    <div class="about-content">
+
+      <!-- Developer Profile Card -->
+      <div>
+
+        <!-- Developer Image -->
+        <div
+          class="photo-container"
+          style="
+            width:180px;
+            height:180px;
+            margin:0 auto 20px;
+          "
+        >
+
+          <img
+            src="https://mamunexpert.github.io/Portfolio/pic/profile.jpg"
+            class="photo"
+            alt="mamunexpert"
+            style="
+              width:180px;
+              height:180px;
+            "
+          >
+
+        </div>
+
+
+        <!-- Developer Name -->
+        <h3
+          class="name"
+          style="font-size:1.8rem;"
+        >
+
+          MD. AL MAMUN
+
+        </h3>
+
+
+        <!-- Profession -->
+        <p class="profession">
+
+          Full Stack Web Developer
+
+        </p>
+
+
+        <!-- Location -->
+        <div class="info-row">
+
+          <i class="fas fa-map-marker-alt"></i>
+
+          Gazipur, Bangladesh
+
+        </div>
+
+
+        <!-- Experience -->
+        <div class="info-row">
+
+          <i class="fas fa-user"></i>
+
+          5+ Years Experience
+
+        </div>
+
+
+        <!-- Phone -->
+        <div class="info-row">
+
+          <i class="fas fa-phone"></i>
+
+          +880 17XX-XXXXXX
+
+        </div>
+
+
+        <!-- Availability Status -->
+        <div
+          class="status"
+          style="
+            background:rgba(0,200,83,0.15);
+            color:#00c853;
+          "
+        >
+
+          <i class="fas fa-circle"></i>
+
+          Available for Projects
+
+        </div>
+
+      </div>
+
+
+      <!-- Developer Details -->
+      <div>
+
+        <!-- About Me -->
+        <h3
+          style="
+            color:var(--red);
+            margin-bottom:15px;
+            text-align:left;
+          "
+        >
+
+          About Me
+
+        </h3>
+
+
+        <p
+          style="
+            text-align:left;
+            font-size:16px;
+            line-height:1.6;
+          "
+        >
+
+          A passionate developer recognized
+          for building platforms that harness
+          technology to save lives.
+
+          Known for creating modern, clean,
+          and responsive web applications,
+          their work reflects a commitment
+          to both innovation and community impact.
+
+        </p>
+
+
+        <!-- Skills Section -->
+        <h3
+          style="
+            color:var(--red);
+            margin-top:25px;
+            margin-bottom:10px;
+            text-align:left;
+          "
+        >
+
+          Skills & Expertise
+
+        </h3>
+
+
+        <!-- Skill List -->
+        <ul
+          style="
+            text-align:left;
+            font-size:15px;
+            line-height:1.6;
+            list-style-type:disc;
+            margin-left:20px;
+          "
+        >
+
+          <li>
+            <strong>HTML, CSS, JavaScript</strong>
+            – Building responsive applications.
+          </li>
+
+          <li>
+            <strong>UI/UX Design</strong>
+            – User-friendly interface design.
+          </li>
+
+          <li>
+            <strong>Blood Donation Systems</strong>
+            – Health-focused platform development.
+          </li>
+
+          <li>
+            <strong>Problem-Solving</strong>
+            – Smart technical solutions.
+          </li>
+
+          <li>
+            <strong>Community Impact</strong>
+            – Technology for humanitarian support.
+          </li>
+
+        </ul>
+
+
+        <!-- Final Description -->
+        <p
+          style="
+            text-align:left;
+            font-size:16px;
+            line-height:1.6;
+            margin-top:20px;
+          "
+        >
+
+          Their work continues to inspire
+          and empower communities through
+          practical, life-saving solutions.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       Footer Section
+       Final message + copyright
+  =============================== -->
+  <footer
+    style="
+      text-align:center;
+      padding:60px 20px;
+      background:var(--card-bg);
+      color:var(--text-light);
+      border-top:1px solid var(--border);
+    "
+  >
+
+    <!-- Footer Heading -->
+    <h2>
+
+      Your little effort can
+      <span style="color:var(--red)">
+        save a life
+      </span>
+
+    </h2>
+
+
+    <!-- Footer Description -->
+    <p>
+
+      Thank you to all blood donors
+      who make the world a better place.
+
+    </p>
+
+
+    <!-- Copyright -->
+    <p style="margin-top:30px;">
+
+      © 2025 Blood Donor Network.
+      All rights reserved.
+
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

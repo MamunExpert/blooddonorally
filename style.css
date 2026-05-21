@@ -1,0 +1,1278 @@
+    /* ==============================
+       Root Variables
+       Main color & theme variables
+       পুরো website এর মূল color control
+    ============================== */
+    :root {
+
+      /* Main Background Color */
+      --bg: #f8f9fa;
+
+      /* Card Background Color */
+      --card-bg: #ffffff;
+
+      /* Main Text Color */
+      --text: #222222;
+
+      /* Light Text Color */
+      --text-light: #555555;
+
+      /* Primary Red Color */
+      --red: #e63939;
+
+      /* Border Color */
+      --border: #ddd;
+
+      /* Shadow Color */
+      --shadow: rgba(0,0,0,0.1);
+
+    }
+
+
+    /* ==============================
+       Dark Theme Variables
+       Dark mode activate হলে এই color apply হবে
+    ============================== */
+    [data-theme="dark"] {
+
+      /* Dark Background */
+      --bg: #0a0000;
+
+      /* Dark Card Background */
+      --card-bg: #1a0808;
+
+      /* White Text */
+      --text: #ffffff;
+
+      /* Light Pink Text */
+      --text-light: #ffdddd;
+
+      /* Main Red */
+      --red: #e63939;
+
+      /* Border with opacity */
+      --border: rgba(230,57,57,0.3);
+
+      /* Red Glow Shadow */
+      --shadow: rgba(230,57,57,0.25);
+
+    }
+
+
+    /* ==============================
+       Universal Reset
+       সব element এর default margin/padding remove
+    ============================== */
+    * {
+
+      margin: 0;
+      padding: 0;
+
+      /* Width calculation safe রাখা */
+      box-sizing: border-box;
+
+    }
+
+
+    /* ==============================
+       Main Body Style
+       Website main layout styling
+    ============================== */
+    body {
+
+      /* Main Website Font */
+      font-family: 'Poppins', sans-serif;
+
+      /* Dynamic Theme Background */
+      background: var(--bg);
+
+      /* Dynamic Text Color */
+      color: var(--text);
+
+      /* Minimum Full Height */
+      min-height: 100vh;
+
+      /* Smooth Theme Transition */
+      transition: background 0.4s;
+
+    }
+
+
+    /* ==============================
+       Smooth Scroll Effect
+       Anchor click এ smooth scrolling
+    ============================== */
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    /* ==============================
+       Floating Blood Background
+       Dark mode এ animated blood effect
+    ============================== */
+    .blood-bg {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      /* Click block করবে না */
+      pointer-events: none;
+
+      /* Background এ থাকবে */
+      z-index: -1;
+
+      /* Default hidden */
+      opacity: 0;
+
+    }
+
+
+    /* Dark mode এ blood background visible */
+    [data-theme="dark"] .blood-bg {
+
+      opacity: 1;
+
+    }
+
+
+    /* ==============================
+       Single Blood Drop Style
+       Floating blood emoji animation
+    ============================== */
+    .drop {
+
+      position: absolute;
+
+      /* Blood emoji size */
+      font-size: 20px;
+
+      /* Transparent red color */
+      color: rgba(230, 57, 57, 0.35);
+
+      /* Continuous falling animation */
+      animation: bloodFall linear infinite;
+
+    }
+
+
+    /* ==============================
+       Blood Falling Animation
+       Blood top থেকে নিচে move করবে
+    ============================== */
+    @keyframes bloodFall {
+
+      0% {
+
+        transform: translateY(-100px) rotate(0deg);
+
+      }
+
+      100% {
+
+        transform: translateY(110vh) rotate(12deg);
+
+      }
+
+    }
+
+
+    /* ==============================
+       Header Section
+       Sticky navigation header
+    ============================== */
+    header {
+
+      background: var(--card-bg);
+
+      /* Bottom border */
+      border-bottom: 1px solid var(--border);
+
+      /* Scroll করলেও top এ থাকবে */
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      /* Soft shadow effect */
+      box-shadow: 0 2px 10px var(--shadow);
+
+    }
+
+
+    /* ==============================
+       Navbar Layout
+       Navigation alignment system
+    ============================== */
+    nav {
+
+      max-width: 1400px;
+
+      margin: auto;
+
+      padding: 18px 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      /* Small screen wrap support */
+      flex-wrap: wrap;
+
+    }
+
+
+    /* ==============================
+       Logo Style
+       Website logo design
+    ============================== */
+    .logo {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      font-size: 1.6rem;
+
+      font-weight: 700;
+
+      color: var(--red);
+
+    }
+
+
+    /* ==============================
+       Navigation Links Container
+       Navbar menu layout
+    ============================== */
+    .nav-links {
+
+      display: flex;
+
+      gap: 8px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    /* ==============================
+       Single Nav Link
+       Navbar link design
+    ============================== */
+    .nav-links a {
+
+      color: var(--text);
+
+      text-decoration: none;
+
+      padding: 8px 16px;
+
+      font-weight: 500;
+
+      position: relative;
+
+      transition: all 0.3s;
+
+    }
+
+
+    /* Hover Effect */
+    .nav-links a:hover {
+
+      color: var(--red);
+
+    }
+
+
+    /* Active Navigation Link */
+    .nav-links a.active {
+
+      color: var(--red);
+
+      font-weight: 600;
+
+    }
+
+
+    /* ==============================
+       Animated Underline Effect
+       Hover করলে নিচে line আসবে
+    ============================== */
+    .nav-links a::before {
+
+      content: '';
+
+      position: absolute;
+
+      bottom: -2px;
+
+      left: 50%;
+
+      width: 0;
+
+      height: 3px;
+
+      background: var(--red);
+
+      transition: all 0.4s ease;
+
+      transform: translateX(-50%);
+
+    }
+
+
+    /* Hover অথবা active হলে underline show */
+    .nav-links a:hover::before,
+    .nav-links a.active::before {
+
+      width: 80%;
+
+    }
+
+
+    /* ==============================
+       Theme Toggle Button
+       Dark / Light mode button
+    ============================== */
+    .theme-toggle {
+
+      background: none;
+
+      border: none;
+
+      font-size: 1.6rem;
+
+      cursor: pointer;
+
+      color: var(--text);
+
+    }
+
+
+    /* ==============================
+       Hero Section
+       Main intro section styling
+    ============================== */
+    .hero {
+
+      text-align: center;
+
+      padding: 80px 20px 0;
+
+      /* Animation start hidden */
+      opacity: 0;
+
+      transform: translateY(50px);
+
+      /* Smooth intro animation */
+      transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    }
+
+
+    /* Hero Main Heading */
+    .hero h1 {
+
+      font-size: 2.8rem;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    /* Hero Highlight Text */
+    .hero h1 span {
+
+      color: var(--red);
+
+    }
+
+
+    /* ==============================
+       Statistics Section
+       Counter items container
+    ============================== */
+    .stats {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 40px;
+
+      flex-wrap: wrap;
+
+      margin: 40px 0;
+
+    }
+
+
+    /* Single Statistic Item */
+    .stat-item {
+
+      text-align: center;
+
+    }
+
+
+    /* Counter Number Style */
+    .stat-number {
+
+      font-size: 2rem;
+
+      font-weight: 700;
+
+      color: var(--red);
+
+    }
+
+
+    /* ==============================
+       Search Bar Container
+       Donor filtering section
+    ============================== */
+    .search-bar {
+
+      max-width: 1100px;
+
+      margin: 40px auto;
+
+      background: var(--card-bg);
+
+      border-radius: 50px;
+
+      padding: 12px;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      border: 2px solid var(--border);
+
+      box-shadow: 0 5px 15px var(--shadow);
+
+    }
+
+
+    /* ==============================
+       Search Inputs & Select Box
+       Input field styling
+    ============================== */
+    .search-bar input,
+    .search-bar select {
+
+      flex: 1;
+
+      padding: 16px 20px;
+
+      background: transparent;
+
+      border: none;
+
+      color: var(--text);
+
+      min-width: 200px;
+
+    }
+
+
+    /* Focus Effect */
+    .search-bar input:focus,
+    .search-bar select:focus {
+
+      outline: none;
+
+      border-radius: 30px 50px;
+
+      box-shadow: -2px 1px 2px 2px rgba(230, 57, 57, 0.8);
+
+    }
+
+
+    /* Dark Mode Select Style */
+    [data-theme="dark"] .search-bar select {
+
+      background: #1a0808;
+
+      color: #ffffff;
+
+    }
+
+
+    /* ==============================
+       Search Button Style
+       Donor search button
+    ============================== */
+    .search-bar button {
+
+      padding: 0 60px;
+
+      background: var(--red);
+
+      color: white;
+
+      border: 2px solid #ff0d0d;
+
+      border-radius: 50px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+    }
+
+
+    /* ==============================
+       Donor Cards Grid Container
+       সব donor card grid layout এ show হবে
+    ============================== */
+    .cards {
+
+      /* Maximum container width */
+      max-width: 1400px;
+
+      /* Center align */
+      margin: 30px auto;
+
+      /* CSS Grid Layout */
+      display: grid;
+
+      /* Responsive card columns */
+      grid-template-columns:
+        repeat(auto-fit, minmax(340px, 1fr));
+
+      /* Card gap */
+      gap: 25px;
+
+      /* Left-right spacing */
+      padding: 0 20px;
+
+    }
+
+
+    /* ==============================
+       Single Donor Card
+       Main donor card design
+    ============================== */
+    .card {
+
+      /* Dynamic theme background */
+      background: var(--card-bg);
+
+      /* Rounded corners */
+      border-radius: 24px;
+
+      /* Inner spacing */
+      padding: 25px;
+
+      /* Border */
+      border: 1px solid var(--border);
+
+      /* Soft shadow */
+      box-shadow: 0 10px 30px var(--shadow);
+
+      /* Smooth animation */
+      transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+      position: relative;
+
+      /* Animation start hidden */
+      opacity: 0;
+
+      transform: translateY(50px);
+
+    }
+
+
+    /* Card visible animation */
+    .card.visible {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* Hover animation */
+    .card.visible:hover {
+
+      transform: translateY(-10px);
+
+      box-shadow: 0 15px 35px var(--shadow);
+
+    }
+
+
+    /* ==============================
+       Donor Photo Container
+       Profile image wrapper
+    ============================== */
+    .photo-container {
+
+      position: relative;
+
+      width: 130px;
+
+      height: 130px;
+
+      margin: 0 auto 20px;
+
+    }
+
+
+    /* ==============================
+       Donor Profile Photo
+       Circular donor image
+    ============================== */
+    .photo {
+
+      width: 130px;
+
+      height: 130px;
+
+      border-radius: 50%;
+
+      /* Red border */
+      border: 5px solid var(--red);
+
+      /* Image properly crop হবে */
+      object-fit: cover;
+
+    }
+
+
+    /* ==============================
+       Blood Group Badge
+       Blood group floating badge
+    ============================== */
+    .blood-badge {
+
+      position: absolute;
+
+      top: 78px;
+
+      left: 88px;
+
+      /* Red gradient background */
+      background:
+        linear-gradient(135deg, #e63939, #ff4d4d);
+
+      color: white;
+
+      padding: 6px 12px;
+
+      border-radius: 50px;
+
+      font-weight: 800;
+
+      font-size: 1rem;
+
+      /* Glow shadow */
+      box-shadow:
+        0 6px 20px rgba(230, 57, 57, 0.5);
+
+      border: 3px solid rgba(255,255,255,0.3);
+
+      /* Continuous pulse animation */
+      animation:
+        bloodBadgePulse 2.5s infinite ease-in-out;
+
+      z-index: 10;
+
+      /* Text shadow */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+    }
+
+
+    /* ==============================
+       Blood Badge Pulse Animation
+       Badge zoom in/out effect
+    ============================== */
+    @keyframes bloodBadgePulse {
+
+      0%, 100% {
+
+        transform: scale(1);
+
+        box-shadow:
+          0 6px 20px rgba(230, 57, 57, 0.5);
+
+      }
+
+      50% {
+
+        transform: scale(1.08);
+
+        box-shadow:
+          0 10px 30px rgba(230, 57, 57, 0.7);
+
+      }
+
+    }
+
+
+    /* ==============================
+       Verified Badge
+       Verified donor indicator
+    ============================== */
+    .verified {
+
+      position: absolute;
+
+      top: 20px;
+
+      left: 20px;
+
+      /* Green gradient background */
+      background:
+        linear-gradient(135deg, #00c853, #00e676);
+
+      color: white;
+
+      padding: 6px 16px 6px 12px;
+
+      border-radius: 30px;
+
+      font-size: 0.75rem;
+
+      font-weight: 700;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      /* Glow shadow */
+      box-shadow:
+        0 5px 15px rgba(0, 200, 83, 0.4);
+
+      border: 2px solid rgba(255,255,255,0.5);
+
+      z-index: 10;
+
+      /* Pulse effect */
+      animation: verifiedPulse 3s infinite;
+
+    }
+
+
+    /* Verified icon size */
+    .verified i {
+
+      font-size: 1rem;
+
+    }
+
+
+    /* ==============================
+       Verified Pulse Animation
+       Green glow effect
+    ============================== */
+    @keyframes verifiedPulse {
+
+      0%, 100% {
+
+        box-shadow:
+          0 4px 15px rgba(0, 200, 83, 0.4);
+
+      }
+
+      50% {
+
+        box-shadow:
+          0 6px 20px rgba(0, 200, 83, 0.6);
+
+      }
+
+    }
+
+
+    /* Dark mode verified border */
+    [data-theme="dark"] .verified {
+
+      border: 1px solid rgba(255, 255, 255, 0.3);
+
+    }
+
+
+    /* ==============================
+       Donor Name
+       Main donor title
+    ============================== */
+    .name {
+
+      font-size: 1.55rem;
+
+      text-align: center;
+
+      margin: 10px 0 5px;
+
+    }
+
+
+    /* ==============================
+       Profession Text
+       Donor profession style
+    ============================== */
+    .profession {
+
+      text-align: center;
+
+      color: var(--text-light);
+
+      margin-bottom: 18px;
+
+    }
+
+
+    /* ==============================
+       Information Row
+       Location / Age / Phone row
+    ============================== */
+    .info-row {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 8px 0;
+
+      color: var(--text-light);
+
+    }
+
+
+    /* ==============================
+       Donor Availability Status
+       Emergency availability badge
+    ============================== */
+    .status {
+
+      text-align: center;
+
+      padding: 10px 25px;
+
+      /* Light green background */
+      background: rgba(6, 214, 160, 0.15);
+
+      color: #06d6a0;
+
+      border-radius: 50px;
+
+      margin: 18px 0;
+
+      font-weight: 500;
+
+    }
+
+
+    /* ==============================
+       Action Buttons Container
+       Call / Copy / Social buttons
+    ============================== */
+    .actions {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    /* ==============================
+       All Action Buttons
+       Shared button style
+    ============================== */
+    .actions button,
+    .actions a {
+
+      padding: 12px 20px;
+
+      border-radius: 50px;
+
+      border: none;
+
+      cursor: pointer;
+
+      font-weight: 600;
+
+      text-decoration: none;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition: all 0.3s;
+
+    }
+
+
+    /* ==============================
+       Call Button
+       Direct phone call button
+    ============================== */
+    .call-btn {
+
+      background: var(--red);
+
+      color: white;
+
+      gap: 8px;
+
+    }
+
+
+    /* ==============================
+       Social Buttons
+       Copy / WhatsApp / Messenger
+    ============================== */
+    .social-btn {
+
+      background: rgba(0,0,0,0.1);
+
+      color: var(--text);
+
+    }
+
+
+    /* WhatsApp hover effect */
+    .social-btn:hover {
+
+      background: #25D366;
+
+      color: white;
+
+      transform: translateY(-2px);
+
+    }
+
+
+    /* Messenger hover effect */
+    .social-btn:nth-child(4):hover {
+
+      background: #0084FF;
+
+      color: white;
+
+      transform: translateY(-2px);
+
+    }
+
+
+    /* ==============================
+       See More Button Container
+       Load more section
+    ============================== */
+    .see-more-container {
+
+      text-align: center;
+
+      margin: 50px 0 30px;
+
+    }
+
+
+    /* ==============================
+       See More Button
+       Extra donor load button
+    ============================== */
+    .see-more-btn {
+
+      background: var(--red);
+
+      color: white;
+
+      border: 2px solid #ff0d0d;
+
+      padding: 16px 48px;
+
+      font-size: 1.1rem;
+
+      font-weight: 600;
+
+      border-radius: 50px;
+
+      cursor: pointer;
+
+      transition:
+        all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      /* Button glow */
+      box-shadow:
+        0 8px 25px rgba(230, 57, 57, 0.3);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    /* See More hover effect */
+    .see-more-btn:hover {
+
+      transform: translateY(-4px) scale(1.05);
+
+      box-shadow:
+        0 15px 35px rgba(230, 57, 57, 0.4);
+
+    }
+
+
+    /* ==============================
+       Donor Section Heading
+       Animated heading title
+    ============================== */
+    .donors-heading {
+
+      text-align: center;
+
+      font-size: 2.8rem;
+
+      margin-bottom: 40px;
+
+      opacity: 0;
+
+      transform: translateY(40px);
+
+      transition:
+        all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    }
+
+
+    /* Visible heading animation */
+    .donors-heading.visible {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* ==============================
+       Scroll Animation Section
+       Scroll এ section animate হবে
+    ============================== */
+    .section-animate {
+
+      opacity: 0;
+
+      transform: translateY(60px);
+
+      transition:
+        all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    }
+
+
+    /* Section visible animation */
+    .section-animate.visible {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* ==============================
+       About / Contact / Developer
+       Common section style
+    ============================== */
+    .about,
+    .contact,
+    .developer {
+
+      padding: 100px 20px;
+
+      background: var(--card-bg);
+
+      margin: 40px 0;
+
+    }
+
+
+    /* ==============================
+       Donor Section
+       Main donor area spacing
+    ============================== */
+    #donors {
+
+      padding: 100px 20px;
+
+      margin: 0 0 40px;
+
+    }
+
+
+    /* Section heading style */
+    .about h2,
+    .contact h2,
+    .developer h2 {
+
+      text-align: center;
+
+      font-size: 2.6rem;
+
+      margin-bottom: 40px;
+
+    }
+
+
+    /* ==============================
+       Section Grid Layout
+       Responsive content columns
+    ============================== */
+    .about-content,
+    .contact-content,
+    .developer-content {
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(450px, 1fr));
+
+      gap: 40px;
+
+      text-align: center;
+
+    }
+
+
+    /* Section paragraph text */
+    .about p,
+    .contact p,
+    .developer p {
+
+      font-size: 1.1rem;
+
+      line-height: 1.8;
+
+      color: var(--text-light);
+
+    }
+
+
+    /* ==============================
+       Footer Section
+       Bottom copyright area
+    ============================== */
+    footer {
+
+      text-align: center;
+
+      padding: 60px 20px 40px;
+
+      background: var(--card-bg);
+
+      border-top: 1px solid var(--border);
+
+      color: var(--text-light);
+
+    }
+
+
+    /* ==============================
+       Responsive Design
+       Mobile device optimization
+    ============================== */
+    @media (max-width: 768px) {
+
+      /* Hero heading smaller */
+      .hero h1 {
+
+        font-size: 2.4rem;
+
+      }
+
+      /* Smaller navbar gap */
+      .nav-links {
+
+        gap: 5px;
+
+      }
+
+      /* Navbar column layout */
+      nav {
+
+        flex-direction: column;
+
+      }
+
+      /* Search bar mobile layout */
+      .search-bar {
+
+        flex-direction: column;
+
+        padding: 20px;
+
+      }
+
+      /* Input auto width */
+      .search-bar input,
+      .search-bar select {
+
+        min-width: auto;
+
+      }
+
+      /* Mobile search button */
+      .search-bar button {
+
+        padding: 12px 35px;
+
+      }
+
+      /* Mobile card padding */
+      .card {
+
+        padding: 25px 35px;
+
+      }
+
+      /* Smaller stats gap */
+      .stats {
+
+        gap: 30px;
+
+      }
+
+    }
