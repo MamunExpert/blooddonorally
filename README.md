@@ -13,8 +13,9 @@ This platform helps people quickly find blood donors by **name, location, and bl
 
 > Add your live website link here
 <h1> 
-https://mamunexpert.github.io/blooddonorally/
+tinyurl.com/BloodDonorV01
  </h1>
+ 
 ---
 
 # 📌 Features
