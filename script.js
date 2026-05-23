@@ -4,11 +4,11 @@
     // ==============================
     const donors = [
 
-      { name: "Md Harun", blood: "A+", photo: "https://i.ibb.co.com/hF4KxdT3/harun.jpg", profession: "Director of HPC", location: "Savar, Dhaka", age: 24, phone: "+8801733*******", messenger: "md.harun.293247", verified: true },
-      { name: "Md Akram Hossain", blood: "AB+", photo: "https://i.postimg.cc/ryZjpQ8D/akramh.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 24, phone: "+8801820*******", messenger: "mdakramhossain.romjan", verified: true },
-      { name: "Suhag Mia", blood: "O-", photo: "https://i.postimg.cc/76kH03wM/suhag.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 28, phone: "+8801958******", messenger: "s.d.suhag.khan.2025", verified: true },
-      { name: "Iqbal Baher Robin", blood: "B+", photo: "https://i.ibb.co.com/xttPgq9d/ibrobin.jpg", profession: "Entrepreneur", location: "Mawna, Sreepur, Gazipur", age: 40, phone: "+8801711-223344", messenger:"", verified: true },
-      { name: "Nusrat Jahan", blood: "B+", photo: "https://randomuser.me/api/portraits/women/44.jpg", profession: "Medical Student", location: "Chittagong, Bangladesh", age: 24, phone: "+8801812-556677", verified: true },
+      { name: "Md Harun", blood: "A+", photo: "https://i.ibb.co.com/hF4KxdT3/harun.jpg", profession: "Director of HPC", location: "Savar, Dhaka", age: 24, phone: "+8801733584761", messenger: "md.harun.293247", verified: true, protectedNumber: false, blurredPhoto: true },
+      { name: "Md Akram Hossain", blood: "AB+", photo: "https://i.postimg.cc/ryZjpQ8D/akramh.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 24, phone: "+8801848957584", messenger: "mdakramhossain.romjan", verified: true, protectedNumber: false, blurredPhoto: false },
+      { name: "Suhag Mia", blood: "O-", photo: "https://i.postimg.cc/76kH03wM/suhag.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 28, phone: "+8801955475894", messenger: "s.d.suhag.khan.2025", verified: true, protectedNumber: false, blurredPhoto: false },
+      { name: "Iqbal Baher Robin", blood: "B+", photo: "https://i.ibb.co.com/xttPgq9d/ibrobin.jpg", profession: "Entrepreneur", location: "Mawna, Sreepur, Gazipur", age: 40, phone: "+8801711-223344", messenger:"", verified: true, protectedNumber: true, blurredPhoto: false },
+      { name: "Nusrat Jahan", blood: "B+", photo: "https://randomuser.me/api/portraits/women/44.jpg", profession: "Medical Student", location: "Chittagong, Bangladesh", age: 24, phone: "+8801812-556677", verified: true, protectedNumber: true, blurredPhoto: true },
       { name: "Karim Hasan", blood: "O+", photo: "https://randomuser.me/api/portraits/men/45.jpg", profession: "Business Analyst", location: "Khulna, Bangladesh", age: 29, phone: "+8801911-998877", verified: false },
       { name: "Fatema Akter", blood: "AB+", photo: "https://randomuser.me/api/portraits/women/68.jpg", profession: "Graphic Designer", location: "Sylhet, Bangladesh", age: 27, phone: "+8801611-445566", verified: true },
       { name: "Tanvir Hossain", blood: "A-", photo: "https://randomuser.me/api/portraits/men/51.jpg", profession: "Civil Engineer", location: "Rajshahi, Bangladesh", age: 31, phone: "+8801633-778899", verified: true },
@@ -57,162 +57,105 @@
     let currentFilteredDonors = [];
 
 
-    // ==============================
-    // Create Donor Card Function
-    // Dynamic donor card generate করার function
-    // ==============================
-    function createCard(d) {
+// ==============================
+// Create Donor Card Function
+// Dynamic donor card generate করার function
+// ==============================
+function showProtectedAlert() {
+  alert("This donor has protected their phone number.\nPlease use the Messenger link.");
+}
 
-      // Template string return করা হচ্ছে
-      return `
+// ==============================
+// Create Donor Card Function
+// Dynamic donor card generate করার function
+// ==============================
+function createCard(d) {
+  
+  const protectNumber = d.protectedNumber === true;
+  const blurPhoto = d.blurredPhoto === true;
 
-        <div class="card">
+  return `
+    <div class="card">
 
-          <!-- Verified Badge -->
-          <!-- যদি donor verified হয় তাহলে badge show হবে -->
-          ${d.verified
-            ? `<div class="verified">
-                 <i class="fas fa-check-circle"></i>
-                 Verified
-               </div>`
-            : ''
-          }
+      ${d.verified ? `
+        <div class="verified">
+          <i class="fas fa-check-circle"></i> Verified
+        </div>` : ''}
 
-          <!-- Donor Image Section -->
-          <div class="photo-container">
+<!-- Photo Container -->
+<div class="photo-container">
+  <img
+    src="${d.photo}"
+    class="photo ${blurPhoto ? 'blurred-photo' : ''}"
+    alt="${d.name}"
+    loading="lazy"
+  >
+  <div class="blood-badge">${d.blood}</div>
 
-            <!-- Donor Photo -->
-            <!-- loading="lazy" performance improve করে -->
-            <!-- image error হলে placeholder image show হবে -->
-            <img
-              src="${d.photo}"
-              class="photo"
-              alt="${d.name}"
-              loading="lazy"
-              onerror="this.src='https://via.placeholder.com/130?text=Donor'"
-            >
+  <!-- Photo Blur Tooltip -->
+  ${blurPhoto ? `
+    <div class="custom-tooltip photo-tooltip" 
+         data-tooltip="This donor has protected their profile picture for privacy.">
+    </div>` : ''}
+</div>
 
-            <!-- Blood Group Badge -->
-            <div class="blood-badge">
-              ${d.blood}
-            </div>
+      <h3 class="name">${d.name}</h3>
+      <p class="profession">${d.profession}</p>
 
-          </div>
+      <div class="info-row">
+        <i class="fas fa-map-marker-alt"></i> ${d.location}
+      </div>
 
+      <div class="info-row">
+        <i class="fas fa-user"></i> ${d.age} Years Old
+      </div>
 
-          <!-- Donor Name -->
-          <h3 class="name">
-            ${d.name}
-          </h3>
+      <!-- Phone Number -->
+      <div class="info-row">
+        <i class="fas fa-phone"></i>
+        ${protectNumber ? `
+          <span class="secured-number" 
+                data-tooltip="This donor has protected their phone number. Please use the Messenger link.">
+            <i class="fas fa-lock"></i> Number Secured
+          </span>` 
+          : d.phone}
+      </div>
 
+      <div class="status">
+        <i class="fas fa-circle"></i> Available For Emergency
+      </div>
 
-          <!-- Profession -->
-          <p class="profession">
-            ${d.profession}
-          </p>
+      <div class="actions">
 
+        <button class="call-btn" 
+          onclick="${protectNumber ? "showProtectedAlert()" : `callDonor('${d.phone}', '${d.name}')`}">
+          <i class="fas fa-phone"></i> Call
+        </button>
 
-          <!-- Location -->
-          <div class="info-row">
+        <button class="social-btn" 
+          onclick="${protectNumber ? "showProtectedAlert()" : `copyPhone('${d.phone}')`}">
+          <i class="fas fa-copy"></i>
+        </button>
 
-            <i class="fas fa-map-marker-alt"></i>
+        ${protectNumber ? `
+          <button class="social-btn" style="opacity:0.5; cursor:not-allowed;" disabled title="WhatsApp Protected">
+            <i class="fab fa-whatsapp"></i>
+          </button>` : `
+          <a href="https://wa.me/${d.phone.replace('+880', '880')}" 
+             target="_blank" class="social-btn" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>`}
 
-            ${d.location}
+        <a href="https://m.me/${d.messenger || ''}" 
+           target="_blank" class="social-btn" title="Chat on Messenger">
+          <i class="fab fa-facebook-messenger"></i>
+        </a>
 
-          </div>
+      </div>
+    </div>
+  `;
+}
 
-
-          <!-- Age -->
-          <div class="info-row">
-
-            <i class="fas fa-user"></i>
-
-            ${d.age} Years Old
-
-          </div>
-
-
-          <!-- Phone Number -->
-          <div class="info-row">
-
-            <i class="fas fa-phone"></i>
-
-            ${d.phone}
-
-          </div>
-
-
-          <!-- Availability Status -->
-          <div class="status">
-
-            <i class="fas fa-circle"></i>
-
-            Available For Emergency
-
-          </div>
-
-
-          <!-- Action Buttons -->
-          <div class="actions">
-
-            <!-- Call Button -->
-            <button
-              class="call-btn"
-              onclick="callDonor('${d.phone}', '${d.name}')"
-            >
-
-              <i class="fas fa-phone"></i>
-
-              Call
-
-            </button>
-
-
-            <!-- Copy Phone Button -->
-            <button
-              class="social-btn"
-              onclick="copyPhone('${d.phone}')"
-            >
-
-              <i class="fas fa-copy"></i>
-
-            </button>
-
-
-            <!-- WhatsApp Button -->
-            <!-- Phone number modify করে WhatsApp link তৈরি -->
-            <a
-              href="https://wa.me/${d.phone.replace('+880', '880')}"
-              target="_blank"
-              class="social-btn"
-              title="Chat on WhatsApp"
-            >
-
-              <i class="fab fa-whatsapp"></i>
-
-            </a>
-
-
-            <!-- Messenger Button -->
-            <!-- Messenger username থাকলে link তৈরি হবে -->
-            <a
-              href="https://m.me/${d.messenger || ''}"
-              target="_blank"
-              class="social-btn"
-              title="Chat on Messenger"
-            >
-
-              <i class="fab fa-facebook-messenger"></i>
-
-            </a>
-
-          </div>
-
-        </div>
-
-      `;
-    }
-    
     // ==============================
     // Initial Donor Card Render
     // প্রথমবার donor card show করার function
