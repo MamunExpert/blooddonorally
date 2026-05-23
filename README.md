@@ -13,7 +13,7 @@ This platform helps people quickly find blood donors by **name, location, and bl
 
 > Add your live website link here
 <h1> 
-tinyurl.com/BloodDonorV01
+https://tinyurl.com/BloodDonorV01
  </h1>
  
 ---
