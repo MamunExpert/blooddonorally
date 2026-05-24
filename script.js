@@ -1,16 +1,131 @@
     // ==============================
+    // Floating Blood Animation
+    // Background blood drop effect
+    // ==============================
+    function createFloatingDrops() {
+
+      // Background container select
+      const bg = document.getElementById('bloodBg');
+
+      // পুরানো drop remove করা
+      bg.innerHTML = '';
+
+      // Mobile এ কম drop show হবে
+      const totalDrops =
+        window.innerWidth < 768 ? 8 : 20;
+
+      // Loop দিয়ে drop generate
+      for (let i = 0; i < totalDrops; i++) {
+
+        // New div create
+        const drop = document.createElement('div');
+
+        drop.className = 'drop';
+
+        // Blood emoji
+        drop.textContent = '🩸';
+
+        // Random horizontal position
+        drop.style.left = Math.random() * 100 + '%';
+
+        // Random animation duration
+        drop.style.animationDuration =
+          (Math.random() * 12 + 16) + 's';
+
+        // Random animation delay
+        drop.style.animationDelay =
+          '-' + Math.random() * 20 + 's';
+
+        // Append into background
+        bg.appendChild(drop);
+      }
+    }
+
+
+    // ==============================
+    // Theme Toggle System
+    // Light / Dark mode switch
+    // ==============================
+
+    // Theme button select
+    const toggleBtn =
+      document.getElementById('themeToggle');
+
+    // Body select
+    const body = document.body;
+
+    // LocalStorage থেকে saved theme load
+    const savedTheme =
+      localStorage.getItem('theme');
+
+    // যদি আগে saved theme থাকে
+    if (savedTheme) {
+
+      // Theme apply করা
+      body.setAttribute('data-theme', savedTheme);
+
+      // Icon update
+      if (savedTheme === 'dark') {
+
+        toggleBtn.innerHTML =
+          '<i class="fas fa-sun"></i>';
+
+      } else {
+
+        toggleBtn.innerHTML =
+          '<i class="fas fa-moon"></i>';
+
+      }
+    }
+
+    // Theme toggle click event
+    toggleBtn.addEventListener('click', () => {
+
+      // যদি dark mode থাকে
+      if (body.getAttribute('data-theme') === 'dark') {
+
+        // Light mode apply
+        body.setAttribute('data-theme', 'light');
+
+        // Save theme
+        localStorage.setItem('theme', 'light');
+
+        // Change icon
+        toggleBtn.innerHTML =
+          '<i class="fas fa-moon"></i>';
+
+      } else {
+
+        // Dark mode apply
+        body.setAttribute('data-theme', 'dark');
+
+        // Save theme
+        localStorage.setItem('theme', 'dark');
+
+        // Change icon
+        toggleBtn.innerHTML =
+          '<i class="fas fa-sun"></i>';
+
+      }
+
+    });
+
+
+
+// ==============================
     // Donor Database
     // সব donor information এখানে store করা হয়েছে
     // ==============================
     const donors = [
 
       { name: "Md Harun", blood: "A+", photo: "https://i.ibb.co.com/hF4KxdT3/harun.jpg", profession: "Director of HPC", location: "Savar, Dhaka", age: 24, phone: "+8801733584761", messenger: "md.harun.293247", verified: true, protectedNumber: false, blurredPhoto: true },
-      { name: "Md Akram Hossain", blood: "AB+", photo: "https://i.postimg.cc/ryZjpQ8D/akramh.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 24, phone: "+8801848957584", messenger: "mdakramhossain.romjan", verified: true, protectedNumber: false, blurredPhoto: false },
-      { name: "Suhag Mia", blood: "O-", photo: "https://i.postimg.cc/76kH03wM/suhag.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 28, phone: "+8801955475894", messenger: "s.d.suhag.khan.2025", verified: true, protectedNumber: false, blurredPhoto: false },
+      { name: "Md Akram Hossain", blood: "AB+", photo: "https://i.postimg.cc/ryZjpQ8D/akramh.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 24, phone: "+8801402030317", messenger: "mdakramhossain.romjan", verified: true, protectedNumber: false, blurredPhoto: false },
+      { name: "Suhag Mia", blood: "O-", photo: "https://i.postimg.cc/76kH03wM/suhag.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 28, phone: "+8801629819804", messenger: "s.d.suhag.khan.2025", verified: true, protectedNumber: false, blurredPhoto: false },
       { name: "Iqbal Baher Robin", blood: "B+", photo: "https://i.ibb.co.com/xttPgq9d/ibrobin.jpg", profession: "Entrepreneur", location: "Mawna, Sreepur, Gazipur", age: 40, phone: "+8801711-223344", messenger:"", verified: true, protectedNumber: true, blurredPhoto: false },
-      { name: "Nusrat Jahan", blood: "B+", photo: "https://randomuser.me/api/portraits/women/44.jpg", profession: "Medical Student", location: "Chittagong, Bangladesh", age: 24, phone: "+8801812-556677", verified: true, protectedNumber: true, blurredPhoto: true },
-      { name: "Karim Hasan", blood: "O+", photo: "https://randomuser.me/api/portraits/men/45.jpg", profession: "Business Analyst", location: "Khulna, Bangladesh", age: 29, phone: "+8801911-998877", verified: false },
-      { name: "Fatema Akter", blood: "AB+", photo: "https://randomuser.me/api/portraits/women/68.jpg", profession: "Graphic Designer", location: "Sylhet, Bangladesh", age: 27, phone: "+8801611-445566", verified: true },
+      { name: "Md Badal Mia", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Job Holder", location: "Mawna, sreepur, gazipur", age: 39, phone: "+881714883786", messenger:"", verified: true, protectedNumber: false, blurredPhoto: false },
+      { name: "Md Al Amin", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Student", location: "Mawna, sreepur, gazipur", age: 28, phone: "+8801950172522", messenger:"", verified: true, protectedNumber: true, blurredPhoto: true },
+      { name: "Jahidur Rahman", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Job Holder", location: "Mawna, sreepur, gazipur", age: 30, phone: "+88791664878", verified: true,  messenger:"Jr.khokon", verified: true, protectedNumber: false, blurredPhoto: false },
+      { name: "Fatema Akter", blood: "AB+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Graphic Designer", location: "Sylhet, Bangladesh", age: 27, phone: "+8801611-445566", verified: true },
       { name: "Tanvir Hossain", blood: "A-", photo: "https://randomuser.me/api/portraits/men/51.jpg", profession: "Civil Engineer", location: "Rajshahi, Bangladesh", age: 31, phone: "+8801633-778899", verified: true },
       { name: "Sadia Islam", blood: "B-", photo: "https://randomuser.me/api/portraits/women/55.jpg", profession: "Teacher", location: "Barisal, Bangladesh", age: 25, phone: "+8801555-667788", verified: false },
       { name: "Shafiq Rahman", blood: "O-", photo: "https://randomuser.me/api/portraits/men/67.jpg", profession: "Doctor", location: "Dhaka, Bangladesh", age: 33, phone: "+8801712-334455", verified: true },
@@ -424,119 +539,6 @@ function createCard(d) {
 
       }
     };
-
-
-    // ==============================
-    // Floating Blood Animation
-    // Background blood drop effect
-    // ==============================
-    function createFloatingDrops() {
-
-      // Background container select
-      const bg = document.getElementById('bloodBg');
-
-      // পুরানো drop remove করা
-      bg.innerHTML = '';
-
-      // Mobile এ কম drop show হবে
-      const totalDrops =
-        window.innerWidth < 768 ? 8 : 20;
-
-      // Loop দিয়ে drop generate
-      for (let i = 0; i < totalDrops; i++) {
-
-        // New div create
-        const drop = document.createElement('div');
-
-        drop.className = 'drop';
-
-        // Blood emoji
-        drop.textContent = '🩸';
-
-        // Random horizontal position
-        drop.style.left = Math.random() * 100 + '%';
-
-        // Random animation duration
-        drop.style.animationDuration =
-          (Math.random() * 12 + 16) + 's';
-
-        // Random animation delay
-        drop.style.animationDelay =
-          '-' + Math.random() * 20 + 's';
-
-        // Append into background
-        bg.appendChild(drop);
-      }
-    }
-
-
-    // ==============================
-    // Theme Toggle System
-    // Light / Dark mode switch
-    // ==============================
-
-    // Theme button select
-    const toggleBtn =
-      document.getElementById('themeToggle');
-
-    // Body select
-    const body = document.body;
-
-    // LocalStorage থেকে saved theme load
-    const savedTheme =
-      localStorage.getItem('theme');
-
-    // যদি আগে saved theme থাকে
-    if (savedTheme) {
-
-      // Theme apply করা
-      body.setAttribute('data-theme', savedTheme);
-
-      // Icon update
-      if (savedTheme === 'dark') {
-
-        toggleBtn.innerHTML =
-          '<i class="fas fa-sun"></i>';
-
-      } else {
-
-        toggleBtn.innerHTML =
-          '<i class="fas fa-moon"></i>';
-
-      }
-    }
-
-    // Theme toggle click event
-    toggleBtn.addEventListener('click', () => {
-
-      // যদি dark mode থাকে
-      if (body.getAttribute('data-theme') === 'dark') {
-
-        // Light mode apply
-        body.setAttribute('data-theme', 'light');
-
-        // Save theme
-        localStorage.setItem('theme', 'light');
-
-        // Change icon
-        toggleBtn.innerHTML =
-          '<i class="fas fa-moon"></i>';
-
-      } else {
-
-        // Dark mode apply
-        body.setAttribute('data-theme', 'dark');
-
-        // Save theme
-        localStorage.setItem('theme', 'dark');
-
-        // Change icon
-        toggleBtn.innerHTML =
-          '<i class="fas fa-sun"></i>';
-
-      }
-
-    });
 
 
     // ==============================
