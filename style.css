@@ -1,4 +1,6 @@
-    /* ==============================
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+/* ==============================
        Root Variables
        Main color & theme variables
        পুরো website এর মূল color control
@@ -254,6 +256,12 @@
 
     }
 
+  .ally {
+      font-family: "Share Tech",  'Poppins',  sans-serif;
+       font-weight: 500;
+       color: var(--red);
+       font-size: 1.17rem;
+  }
 
     /* ==============================
        Navigation Links Container
@@ -262,8 +270,6 @@
     .nav-links {
 
       display: flex;
-
-      gap: 8px;
 
       flex-wrap: wrap;
 
@@ -276,17 +282,17 @@
     ============================== */
     .nav-links a {
 
+      font-family: "Share Tech",  'Poppins',  sans-serif;
+
+      font-size: 1.3rem;
+
       color: var(--text);
 
       text-decoration: none;
       
       padding: 8px 16px;
 
-      font-weight: 500;
-
       position: relative;
-
-      transition: all 0.3s;
 
     }
 
@@ -296,6 +302,8 @@
 
       color: var(--red);
 
+      font-weight: bold;
+
     }
 
 
@@ -304,7 +312,7 @@
 
       color: var(--red);
 
-      font-weight: 600;
+      font-weight: bold;
 
     }
 
@@ -319,7 +327,7 @@
 
       position: absolute;
 
-      bottom: -2px;
+      bottom: -1px;
 
       left: 50%;
 
@@ -329,7 +337,7 @@
 
       background: var(--red);
 
-      transition: all 0.4s ease;
+      transition: all .3s ease;
 
       transform: translateX(-50%);
 
@@ -340,7 +348,7 @@
     .nav-links a:hover::before,
     .nav-links a.active::before {
 
-      width: 80%;
+      width: 70%;
 
     }
 
@@ -388,6 +396,8 @@
     /* Hero Main Heading */
     .hero h1 {
 
+      font-family: "Share Tech",  'Poppins',  sans-serif;
+
       font-size: 2.8rem;
 
       margin-bottom: 12px;
@@ -433,7 +443,7 @@
     /* Counter Number Style */
     .stat-number {
 
-      font-size: 2rem;
+      font-size: 2.2rem;
 
       font-weight: 700;
 
@@ -460,6 +470,10 @@
 
       display: flex;
 
+      justify-content: center;
+
+      align-content: center;
+
       flex-wrap: wrap;
 
       gap: 10px;
@@ -478,9 +492,11 @@
     .search-bar input,
     .search-bar select {
 
+      font-family: "Share Tech",  'Poppins',  sans-serif;
+
       flex: 1;
 
-      padding: 16px 20px;
+      padding: 16px;
 
       background: transparent;
 
@@ -488,7 +504,7 @@
 
       color: var(--text);
 
-      min-width: 200px;
+      min-width: 160px;
 
     }
 
@@ -522,7 +538,7 @@
     ============================== */
     .search-bar button {
 
-      padding: 0 60px;
+      padding: 15px 60px;
 
       background: var(--red);
 
@@ -531,6 +547,8 @@
       border: 2px solid #ff0d0d;
 
       border-radius: 50px;
+
+      font-size: 1rem;
 
       font-weight: 600;
 
@@ -1164,71 +1182,6 @@
   margin-top: -5px;
 }
 
-
-/* =============================================
-   MOBILE RESPONSIVE OPTIMIZATION
-   Mobile screen এর জন্য improved UI
-   ============================================= */
-
-@media (max-width: 768px) {
-
-  /* Blur photo hover scale কমানো */
-  .blurred-photo:hover {
-
-    transform: scale(1.02);
-  }
-
-  /* Tooltip box smaller for mobile */
-  .custom-tooltip::after,
-  .secured-number[data-tooltip]::after,
-  .photo-tooltip::after {
-
-    font-size: 0.72rem;
-
-    padding: 10px 12px;
-
-    max-width: 210px;
-
-    line-height: 1.4;
-  }
-
-  /* Secured number tooltip center fix */
-  .secured-number[data-tooltip]::after {
-
-    left: 50%;
-
-    transform: translateX(-50%);
-  }
-
-  /* Tooltip arrow center fix */
-  .secured-number[data-tooltip]::before {
-
-    left: 50%;
-  }
-
-  /* Photo tooltip responsive width */
-  .photo-tooltip::after {
-
-    max-width: 200px;
-  }
-
-  /* Mobile এ tooltip overflow prevent */
-  .photo-container {
-
-    overflow: visible;
-  }
-
-  /* Secured text wrap support */
-  .secured-number {
-
-    flex-wrap: wrap;
-
-    gap: 4px;
-
-    font-size: 0.9rem;
-  }
-}
-
     
     /* ==============================
        Donor Availability Status
@@ -1578,6 +1531,16 @@
     }
 
 
+
+
+
+
+
+
+
+
+
+
 /* =============================================
    MOBILE RESPONSIVE FIX
    Mobile device এর জন্য clean & compact layout
@@ -1609,6 +1572,7 @@
     font-size: 1.3rem;
   }
 
+  
   .nav-links {
 
     /* Nav link center align */
@@ -1802,6 +1766,67 @@
     margin: 15px 0;
   }
 
+ /* =============================================
+     BLUR PHOTO ||  SECURED NUMBER
+     ============================================= */
+
+  /* Blur photo hover scale কমানো */
+  .blurred-photo:hover {
+
+    transform: scale(1.02);
+  }
+
+  /* Tooltip box smaller for mobile */
+  .custom-tooltip::after,
+  .secured-number[data-tooltip]::after,
+  .photo-tooltip::after {
+
+    font-size: 0.72rem;
+
+    padding: 10px 12px;
+
+    max-width: 210px;
+
+    line-height: 1.4;
+  }
+
+  /* Secured number tooltip center fix */
+  .secured-number[data-tooltip]::after {
+
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  /* Tooltip arrow center fix */
+  .secured-number[data-tooltip]::before {
+
+    left: 50%;
+  }
+
+  /* Photo tooltip responsive width */
+  .photo-tooltip::after {
+
+    max-width: 200px;
+  }
+
+  /* Mobile এ tooltip overflow prevent */
+  .photo-container {
+
+    overflow: visible;
+  }
+
+  /* Secured text wrap support */
+  .secured-number {
+
+    flex-wrap: wrap;
+
+    gap: 4px;
+
+    font-size: 0.9rem;
+  }
+}
+
 
   /* =============================================
      SECTION HEADINGS
@@ -1814,8 +1839,12 @@
   .developer h2 {
 
     font-size: 2rem;
+    
   }
-
+  
+    .ally{
+      font-size: 1rem;
+  }
 
   /* =============================================
      DONOR CARDS
@@ -1827,20 +1856,7 @@
 }
 
 
-  /* =============================================
-     ABOUT / CONTACT / DEVELOPER
-     Grid layout to single column
-     ============================================= */
 
-  .about-content,
-  .contact-content,
-  .developer-content {
-
-    /* One column layout */
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
 
 
   /* =============================================
@@ -1902,6 +1918,10 @@
     font-size: 1.1rem;
   }
 
+    .ally{
+      font-size:.81rem;
+  }
+  
 
   /* =============================================
      DONOR BUTTON
