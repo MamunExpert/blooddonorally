@@ -1633,7 +1633,7 @@
   .hero p {
 
     /* Paragraph readability improve */
-    font-size: 0.92rem;
+    font-size: 0.82rem;
 
     line-height: 1.6;
   }
@@ -1825,7 +1825,6 @@
 
     font-size: 0.9rem;
   }
-}
 
 
   /* =============================================
@@ -1856,8 +1855,23 @@
 }
 
 
+/* =============================================
+   ABOUT / CONTACT / DEVELOPER
+   Mobile Single Column Layout
+   About, Contact এবং Developer section
+   mobile এ এক column এ show হবে
+============================================= */
 
+.about-content,
+.contact-content,
+.developer-content {
 
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 25px;
+}
 
   /* =============================================
      FOOTER SECTION
@@ -1869,6 +1883,13 @@
     font-size: 1.5rem;
   }
 }
+
+
+
+
+
+
+
 
 
 /* =============================================
@@ -1984,17 +2005,18 @@
 
 .verified{
 
-    padding: 5px 14px 4px 12px;
+    padding: 3px 10px 2px 8px;
+    font-size: 0.72rem;
     border-radius: 30px;
-    font-size: 0.7rem;
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.5);
 
 }
 
+
 .verified i {
 
-    font-size: .7rem;
+    font-size: .68rem;
 
 }
 
