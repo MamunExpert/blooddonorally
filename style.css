@@ -1560,10 +1560,10 @@
     flex-direction: column;
 
     /* Element এর মধ্যে spacing */
-    gap: 15px;
+    gap: 8px;
 
     /* Inner padding reduce */
-    padding: 16px;
+    padding: 8px 16px;
   }
 
   .logo {
@@ -1923,7 +1923,7 @@
 
   .nav-links a {
 
-    font-size: 0.62rem;
+    font-size: 0.82rem;
 
     padding: 2px 4px;
   }
@@ -1932,7 +1932,7 @@
   /* =============================================
      LOGO SIZE
      Smaller branding text
-     ============================================= */
+
 
   .logo {
 
@@ -1940,9 +1940,10 @@
   }
 
     .ally{
-      font-size:.81rem;
+      font-size: .85rem;
   }
-  
+      ============================================= */
+	  
 
   /* =============================================
      DONOR BUTTON
