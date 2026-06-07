@@ -1635,6 +1635,8 @@
     /* Paragraph readability improve */
     font-size: 0.82rem;
 
+    padding: 0 15px;
+
     line-height: 1.6;
   }
 
