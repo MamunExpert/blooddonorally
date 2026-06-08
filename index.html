@@ -35,99 +35,95 @@
 
       </div>
 
+	  <!-- Mobile Toggle -->
+	  <button class="menu-toggle" id="menuToggle">
+		<i class="fas fa-bars"></i>
+	  </button>
 
-      <!-- Navigation Links -->
-      <!-- onclick দিয়ে smooth scroll navigation -->
-      <div class="nav-links">
+	  <!-- Desktop Menu -->
+	  <div class="nav-links">
 
-        <a
-          href="#home"
-          class="active"
-          onclick="navigateToSection(this)"
-        >
-          Home
-        </a>
+		<a href="#home" class="active"
+		   onclick="navigateToSection(this)">
+		  Home
+		</a>
 
-        <a
-          href="#donors"
-          onclick="navigateToSection(this)"
-        >
-          Donors
-        </a>
+		<a href="#donors"
+		   onclick="navigateToSection(this)">
+		  Donors
+		</a>
 
-        <a
-          href="#about"
-          onclick="navigateToSection(this)"
-        >
-          About Us
-        </a>
+		<a href="#about"
+		   onclick="navigateToSection(this)">
+		  About Us
+		</a>
 
-        <a
-          href="#contact"
-          onclick="navigateToSection(this)"
-        >
-          Contact
-        </a>
+		<a href="#contact"
+		   onclick="navigateToSection(this)">
+		  Contact
+		</a>
 
+	  </div>
 
+	  <!-- Desktop Right -->
+	  <div class="nav-actions">
 
+		<button class="theme-toggle"
+				id="themeToggle">
+		  <i class="fas fa-moon"></i>
+		</button>
 
-	   <!-------------------- developer nav off 
-        <a
-          href="#developer"
-          onclick="navigateToSection(this)"
-        >
-          Developer
-        </a>        -------------------------------------------- -->
+		<button class="donor-bttn">
+		  Become a Donor
+		</button>
 
-
-
-
-      </div>
-
-
-      <!-- Right Side Buttons -->
-      <div
-        style="
-          display:flex;
-          align-items:center;
-          gap:15px;
-        "
-      >
-
-        <!-- Theme Toggle Button -->
-        <!-- Light / Dark mode switch -->
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-        >
-
-          <i class="fas fa-moon"></i>
-
-        </button>
-
-
-        <!-- Become Donor Button -->
-        <button class="donor-bttn"
-          style="
-            background:var(--red);
-            padding:12px 28px;
-            border: 2px solid #ff0d0d;
-            border-radius: 30px;
-            color:white;
-            font-weight:600;
-            cursor: pointer;
-          "
-        >
-
-          Become a Donor
-
-        </button>
-
-      </div>
-
+	  </div>
     </nav>
 
+
+	<div class="mobile-menu" id="mobileMenu">
+
+	  <div class="mobile-menu-header">
+
+		<h3>Menu</h3>
+
+		<button id="closeMenu">
+		  <i class="fas fa-times"></i>
+		</button>
+
+	  </div>
+
+	  <a href="#home">Home</a>
+
+	  <a href="#donors">
+		Available Donors
+	  </a>
+
+	  <a href="#">
+		Divisional Volunteer
+	  </a>
+
+	  <a href="#">
+		FAQ
+	  </a>
+
+	  <a href="#about">
+		About Us
+	  </a>
+
+	  <a href="#contact">
+		Contact Us
+	  </a>
+
+	  <a href="#developer">
+		Developer Info
+	  </a>
+
+	  <button class="mobile-donor-btn">
+		Become a Donor
+	  </button>
+
+	</div>
   </header>
 
 
@@ -156,9 +152,6 @@
       Connecting local donor groups,
       teams, foundations, and heroes
       to save lives together.
-
-      <br>
-
       Search by name, location or blood group
       and connect with active donors near you.
 
