@@ -118,7 +118,7 @@
     // ==============================
     const donors = [
 
-{ name: "Md Harun", blood: "A+", photo: "https://i.ibb.co.com/hF4KxdT3/harun.jpg", profession: "Director of HPC", location: "Savar, Dhaka", age: 24, phone: "+8801889-783375", messenger: "md.harun.293247", verified: true, protectedNumber: false, blurredPhoto: true },
+{ name: "Md Harun", blood: "A+", photo: "https://i.ibb.co.com/hF4KxdT3/harun.jpg", profession: "Director of HPC", location: "Savar, Dhaka", age: 24, phone: "+8801889-783375", messenger: "md.harun.293247", verified: true, protectedNumber: false, blurredPhoto: false },
 { name: "Md Akram Hossain", blood: "AB+", photo: "https://i.postimg.cc/ryZjpQ8D/akramh.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 24, phone: "+8801402030317", messenger: "mdakramhossain.romjan", verified: true, protectedNumber: false, blurredPhoto: false },
 { name: "Suhag Mia", blood: "O-", photo: "https://i.postimg.cc/76kH03wM/suhag.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 28, phone: "+8801629819804", messenger: "s.d.suhag.khan.2025", verified: true, protectedNumber: false, blurredPhoto: false },
 { name: "Iqbal Baher Robin", blood: "AB+", photo: "https://i.ibb.co.com/xttPgq9d/ibrobin.jpg", profession: "Entrepreneur", location: "Mawna, Sreepur, Gazipur", age: 40, phone: "+8801711-223344", messenger:"", verified: true, protectedNumber: true, blurredPhoto: false },
@@ -844,3 +844,42 @@ function createCard(d) {
 
         });
     };
+
+
+
+
+
+const menuToggle =
+document.getElementById('menuToggle');
+
+const mobileMenu =
+document.getElementById('mobileMenu');
+
+const closeMenu =
+document.getElementById('closeMenu');
+
+menuToggle.addEventListener('click', () => {
+
+  mobileMenu.classList.add('active');
+
+});
+
+closeMenu.addEventListener('click', () => {
+
+  mobileMenu.classList.remove('active');
+
+});
+
+
+
+document
+.querySelectorAll('.mobile-menu a')
+.forEach(link => {
+
+  link.addEventListener('click', () => {
+
+    mobileMenu.classList.remove('active');
+
+  });
+
+});
