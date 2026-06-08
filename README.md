@@ -1,6 +1,9 @@
 # Blood Donor Alliance
 Blood Donor Ally is an initiative designed to connect voluntary blood donors with patients in urgent need. It streamlines the donation process, making it highly efficient for locals in and around Madhupur, Tangail, Mymensingh, Mawna, Sreepur, Gazipur, BKSP, Savar to find compatible, verified donors or certified collection centers quickly.
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ad30183e-e21c-4cac-8691-79b8659062e3" alt="Screenshot" width="90%">
+</div>
 
 # 🩸 Blood Donor Network
 
