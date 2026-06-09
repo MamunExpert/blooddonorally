@@ -4,8 +4,11 @@ Blood Donor Ally is an initiative designed to connect voluntary blood donors wit
 <div align="center">
     <img width="3096" height="1778" alt="Macbook-Air" src="https://github.com/user-attachments/assets/344f5252-96d2-4afb-9f00-909a84ca8100" width="90%"/>
     <img width="2814" height="1616" alt="Macbook-Air-2" src="https://github.com/user-attachments/assets/9d9661a3-720b-4914-bce4-df7f55a98033" width="85%"/>
-    <img width="3650" height="1988" alt="iPhone-14-PRO" src="https://github.com/user-attachments/assets/ba030ef7-ae29-4f53-9e7e-f044c5115a9a" width="90%"/>
-    <img width="804" height="1638" alt="iPhone-14-PRO-2" src="https://github.com/user-attachments/assets/37504777-57ca-4af6-822c-cce1b9fb9860" width="85%"/>
+    ---
+    <img width="804" height="1638" alt="iPhone-14-PRO" src="https://github.com/user-attachments/assets/0481f8d5-895d-4b29-ba46-92d31888f940" width="65%"/>
+    <img width="804" height="1638" alt="iPhone-14-PRO-2" src="https://github.com/user-attachments/assets/37504777-57ca-4af6-822c-cce1b9fb9860" width="65%"/>
+    <img width="804" height="1638" alt="iPhone-14-PRO-3" src="https://github.com/user-attachments/assets/0b52cb84-e495-48fe-8dbe-0e9782cbcf51" width="65%"/>
+
 </div>
 
 # 🩸 The Largest Blood Donor Network
