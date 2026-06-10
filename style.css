@@ -396,21 +396,63 @@
 	 gap:15px;
 	}
 
-	.menu-toggle{
+	/* =====================================
+	   Custom Animated Hamburger
+	   Modern Professional Design
+	   ===================================== */
 
-	 display:none;
+	.menu-toggle {
 
-	 background:none;
+	  width: 35px;
+	  height: 35px;
 
-	 border:none;
+	  border: none;
+	  border-radius: 50%;
 
-	 font-size:1.8rem;
+	  background: rgba(230,57,57,.12);
 
-	 cursor:pointer;
+	  display: none;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  gap: 4px;
 
-	 color:var(--text);
+	  cursor: pointer;
+
+	  transition: all .3s ease;
+
+	  box-shadow:
+		0 0 10px rgba(230,57,57,.25);
+
 	}
 
+	.menu-toggle span {
+
+	  width: 14px;
+	  height: 2px;
+
+	  border-radius: 26px;
+
+	  background: var(--red);
+
+	  transition: all .3s ease;
+
+	}
+
+	.menu-toggle:hover {
+
+	  background: var(--red);
+
+	  box-shadow:
+		0 0 18px rgba(230,57,57,.5);
+
+	}
+
+	.menu-toggle:hover span {
+
+	  background: #fff;
+
+	}
 
 
     /* ==============================
@@ -1947,19 +1989,59 @@
 	 color: var(--red);
 	}
 
+	/* =========================================
+	   Mobile Menu Close Button
+	   FAQ Style Premium Close Button
+	========================================= */
+
 	.mobile-menu-header button{
 
-	 background:none;
+	  width:36px;
 
-	 border:none;
+	  height:36px;
 
-	 font-size:1.5rem;
+	  border:none;
 
-	 cursor:pointer;
+	  cursor:pointer;
 
-	 color:var(--text);
+	  display:flex;
+
+	  align-items:center;
+
+	  justify-content:center;
+
+	  border-radius:50%;
+
+	  background:
+	  linear-gradient(
+		135deg,
+		#ff4d4d,
+		#ff2424
+	  );
+
+	  color:#ffffff;
+
+	  font-size:14px;
+
+	  box-shadow:
+		0 6px 18px rgba(255,59,59,.25);
+
+	  transition:.35s ease;
 	}
 
+	/* Hover Effect */
+
+	.mobile-menu-header button:hover{
+
+	  background:#ffffff;
+
+	  color:#ff3b3b;
+
+	  transform:rotate(90deg);
+	}
+	
+	
+	
 	.mobile-menu a{
 
 	 padding:18px 25px;
@@ -2564,7 +2646,7 @@
 
 	 .menu-toggle{
 
-	   display:block;
+	   display:flex;
 	 }
 
 	 nav{
