@@ -119,46 +119,52 @@
     const donors = [
 
 { name: "Md Harun", blood: "A+", photo: "https://i.ibb.co.com/hF4KxdT3/harun.jpg", profession: "Director of HPC", location: "Savar, Dhaka", age: 24, phone: "+8801889-783375", messenger: "md.harun.293247", verified: true, protectedNumber: false, blurredPhoto: false },
+
 { name: "Md Akram Hossain", blood: "AB+", photo: "https://i.postimg.cc/ryZjpQ8D/akramh.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 24, phone: "+8801402030317", messenger: "mdakramhossain.romjan", verified: true, protectedNumber: false, blurredPhoto: false },
+
 { name: "Suhag Mia", blood: "O-", photo: "https://i.postimg.cc/76kH03wM/suhag.jpg", profession: "Job Holder", location: "Mawna, Sreepur, Gazipur", age: 28, phone: "+8801629819804", messenger: "s.d.suhag.khan.2025", verified: true, protectedNumber: false, blurredPhoto: false },
+
 { name: "Iqbal Baher Robin", blood: "AB+", photo: "https://i.ibb.co.com/xttPgq9d/ibrobin.jpg", profession: "Entrepreneur", location: "Mawna, Sreepur, Gazipur", age: 40, phone: "+8801711-223344", messenger:"", verified: true, protectedNumber: true, blurredPhoto: false },
+
 { name: "Md Badal Mia", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Job Holder", location: "Mawna, sreepur, gazipur", age: 39, phone: "+881714883786", messenger:"", verified: true, protectedNumber: false, blurredPhoto: false },
+
 { name: "Md Al Amin", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Student", location: "Mawna, sreepur, gazipur", age: 28, phone: "+8801950172522", messenger:"", verified: true, protectedNumber: true, blurredPhoto: false },
+
 { name: "Jahidur Rahman", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Job Holder", location: "Mawna, sreepur, gazipur", age: 30, phone: "+88791664878", messenger:"Jr.khokon", verified: true, protectedNumber: false, blurredPhoto: false },
 
 { name: "Rone Mia Shihab", blood: "B+", photo: "https://i.ibb.co.com/23yZzqy7/shihabr.jpg", profession: "Job Holder", location: "Mawna, sreepur, gazipur", age: 28, phone: "+8801710-509022", verified: true, protectedNumber: true, blurredPhoto: false },
 
-{ name: "Towhid Rahman", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Managing Director", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801477820404", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Towhid Rahman", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Freelancer, Web Developer", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801477820404", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Md Ibadul Chowdhury", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "General Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801889887455", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Ibadul Chowdhury", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "General Secretary at LLF", location: "Sofipur, Gazipur", age: "", phone: "+8801889887455", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Md Lablu Islam", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Joint General Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801990622909", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Lablu Islam", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Job Holder", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801990622909", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Farzana Tithi", blood: "B+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Joint General Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
+{ name: "Farzana Tithi", blood: "B+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Student", location: "BKSP, Savar, Dhaka", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
 
-{ name: "Md Manik Hossain", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Organizing Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801767574979", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Manik Hossain", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Organizing Secretary at LLF", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801767574979", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Md Monir Hossain", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Organizing Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801921628800", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Monir Hossain", blood: "O+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Organizing Secretary at LLF", location: "BKSP, Savar, Dhaka", age: "", phone: "+8801921628800", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Jannatul Ferdousi Boby", blood: "O+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Organizing Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
+{ name: "Jannatul Ferdousi Boby", blood: "O+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Student", location: "Jirani, Ashulia, Savar", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
 
-{ name: "Rabiul Islam Robi", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Assistant Organizing Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801615260635", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Rabiul Islam Robi", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Student", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801615260635", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Afnan Ahmed Bijoy", blood: "B+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Assistant Organizing Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801728562229", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Afnan Ahmed Bijoy", blood: "B+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Student", location: "Savar, Dhaka", age: "", phone: "+8801728562229", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Md Mehedi Bepari", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Assistant Organizing Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801843364556", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Mehedi Bepari", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Ass. Organizing Secretary at LLF", location: "BKSP, Savar, Dhaka", age: "", phone: "+8801843364556", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Md Anowar Hossain", blood: "B+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Publicity Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801942104949", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Anowar Hossain", blood: "B+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Student", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801942104949", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Antora Akter", blood: "B+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Assistant Publicity Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
+{ name: "Antora Akter", blood: "B+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Student", location: "BKSP, Savar, Dhaka", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
 
 { name: "Md Jahid Hossain", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Assistant Publicity Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801883909629", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Rahima Akter", blood: "B+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Assistant Publicity Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
+{ name: "Rahima Akter", blood: "B+", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "Ass. Publicity Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "", messenger: "", verified: true, protectedNumber: true, blurredPhoto: false },
 
-{ name: "Md Raju Ahmed", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Office Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801745268355", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Raju Ahmed", blood: "A+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Student", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801745268355", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
-{ name: "Md Yasin", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Office Secretary", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801830001685", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Yasin", blood: "AB+", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "Student", location: "Jirani, Ashulia, Savar", age: "", phone: "+8801830001685", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
 { name: "Md Rakib Hossain", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Mirpur-10", age: "", phone: "+8801783972901", messenger: "", verified: true, protectedNumber: false, blurredPhoto: false },
 
@@ -188,11 +194,145 @@
 
 { name: "Emon Chowdhury", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhanmondi", age: "", phone: "+8801747425419", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
 
+{ name: "Nayim", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Shaheenbag", age: "", phone: "+8801766110039", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+
+{ name: "Ratul", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Nirjhor", age: "", phone: "+8801940900137", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Jashim", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801917842261", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Contact to Verify", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Rampura / Gazipur", age: "", phone: "+8801813936561", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Contact to Verify", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka / Lakshmipur", age: "", phone: "+8801830123617", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Kawsar Mahmud", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801926264906", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Bappi", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801710347502", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Mutafizur Rahman", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Banasree", age: "", phone: "+8801722970383", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Shahidul Islam", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801918109098", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Wahidul Haque", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Gazipur", age: "", phone: "+8801716611075", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Mahmudur Rahman", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801717014761", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Rifat Hossain", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801685332733", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Shameem Anwar Saadat", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801711541201", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Tarun Islam", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801911212966", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Iqbaal", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801552373506", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Ashraful", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801711563356", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Tazul Islam", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801915969809", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Tanveer", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801620759827", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Jishaad Rana", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801687767102", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Prosenjeet", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Khulna", age: "", phone: "+8801925323616", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Sameer Sarkar", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801676798898", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Ashraful Islam", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801911088640", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Soheel Sonet", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801860363686", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Rasel Qureshi", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801711484380", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Towhed Rahman", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Mogbazar", age: "", phone: "+8801920910091", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Riyad", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Lalbag", age: "", phone: "+8801988843774", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Alif Reza", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Pabna", age: "", phone: "+8801744259918", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Arman", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Chittagong", age: "", phone: "+8801839109445", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Azad Rahman", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Habiganj", age: "", phone: "+8801771098615", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Fazlur Rahman", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Chittagong", age: "", phone: "+8801711194285", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Imtiaz Lijon", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Khulna", age: "", phone: "+8801750024678", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Kutub Uddin Chishti", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Brahmanbaria", age: "", phone: "+8801921985060", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Rakib Hossain", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Lakshmipur", age: "", phone: "+8801756845968", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Shahid", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Sylhet", age: "", phone: "+8801712357119", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Masum Billah", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Gaibandha", age: "", phone: "+8801737066845", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Golam Towhid", blood: "AB-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Rajshahi", age: "", phone: "+8801736473685", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+
+{ name: "Zaima Jahan Srabony", blood: "B-", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "", location: "Mirpur", age: "", phone: "+8801776227360", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Jahid", blood: "B-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801713521174", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Zakir", blood: "B-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhaka", age: "", phone: "+8801721010509", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Sarwar Jahan Prince", blood: "B-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Uttara", age: "", phone: "+8801819855040", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Tanassum Tanzil Suchi", blood: "B-", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "", location: "Uttara", age: "", phone: "+8801614000774", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Mohammad Rahul", blood: "B-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Kallyanpur", age: "", phone: "+8801671766329", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+
+{ name: "Alvi Ahmed", blood: "O-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "", age: "", phone: "+8801771326202", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Muhammad Rakibul Islam", blood: "O-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "", age: "", phone: "+8801789600010", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Jannatul Naima", blood: "O-", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "", location: "", age: "", phone: "+8801754759918", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Md Rafiad Islam", blood: "O-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "", age: "", phone: "+8801684810001", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+{ name: "Masaba", blood: "O-", photo: "https://i.ibb.co.com/jNcN7ws/female.jpg", profession: "", location: "", age: "", phone: "+8801922299755", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+
+{name:"Emon Chowdhury",bloodGroup:"A-",location:"Dhanmondi",phone:"01747425419",whatsapp:"https://wa.me/8801747425419",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Safayet Ullah",bloodGroup:"A-",location:"Dhanmondi",phone:"01680909520",whatsapp:"https://wa.me/8801680909520",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Abdus Samad Azad",bloodGroup:"A-",location:"Farmgate",phone:"01758286147",whatsapp:"https://wa.me/8801758286147",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Consoler Jack Denver",bloodGroup:"A-",location:"Gulshan",phone:"01865600400",whatsapp:"https://wa.me/8801865600400",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rabbi",bloodGroup:"A-",location:"Gulshan",phone:"01536198012",whatsapp:"https://wa.me/8801536198012",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Parvez Hossain",bloodGroup:"A-",location:"Jurain",phone:"01678709199",whatsapp:"https://wa.me/8801678709199",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Shafiur Rahman",bloodGroup:"A-",location:"Kallyanpur",phone:"01768843878",whatsapp:"https://wa.me/8801768843878",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Avishek Bhowmik",bloodGroup:"A-",location:"Mirpur",phone:"01682328191",whatsapp:"https://wa.me/8801682328191",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Sabit Hasan",bloodGroup:"A-",location:"Mirpur",phone:"01842759613",whatsapp:"https://wa.me/8801842759613",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"M Ahmed Mahey",bloodGroup:"A-",location:"Mohakhali",phone:"01553432984",whatsapp:"https://wa.me/8801553432984",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Zubayer Hossain Fahim",bloodGroup:"A-",location:"New Market",phone:"01842861288",whatsapp:"https://wa.me/8801842861288",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Reza",bloodGroup:"A-",location:"Savar",phone:"01721527394",whatsapp:"https://wa.me/8801721527394",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Mamun",bloodGroup:"A-",location:"Shyamoli",phone:"01737877743",whatsapp:"https://wa.me/8801737877743",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rafiqul Islam Rony",bloodGroup:"A-",location:"Uttara",phone:"01825194679",whatsapp:"https://wa.me/8801825194679",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"A-",location:"Uttara",phone:"01939954100",whatsapp:"https://wa.me/8801939954100",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Raz Roy",bloodGroup:"A-",location:"Ullapara",phone:"01767351739",whatsapp:"https://wa.me/8801767351739",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+
+{name:"FM Khalid Bin Ibrahim",bloodGroup:"AB-",location:"Banasree",phone:"01730701915",whatsapp:"https://wa.me/8801730701915",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Mostafizur Rahman",bloodGroup:"AB-",location:"Banasree",phone:"01733135716",whatsapp:"https://wa.me/8801733135716",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Faisal Khan",bloodGroup:"AB-",location:"Lalbag",phone:"01961122333",whatsapp:"https://wa.me/8801961122333",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Ridwanur Rahman",bloodGroup:"AB-",location:"Mirpur",phone:"01711084006",whatsapp:"https://wa.me/8801711084006",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Shamim Ahammed",bloodGroup:"AB-",location:"Mirpur",phone:"01927790773",whatsapp:"https://wa.me/8801927790773",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Suvasish Dey",bloodGroup:"AB-",location:"Savar",phone:"01711288432",whatsapp:"https://wa.me/8801711288432",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rasel Sarker",bloodGroup:"AB-",location:"Shegunbagicha",phone:"01906601111",whatsapp:"https://wa.me/8801906601111",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Abdur Rahim",bloodGroup:"AB-",location:"Sobujbag",phone:"01961500757",whatsapp:"https://wa.me/8801961500757",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rony Rahman",bloodGroup:"AB-",location:"Uttara",phone:"01744244047",whatsapp:"https://wa.me/8801744244047",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+
+{name:"Saikat Hossain",bloodGroup:"B-",location:"Ashulia",phone:"01722417557",whatsapp:"https://wa.me/8801722417557",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Suman Ahmed",bloodGroup:"B-",location:"Bangshal",phone:"01949303803",whatsapp:"https://wa.me/8801949303803",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"B-",location:"Cantonment",phone:"01997617633",whatsapp:"https://wa.me/8801997617633",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Abu Rayhan Ifat",bloodGroup:"B-",location:"Dhanmondi",phone:"01633717791",whatsapp:"https://wa.me/8801633717791",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"B-",location:"Dhanmondi",phone:"01868981543",whatsapp:"https://wa.me/8801868981543",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Ismail Khalil Ullah",bloodGroup:"B-",location:"Farmgate",phone:"01710335252",whatsapp:"https://wa.me/8801710335252",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Hosen Miah",bloodGroup:"B-",location:"Gulshan",phone:"01914709682",whatsapp:"https://wa.me/8801914709682",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"B-",location:"Jatrabari",phone:"01777788299",whatsapp:"https://wa.me/8801777788299",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Hamidur Rahman Mehedi",bloodGroup:"B-",location:"Mirpur",phone:"01618778811",whatsapp:"https://wa.me/8801618778811",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Sumon Hussain Munna",bloodGroup:"B-",location:"Mirpur",phone:"01799922200",whatsapp:"https://wa.me/8801799922200",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rony Ahmed",bloodGroup:"B-",location:"Mirpur",phone:"01728952159",whatsapp:"https://wa.me/8801728952159",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Tasin Sami",bloodGroup:"B-",location:"Mirpur",phone:"01731843866",whatsapp:"https://wa.me/8801731843866",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Naeem",bloodGroup:"B-",location:"Mohammadpur",phone:"01731612561",whatsapp:"https://wa.me/8801731612561",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Mehedi",bloodGroup:"B-",location:"Mohammadpur",phone:"01837373202",whatsapp:"https://wa.me/8801837373202",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Tajul Islam",bloodGroup:"B-",location:"Niketon",phone:"01708109675",whatsapp:"https://wa.me/8801708109675",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Ripon",bloodGroup:"B-",location:"Nikunja",phone:"01962424049",whatsapp:"https://wa.me/8801962424049",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Anishur Rahman Sohel",bloodGroup:"B-",location:"Rayerbag",phone:"01726363026",whatsapp:"https://wa.me/8801726363026",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"SA Zabir",bloodGroup:"B-",location:"Savar",phone:"01738057519",whatsapp:"https://wa.me/8801738057519",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"B-",location:"Shyamoli",phone:"01684404780",whatsapp:"https://wa.me/8801684404780",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Joy",bloodGroup:"B-",location:"Shyamoli",phone:"01754004404",whatsapp:"https://wa.me/8801754004404",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"B-",location:"Tejgaon",phone:"01761698844",whatsapp:"https://wa.me/8801761698844",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Sumon Sikder",bloodGroup:"B-",location:"Uttara",phone:"01748632920",whatsapp:"https://wa.me/8801748632920",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+
+{name:"Mr. Ashik",bloodGroup:"O-",location:"Zirabo",phone:"01710027589",whatsapp:"https://wa.me/8801710027589",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Hridoy Islam Hridu",bloodGroup:"O-",location:"Badda",phone:"01683626187",whatsapp:"https://wa.me/8801683626187",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"O-",location:"Bashabo",phone:"01521402247",whatsapp:"https://wa.me/8801521402247",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Mahfuj Ullah",bloodGroup:"O-",location:"Bashabo",phone:"01772013388",whatsapp:"https://wa.me/8801772013388",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Didarul Islam",bloodGroup:"O-",location:"Cantonment",phone:"01678035238",whatsapp:"https://wa.me/8801678035238",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Nasir",bloodGroup:"O-",location:"Cantonment",phone:"01736616565",whatsapp:"https://wa.me/8801736616565",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Hossain Rony",bloodGroup:"O-",location:"Dania",phone:"01625681553",whatsapp:"https://wa.me/8801625681553",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Kamrul Hasan",bloodGroup:"O-",location:"Dhanmondi",phone:"01814714948",whatsapp:"https://wa.me/8801814714948",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Tarikul Raju",bloodGroup:"O-",location:"Dilkusha",phone:"01713178388",whatsapp:"https://wa.me/8801713178388",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Javed Nasim",bloodGroup:"O-",location:"Hazaribag",phone:"01994736230",whatsapp:"https://wa.me/8801994736230",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Yasir Sohel",bloodGroup:"O-",location:"Kallyanpur",phone:"01837569065",whatsapp:"https://wa.me/8801837569065",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rakib Hasan",bloodGroup:"O-",location:"Kamalapur",phone:"01610086444",whatsapp:"https://wa.me/8801610086444",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"HM Saife",bloodGroup:"O-",location:"Kamarpara",phone:"01989456743",whatsapp:"https://wa.me/8801989456743",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Shojib",bloodGroup:"O-",location:"Lalbag",phone:"01923502360",whatsapp:"https://wa.me/8801923502360",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Contact to Verify",bloodGroup:"O-",location:"Mirpur",phone:"01736913763",whatsapp:"https://wa.me/8801736913763",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Nirob Islam Rumon",bloodGroup:"O-",location:"Mirpur",phone:"01752131940",whatsapp:"https://wa.me/8801752131940",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Tonay",bloodGroup:"O-",location:"Mirpur",phone:"01925576933",whatsapp:"https://wa.me/8801925576933",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Mahedi Hasan Dolon",bloodGroup:"O-",location:"Mogbazar",phone:"01675550732",whatsapp:"https://wa.me/8801675550732",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Riyad",bloodGroup:"O-",location:"Mohammadpur",phone:"01915550370",whatsapp:"https://wa.me/8801915550370",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Abu Mohammed Sourov",bloodGroup:"O-",location:"Panthapath",phone:"01722683705",whatsapp:"https://wa.me/8801722683705",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Ashik Rahman",bloodGroup:"O-",location:"Postogola",phone:"01921664114",whatsapp:"https://wa.me/8801921664114",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Emtiaz Rahman",bloodGroup:"O-",location:"Savar",phone:"01764935821",whatsapp:"https://wa.me/8801764935821",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rahat Khan Dipto",bloodGroup:"O-",location:"Savar",phone:"01917000880",whatsapp:"https://wa.me/8801917000880",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rajib",bloodGroup:"O-",location:"Savar",phone:"01774061678",whatsapp:"https://wa.me/8801774061678",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rajib",bloodGroup:"O-",location:"Savar",phone:"01791785279",whatsapp:"https://wa.me/8801791785279",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Nahid Rexve",bloodGroup:"O-",location:"Shahbag",phone:"01739376172",whatsapp:"https://wa.me/8801739376172",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Alif",bloodGroup:"O-",location:"Uttara",phone:"01739576708",whatsapp:"https://wa.me/8801739576708",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Fahim Khan Iqbal",bloodGroup:"O-",location:"Uttara",phone:"01819664053",whatsapp:"https://wa.me/8801819664053",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"FS Khan",bloodGroup:"O-",location:"Uttara",phone:"01714664368",whatsapp:"https://wa.me/8801714664368",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Anik",bloodGroup:"O-",location:"Uttara",phone:"01771240671",whatsapp:"https://wa.me/8801771240671",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Jahangir Alam",bloodGroup:"O-",location:"Uttara",phone:"01710530142",whatsapp:"https://wa.me/8801710530142",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Md. Shohanur Rahman",bloodGroup:"O-",location:"Uttara",phone:"01711512047",whatsapp:"https://wa.me/8801711512047",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Rayhan Hossain",bloodGroup:"O-",location:"Uttara",phone:"01737029698",whatsapp:"https://wa.me/8801737029698",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+{name:"Shakil",bloodGroup:"O-",location:"Uttara",phone:"01760050000",whatsapp:"https://wa.me/8801760050000",photo:"https://i.ibb.co.com/wjy8hHn/male.jpg",photoProtection:false,photoBlur:false,messenger:""},
+
 { name: "Md. Safayet Ullah", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhanmondi", age: "", phone: "+8801680909520", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
 
 { name: "Abdus Samad Azad", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Farmgate", age: "", phone: "+8801758286147", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
-
-{ name: "Consoler Jack Denver", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Gulshan", age: "", phone: "+8801865600400", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
 
 { name: "Rabbi", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Gulshan", age: "", phone: "+8801536198012", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
 
@@ -667,6 +807,50 @@ function createCard(d) {
     }
 
 
+
+
+
+// =========================================
+// FAQ Accordion System
+// Professional Auto Close Accordion
+//
+// একসাথে শুধু ১টি FAQ open থাকবে
+// নতুন FAQ open করলে আগেরটি বন্ধ হবে
+// =========================================
+
+document
+.querySelectorAll('.faq-question')
+.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    // Current clicked FAQ item
+    const currentItem =
+      button.parentElement;
+
+    // Close all other FAQ items
+    document
+    .querySelectorAll('.faq-item')
+    .forEach(item => {
+
+      if(item !== currentItem){
+
+        item.classList.remove('active');
+
+      }
+
+    });
+
+    // Toggle current FAQ
+    currentItem.classList.toggle('active');
+
+  });
+
+});
+
+
+
+
     // ==============================
     // Smooth Navigation Function
     // Navbar section smoothly scroll করার জন্য
@@ -848,38 +1032,115 @@ function createCard(d) {
 
 
 
+	// ==========================================
+	// Mobile Navigation System
+	// Mobile menu open / close control
+	// ==========================================
 
-const menuToggle =
-document.getElementById('menuToggle');
+	// Menu toggle button select করা
+	const menuToggle =
+	document.getElementById('menuToggle');
 
-const mobileMenu =
-document.getElementById('mobileMenu');
+	// Mobile menu container select করা
+	const mobileMenu =
+	document.getElementById('mobileMenu');
 
-const closeMenu =
-document.getElementById('closeMenu');
+	// Close button select করা
+	const closeMenu =
+	document.getElementById('closeMenu');
 
-menuToggle.addEventListener('click', () => {
-
-  mobileMenu.classList.add('active');
-
-});
-
-closeMenu.addEventListener('click', () => {
-
-  mobileMenu.classList.remove('active');
-
-});
-
+	// Background overlay select করা
+	const menuOverlay =
+	document.getElementById('menuOverlay');
 
 
-document
-.querySelectorAll('.mobile-menu a')
-.forEach(link => {
+	// ==========================================
+	// Open Mobile Menu Function
+	// Mobile menu এবং overlay show করবে
+	// ==========================================
+	function openMobileMenu() {
 
-  link.addEventListener('click', () => {
+	  // Menu show করা
+	  mobileMenu.classList.add('active');
 
-    mobileMenu.classList.remove('active');
+	  // Overlay show করা
+	  menuOverlay.classList.add('active');
 
-  });
+	  // Body scroll disable
+	  document.body.style.overflow = 'hidden';
 
-});
+	}
+
+
+	// ==========================================
+	// Close Mobile Menu Function
+	// Mobile menu এবং overlay hide করবে
+	// ==========================================
+	function closeMobileMenu() {
+
+	  // Menu hide করা
+	  mobileMenu.classList.remove('active');
+
+	  // Overlay hide করা
+	  menuOverlay.classList.remove('active');
+
+	  // Body scroll enable
+	  document.body.style.overflow = '';
+
+	}
+
+
+	// ==========================================
+	// Hamburger Menu Click Event
+	// Hamburger icon click করলে menu open হবে
+	// ==========================================
+	menuToggle.addEventListener('click', openMobileMenu);
+
+
+	// ==========================================
+	// Close Button Event
+	// X icon click করলে menu close হবে
+	// ==========================================
+	closeMenu.addEventListener('click', closeMobileMenu);
+
+
+	// ==========================================
+	// Overlay Click Event
+	// Overlay click করলে menu close হবে
+	// ==========================================
+	menuOverlay.addEventListener('click', closeMobileMenu);
+
+
+	// ==========================================
+	// Mobile Menu Link Events
+	// যেকোনো menu link click করলে menu close হবে
+	// ==========================================
+	document
+	.querySelectorAll('.mobile-menu a')
+	.forEach(link => {
+
+	  link.addEventListener('click', () => {
+
+		closeMobileMenu();
+
+	  });
+
+	});
+
+
+	// ==========================================
+	// ESC Key Support
+	// ESC press করলে menu close হবে
+	// ==========================================
+	document.addEventListener('keydown', (e) => {
+
+	  if (
+		e.key === 'Escape' &&
+		mobileMenu.classList.contains('active')
+	  ) {
+
+		closeMobileMenu();
+
+	  }
+
+	});
