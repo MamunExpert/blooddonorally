@@ -1,2910 +1,1060 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find verified blood donors across Bangladesh. Search donors by name, location, or blood group and connect quickly during emergencies.">
+  <title>Blood Donor Alliance | Find Verified Blood Donors Across Bangladesh</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-/* ==============================
-       Root Variables
-       Main color & theme variables
-       পুরো website এর মূল color control
-    ============================== */
-    :root {
+</head>
+<body data-theme="light">
 
-      /* Main Background Color */
-      --bg: #f8f9fa;
-
-      /* Card Background Color */
-      --card-bg: #ffffff;
-
-      /* Main Text Color */
-      --text: #222222;
-
-      /* Light Text Color */
-      --text-light: #555555;
-
-      /* Primary Red Color */
-      --red: #e63939;
-
-      /* Border Color */
-      --border: #ddd;
-
-      /* Shadow Color */
-      --shadow: rgba(0,0,0,0.1);
-
-    }
-
-
-    /* ==============================
-       Dark Theme Variables
-       Dark mode activate হলে এই color apply হবে
-    ============================== */
-    [data-theme="dark"] {
-
-      /* Dark Background */
-      --bg: #0a0000;
-
-      /* Dark Card Background */
-      --card-bg: #1a0808;
-
-      /* White Text */
-      --text: #ffffff;
-
-      /* Light Pink Text */
-      --text-light: #ffdddd;
-
-      /* Main Red */
-      --red: #e63939;
-
-      /* Border with opacity */
-      --border: rgba(230,57,57,0.3);
-
-      /* Red Glow Shadow */
-      --shadow: rgba(230,57,57,0.25);
-
-    }
-
-
-    /* ==============================
-       Universal Reset
-       সব element এর default margin/padding remove
-    ============================== */
-    * {
-
-      margin: 0;
-      padding: 0;
-
-      /* Width calculation safe রাখা */
-      box-sizing: border-box;
-
-    }
-
-
-    /* ==============================
-       Main Body Style
-       Website main layout styling
-    ============================== */
-    body {
-
-      /* Main Website Font */
-      font-family: 'Poppins', sans-serif;
-
-      /* Dynamic Theme Background */
-      background: var(--bg);
-
-      /* Dynamic Text Color */
-      color: var(--text);
-
-      /* Minimum Full Height */
-      min-height: 100vh;
-
-      /* Smooth Theme Transition */
-      transition: background 0.4s;
-
-    }
-
-
-    /* ==============================
-       Smooth Scroll Effect
-       Anchor click এ smooth scrolling
-    ============================== */
-    html {
-
-      scroll-behavior: smooth;
-
-    }
-
-
-    /* ==============================
+  <!-- ==============================
        Floating Blood Background
-       Dark mode এ animated blood effect
-    ============================== */
-    .blood-bg {
-
-      position: fixed;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 100%;
-
-      /* Click block করবে না */
-      pointer-events: none;
-
-      /* Background এ থাকবে */
-      z-index: -1;
-
-      /* Default hidden */
-      opacity: 0;
-
-    }
+       Dark mode এ animated blood drop effect show হবে
+  =============================== -->
+  <div class="blood-bg" id="bloodBg"></div>
 
 
-    /* Dark mode এ blood background visible */
-    [data-theme="dark"] .blood-bg {
-
-      opacity: 1;
-
-    }
-
-
-    /* ==============================
-       Single Blood Drop Style
-       Floating blood emoji animation
-    ============================== */
-    .drop {
-
-      position: absolute;
-
-      /* Blood emoji size */
-      font-size: 20px;
-
-      /* Transparent red color */
-      color: rgba(230, 57, 57, 0.35);
-
-      /* Continuous falling animation */
-      animation: bloodFall linear infinite;
-
-    }
-
-
-    /* ==============================
-       Blood Falling Animation
-       Blood top থেকে নিচে move করবে
-    ============================== */
-    @keyframes bloodFall {
-
-      0% {
-
-        transform: translateY(-100px) rotate(0deg);
-
-      }
-
-      100% {
-
-        transform: translateY(110vh) rotate(12deg);
-
-      }
-
-    }
-
-
-				section{
-				  scroll-margin-top:90px;
-				}
-
-
-    /* ==============================
+  <!-- ==============================
        Header Section
-       Sticky navigation header
-    ============================== */
-    header {
+       Navbar + Logo + Navigation Menu
+  =============================== -->
+  <header>
 
-      background: var(--card-bg);
+    <nav>
 
-      /* Bottom border */
-      border-bottom: 1px solid var(--border);
+      <!-- Website Logo -->
+      <div class="logo">
 
-      /* Scroll করলেও top এ থাকবে */
-      position: sticky;
+        <i class="fas fa-tint"></i>
 
-      top: 0;
+        <span>Blood Donor <span class="ally">Alliance</span></span>
 
-      z-index: 100;
+      </div>
 
-      /* Soft shadow effect */
-      box-shadow: 0 2px 10px var(--shadow);
+		  <!-- Mobile Toggle -->
+	<button id="menuToggle" class="menu-toggle">
 
-    }
+	  <span></span>
+	  <span></span>
+	  <span></span>
 
+	</button>
 
-    /* ==============================
-       Navbar Layout
-       Navigation alignment system
-    ============================== */
-    nav {
+	  <!-- Desktop Menu -->
+	  <div class="nav-links">
 
-      max-width: 1400px;
+		<a href="#home" class="active"
+		   onclick="navigateToSection(this)">
+		  Home
+		</a>
 
-      margin: auto;
+		<a href="#donors"
+		   onclick="navigateToSection(this)">
+		  Donors
+		</a>
 
-      padding: 18px 20px;
+		<a href="#about"
+		   onclick="navigateToSection(this)">
+		  About Us
+		</a>
 
-      display: flex;
+		<a href="#contact"
+		   onclick="navigateToSection(this)">
+		  Contact
+		</a>
 
-      align-items: center;
+	  </div>
 
-      justify-content: space-between;
+	  <!-- Desktop Right -->
+	  <div class="nav-actions">
 
-      /* Small screen wrap support */
-      flex-wrap: wrap;
+		<button class="theme-toggle"
+				id="themeToggle">
+		  <i class="fas fa-moon"></i>
+		</button>
 
-    }
+		<button class="donor-bttn">
+		  Become a Donor
+		</button>
 
+	  </div>
+    </nav>
 
-    /* ==============================
-       Logo Style
-       Website logo design
-    ============================== */
-    .logo {
+	<!-- ==========================================
+		 Mobile Menu Overlay
+		 Menu open হলে background dark layer show হবে
+	========================================== -->
+	<div class="menu-overlay" id="menuOverlay"></div>
 
-      display: flex;
+		<!-- Mobile Menu -->
+	<div class="mobile-menu" id="mobileMenu">
 
-     cursor: pointer;
+	  <div class="mobile-menu-header">
 
-      align-items: center;
+		<h3>Menu</h3>
 
-      gap: 12px;
+		<button id="closeMenu">
+		  <i class="fas fa-times"></i>
+		</button>
 
-      font-size: 1.6rem;
+	  </div>
 
-      font-weight: 700;
+	  <a href="#home">Home</a>
 
-      color: var(--red);
+	  <a href="#donors">
+		Available Donors
+	  </a>
 
-    }
+	  <a href="#">
+		Divisional Volunteer
+	  </a>
 
-  .ally {
-      font-family: "Share Tech",  'Poppins',  sans-serif;
-       font-weight: 500;
-       color: var(--red);
-       font-size: 1.17rem;
-  }
+	  <a href="#about">
+		About Us
+	  </a>
 
-    /* ==============================
-       Navigation Links Container
-       Navbar menu layout
-    ============================== */
-    .nav-links {
+	  <a href="#faq">
+		FAQ
+		</a>
 
-      display: flex;
+	  <a href="#contact">
+		Contact Us
+	  </a>
 
-      flex-wrap: wrap;
+	  <a href="#developer">
+		Developer Info
+	  </a>
 
-    }
+	  <button class="mobile-donor-btn">
+		Become a Donor
+	  </button>
 
+	</div>
+  </header>
 
-    /* ==============================
-       Single Nav Link
-       Navbar link design
-    ============================== */
-    .nav-links a {
 
-      font-family: "Share Tech",  'Poppins',  sans-serif;
-
-      font-size: 1.3rem;
-
-      color: var(--text);
-
-      text-decoration: none;
-      
-      padding: 8px 16px;
-
-      position: relative;
-
-    }
-
-
-    /* Hover Effect */
-    .nav-links a:hover {
-
-      color: var(--red);
-
-      font-weight: bold;
-
-    }
-
-
-    /* Active Navigation Link */
-    .nav-links a.active {
-
-      color: var(--red);
-
-      font-weight: bold;
-
-    }
-
-
-    /* ==============================
-       Animated Underline Effect
-       Hover করলে নিচে line আসবে
-    ============================== */
-    .nav-links a::before {
-
-      content: '';
-
-      position: absolute;
-
-      bottom: -1px;
-
-      left: 50%;
-
-      width: 0;
-
-      height: 3px;
-
-      background: var(--red);
-
-      transition: all .3s ease;
-
-      transform: translateX(-50%);
-
-    }
-
-
-    /* Hover অথবা active হলে underline show */
-    .nav-links a:hover::before,
-    .nav-links a.active::before {
-
-      width: 70%;
-
-    }
-
-
-    /* ==============================
-       Theme Toggle Button
-       Dark / Light mode button
-    ============================== */
-    .theme-toggle {
-
-      background: none;
-
-      border: none;
-
-      font-size: 1.6rem;
-
-      cursor: pointer;
-
-      color: var(--text);
-
-    }
-	
-		.donor-bttn{
-            background:var(--red);
-			font-family: 'Poppins', sans-serif;
-            padding:12px 28px;
-            border: 2px solid #ff0d0d;
-            border-radius: 30px;
-            color:white;
-            font-weight:600;
-            cursor: pointer;
-		}
-
-
-
-	.nav-actions{
-
-	 display:flex;
-	 align-items:center;
-	 gap:15px;
-	}
-
-	/* =====================================
-	   Custom Animated Hamburger
-	   Modern Professional Design
-	   ===================================== */
-
-	.menu-toggle {
-
-	  width: 35px;
-	  height: 35px;
-
-	  border: none;
-	  border-radius: 50%;
-
-	  background: rgba(230,57,57,.12);
-
-	  display: none;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	  gap: 4px;
-
-	  cursor: pointer;
-
-	  transition: all .3s ease;
-
-	  box-shadow:
-		0 0 10px rgba(230,57,57,.25);
-
-	}
-
-	.menu-toggle span {
-
-	  width: 14px;
-	  height: 2px;
-
-	  border-radius: 26px;
-
-	  background: var(--red);
-
-	  transition: all .3s ease;
-
-	}
-
-	.menu-toggle:hover {
-
-	  background: var(--red);
-
-	  box-shadow:
-		0 0 18px rgba(230,57,57,.5);
-
-	}
-
-	.menu-toggle:hover span {
-
-	  background: #fff;
-
-	}
-
-
-    /* ==============================
+  <!-- ==============================
        Hero Section
-       Main intro section styling
-    ============================== */
-    .hero {
+       Main heading + stats + search
+  =============================== -->
+  <section
+    id="home"
+    class="hero"
+  >
 
-      text-align: center;
+    <!-- Main Heading -->
+    <h1>
 
-      padding: 80px 20px 0;
+      The
+      <span>Largest Blood </span>
+      Donor Network
 
-      /* Animation start hidden */
-      opacity: 0;
+    </h1>
 
-      transform: translateY(50px);
 
-      /* Smooth intro animation */
-      transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    <!-- Hero Description -->
+    <p>
 
-    }
+      Connecting blood donors and patients 
+	  through a fast, reliable, and life-saving network. 
+	  Search by name, location, or blood group 
+	  to find active donors near you.
 
+    </p>
 
-    /* Hero Main Heading */
-    .hero h1 {
 
-      font-family: "Share Tech",  'Poppins',  sans-serif;
+    <!-- Statistics Section -->
+    <div class="stats">
 
-      font-size: 2.8rem;
+      <!-- Active Donor Count -->
+      <div class="stat-item">
 
-      margin-bottom: 12px;
+        <span
+          class="stat-number"
+          data-target="1248"
+        >
+          0
+        </span>
 
-    }
+        +
 
+        <br>
 
-    /* Hero Highlight Text */
-    .hero h1 span {
+        Active Donors
 
-      color: var(--red);
+      </div>
 
-    }
 
+      <!-- Lives Saved Count -->
+      <div class="stat-item">
 
-  .hero p {
+        <span
+          class="stat-number"
+          data-target="12750"
+        >
+          0
+        </span>
 
-    padding: 0 99px;
+        +
 
-  }
+        <br>
 
+        Lives Saved
 
-    /* ==============================
-       Statistics Section
-       Counter items container
-    ============================== */
-    .stats {
+      </div>
 
-      display: flex;
 
-      justify-content: center;
+      <!-- Happy Patients Count -->
+      <div class="stat-item">
 
-      gap: 40px;
+        <span
+          class="stat-number"
+          data-target="3980"
+        >
+          0
+        </span>
 
-      flex-wrap: wrap;
+        +
 
-      margin: 40px 0;
+        <br>
 
-    }
+        Happy Patients
 
+      </div>
 
-    /* Single Statistic Item */
-    .stat-item {
+    </div>
 
-      text-align: center;
 
-    }
+    <!-- ==============================
+         Search Bar Section
+         Donor search inputs
+    =============================== -->
+    <div class="search-bar">
 
+      <!-- Search By Name -->
+      <input
+        type="text"
+        id="searchName"
+        placeholder="Search by name..."
+        onkeypress="
+          if(event.key === 'Enter')
+          filterDonors()
+        "
+      >
 
-    /* Counter Number Style */
-    .stat-number {
 
-      font-size: 2.2rem;
+      <!-- Search By Location -->
+      <input
+        type="text"
+        id="searchLocation"
+        placeholder="Search by location..."
+        onkeypress="
+          if(event.key === 'Enter')
+          filterDonors()
+        "
+      >
 
-      font-weight: 700;
 
-      color: var(--red);
+      <!-- Blood Group Select -->
+      <select
+        id="bloodGroup"
+        onchange="filterDonors()"
+      >
 
-    }
+        <option value="">
+          All Blood Groups
+        </option>
 
+        <option>A+</option>
+        <option>A-</option>
 
-    /* ==============================
-       Search Bar Container
-       Donor filtering section
-    ============================== */
-    .search-bar {
+        <option>B+</option>
+        <option>B-</option>
 
-      max-width: 1100px;
+        <option>O+</option>
+        <option>O-</option>
 
-      margin: 40px auto;
+        <option>AB+</option>
+        <option>AB-</option>
 
-      background: var(--card-bg);
+      </select>
 
-      border-radius: 50px;
 
-      padding: 12px;
+      <!-- Search Button -->
+      <button onclick="filterDonors()">
 
-      display: flex;
+        Search
 
-      justify-content: center;
+      </button>
 
-      align-content: center;
+    </div>
 
-      flex-wrap: wrap;
+  </section>
 
-      gap: 10px;
 
-      border: 2px solid var(--border);
 
-      box-shadow: 0 5px 15px var(--shadow);
-
-    }
-
-
-    /* ==============================
-       Search Inputs & Select Box
-       Input field styling
-    ============================== */
-    .search-bar input,
-    .search-bar select {
-
-      font-family: "Share Tech",  'Poppins',  sans-serif;
-
-      flex: 1;
-
-      padding: 16px;
-
-      background: transparent;
-
-      border: none;
-
-      color: var(--text);
-
-      min-width: 160px;
-
-    }
-
-
-    /* Focus Effect */
-    .search-bar input:focus,
-    .search-bar select:focus {
-
-      outline: none;
-
-      border-radius: 30px 50px;
-
-      box-shadow: -2px 1px 2px 2px rgba(230, 57, 57, 0.8);
-
-    }
-
-
-    /* Dark Mode Select Style */
-    [data-theme="dark"] .search-bar select {
-
-      background: #1a0808;
-
-      color: #ffffff;
-
-    }
-
-
-    /* ==============================
-       Search Button Style
-       Donor search button
-    ============================== */
-    .search-bar button {
-		
-	  font-family: 'Poppins', sans-serif;
-
-      padding: 10px 60px;
-
-      background: var(--red);
-
-      color: white;
-
-      border: 2px solid #ff0d0d;
-
-      border-radius: 50px;
-
-      font-size: 1rem;
-
-      font-weight: 600;
-
-      cursor: pointer;
-
-    }
-
-
-    /* ==============================
-       Donor Cards Grid Container
-       সব donor card grid layout এ show হবে
-    ============================== */
-    .cards {
-
-      /* Maximum container width */
-      max-width: 1400px;
-
-      /* Center align */
-      margin: 30px auto;
-
-      /* CSS Grid Layout */
-      display: grid;
-
-      /* Responsive card columns */
-      grid-template-columns:
-        repeat(auto-fit, minmax(340px, 1fr));
-
-      /* Card gap */
-      gap: 25px;
-
-    }
-
-
-    /* ==============================
-       Single Donor Card
-       Main donor card design
-    ============================== */
-    .card {
-
-      /* Dynamic theme background */
-      background: var(--card-bg);
-
-      /* Rounded corners */
-      border-radius: 24px;
-
-      /* Inner spacing */
-      padding: 25px;
-
-      /* Border */
-      border: 1px solid var(--border);
-
-      /* Soft shadow */
-      box-shadow: 0 10px 30px var(--shadow);
-
-      /* Smooth animation */
-      transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-      position: relative;
-
-      /* Animation start hidden */
-      opacity: 0;
-
-      transform: translateY(50px);
-
-    }
-
-
-    /* Card visible animation */
-    .card.visible {
-
-      opacity: 1;
-
-      transform: translateY(0);
-
-    }
-
-
-    /* Hover animation */
-    .card.visible:hover {
-
-      transform: translateY(-10px);
-
-      box-shadow: 0 15px 35px var(--shadow);
-
-    }
-
-
-    /* ==============================
-       Donor Photo Container
-       Profile image wrapper
-    ============================== */
-    .photo-container {
-
-      position: relative;
-
-      width: 130px;
-
-      height: 130px;
-
-      margin: 0 auto 20px;
-
-    }
-
-    /* ==============================
-       Donor Profile Photo
-       Circular donor image
-    ============================== */
-    .photo {
-
-      width: 130px;
-
-      height: 130px;
-
-      border-radius: 50%;
-
-      /* Red border */
-      border: 5px solid var(--red);
-
-      /* Image properly crop হবে */
-      object-fit: cover;
-
-    }
-
-
-    /* ==============================
-       Blood Group Badge
-       Blood group floating badge
-    ============================== */
-    .blood-badge {
-
-      position: absolute;
-
-      top: 78px;
-
-      left: 88px;
-
-      /* Red gradient background */
-      background:
-        linear-gradient(135deg, #e63939, #ff4d4d);
-
-      color: white;
-
-      padding: 6px 12px;
-
-      border-radius: 50px;
-
-      font-weight: 800;
-
-      font-size: 1rem;
-
-      /* Glow shadow */
-      box-shadow:
-        0 6px 20px rgba(230, 57, 57, 0.5);
-
-      border: 3px solid rgba(255,255,255,0.3);
-
-      /* Continuous pulse animation */
-      animation:
-        bloodBadgePulse 2.5s infinite ease-in-out;
-
-      z-index: 10;
-
-      /* Text shadow */
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-
-    }
-
-
-    /* ==============================
-       Blood Badge Pulse Animation
-       Badge zoom in/out effect
-    ============================== */
-    @keyframes bloodBadgePulse {
-
-      0%, 100% {
-
-        transform: scale(1);
-
-        box-shadow:
-          0 6px 20px rgba(230, 57, 57, 0.5);
-
-      }
-
-      50% {
-
-        transform: scale(1.08);
-
-        box-shadow:
-          0 10px 30px rgba(230, 57, 57, 0.7);
-
-      }
-
-    }
-
-
-    /* ==============================
-       Verified Badge
-       Verified donor indicator
-    ============================== */
-    .verified {
-
-      position: absolute;
-
-      top: 20px;
-
-      left: 20px;
-
-      /* Green gradient background */
-      background:
-        linear-gradient(135deg, #00c853, #00e676);
-
-      color: white;
-
-      padding: 6px 16px 6px 12px;
-
-      border-radius: 30px;
-
-      font-size: 0.75rem;
-
-      font-weight: 700;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 6px;
-
-      /* Glow shadow */
-      box-shadow:
-        0 5px 15px rgba(0, 200, 83, 0.4);
-
-      border: 2px solid rgba(255,255,255,0.5);
-
-      z-index: 10;
-
-      /* Pulse effect */
-      animation: verifiedPulse 3s infinite;
-
-    }
-
-
-    /* Verified icon size */
-    .verified i {
-
-      font-size: 1rem;
-
-    }
-
-
-    /* ==============================
-       Verified Pulse Animation
-       Green glow effect
-    ============================== */
-    @keyframes verifiedPulse {
-
-      0%, 100% {
-
-        box-shadow:
-          0 4px 15px rgba(0, 200, 83, 0.4);
-
-      }
-
-      50% {
-
-        box-shadow:
-          0 6px 20px rgba(0, 200, 83, 0.6);
-
-      }
-
-    }
-
-
-    /* Dark mode verified border */
-    [data-theme="dark"] .verified {
-
-      border: 1px solid rgba(255, 255, 255, 0.3);
-
-    }
-
-
-    /* ==============================
-       Donor Name
-       Main donor title
-    ============================== */
-    .name {
-
-      font-size: 1.55rem;
-
-      text-align: center;
-
-      margin: 10px 0 5px;
-
-    }
-
-
-    /* ==============================
-       Profession Text
-       Donor profession style
-    ============================== */
-    .profession {
-
-      text-align: center;
-
-      color: var(--text-light);
-
-      margin-bottom: 18px;
-
-    }
-
-
-    /* ==============================
-       Information Row
-       Location / Age / Phone row
-    ============================== */
-    .info-row {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 12px;
-
-      padding: 8px 0;
-
-      color: var(--text-light);
-
-    }
-
-	/* =============================================
-	   BLURRED PHOTO PROTECTION
-	   Donor privacy এর জন্য photo blur effect
-	   ============================================= */
-
-	/* Protected donor image style */
-	.blurred-photo {
-
-	  /* Image blur + slightly dark effect */
-	  filter: blur(7px) brightness(0.85);
-
-	  /* Smooth hover animation */
-	  transition: all 0.4s ease;
-
-	  /* Normal cursor */
-	  cursor: default;
-	}
-
-	/* Hover effect on blurred image */
-	.blurred-photo:hover {
-
-	  /* Hover এ blur কিছুটা কমবে */
-	  filter: blur(5px) brightness(0.95);
-
-	  /* Slight zoom effect */
-	  transform: scale(1.04);
-
-	  /* Soft red glow shadow */
-	  box-shadow: 0 0 20px rgba(230, 57, 57, 0.5);
-	}
-
-
-	/* =============================================
-	   SECURED NUMBER STYLING
-	   Protected phone number UI design
-	   ============================================= */
-
-	/* Secured phone text container */
-	.secured-number {
-
-	  /* Red highlight color */
-	  color: #e63939;
-
-	  /* Medium bold text */
-	  font-weight: 500;
-
-	  /* Icon + text same line */
-	  display: inline-flex;
-
-	  align-items: center;
-
-	  /* Space between icon and text */
-	  gap: 6px;
-
-	  /* Smooth animation */
-	  transition: all 0.3s ease;
-
-	  cursor: default;
-
-	  /* Tooltip positioning support */
-	  position: relative;
-	}
-
-	/* Hover effect */
-	.secured-number:hover {
-
-	  /* Lighter red */
-	  color: #ff5252;
-
-	  /* Slight upward movement */
-	  transform: translateY(-1px);
-	}
-
-	/* Lock icon animation setup */
-	.secured-number i {
-
-	  transition: all 0.3s ease;
-	}
-
-	/* Lock icon hover animation */
-	.secured-number:hover i {
-
-	  /* Rotate + zoom icon */
-	  transform: rotate(25deg) scale(1.2);
-	}
-
-
-	/* =============================================
-	   MODERN CUSTOM TOOLTIP
-	   Reusable tooltip system
-	   ============================================= */
-
-	/* Tooltip parent positioning */
-	.custom-tooltip,
-	.secured-number[data-tooltip] {
-
-	  position: relative;
-	}
-
-	/* Main tooltip box */
-	.custom-tooltip::after,
-	.secured-number[data-tooltip]::after {
-
-	  /* Dynamic tooltip text */
-	  content: attr(data-tooltip);
-
-	  position: absolute;
-
-	  /* Dark glass style background */
-	  background: rgba(15, 15, 15, 0.95);
-
-	  color: #ffffff;
-
-	  padding: 12px 16px;
-
-	  border-radius: 8px;
-
-	  font-size: 0.8rem;
-
-	  line-height: 1.45;
-
-	  /* Auto width */
-	  width: max-content;
-
-	  /* Prevent oversized tooltip */
-	  max-width: 280px;
-
-	  z-index: 200;
-
-	  /* Hidden by default */
-	  opacity: 0;
-	  visibility: hidden;
-
-	  /* Smooth fade animation */
-	  transition: all 0.35s ease;
-
-	  /* Shadow for depth */
-	  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-
-	  /* Ignore mouse events */
-	  pointer-events: none;
-	}
-
-
-	/* =============================================
-	   TOOLTIP ARROW / CHEVRON
-	   Tooltip এর ছোট arrow design
-	   ============================================= */
-
-	/* Shared tooltip arrow setup */
-	.custom-tooltip::before,
-	.secured-number[data-tooltip]::before {
-
-	  content: '';
-
-	  position: absolute;
-
-	  /* Triangle তৈরি করার base */
-	  border: 6px solid transparent;
-
-	  opacity: 0;
-	  visibility: hidden;
-
-	  transition: all 0.35s ease;
-	}
-
-
-	/* =============================================
-	   SHOW TOOLTIP ON HOVER
-	   Mouse hover হলে tooltip visible হবে
-	   ============================================= */
-
-	/* Phone secured tooltip hover */
-	.secured-number:hover::after,
-	.secured-number:hover::before,
-
-	/* Photo tooltip hover */
-	.photo-container:hover .photo-tooltip::after,
-	.photo-container:hover .photo-tooltip::before {
-
-	  opacity: 1;
-
-	  visibility: visible;
-	}
-
-
-	/* =============================================
-	   SECURED NUMBER TOOLTIP POSITION
-	   Phone tooltip positioning system
-	   ============================================= */
-
-	/* Tooltip message box */
-	.secured-number[data-tooltip]::after {
-
-	  /* Number এর উপরে show হবে */
-	  bottom: 100%;
-
-	  /* Center alignment */
-	  left: 100%;
-
-	  transform: translateX(-50%);
-
-	  /* Space from element */
-	  margin-bottom: 10px;
-	}
-
-	/* Tooltip arrow */
-	.secured-number[data-tooltip]::before {
-
-	  bottom: 100%;
-
-	  left: 50%;
-
-	  transform: translateX(-50%);
-
-	  /* Arrow color */
-	  border-top-color: rgba(15,15,15,0.95);
-
-	  /* Arrow positioning */
-	  margin-bottom: -5px;
-	}
-
-
-	/* =============================================
-	   PHOTO BLUR TOOLTIP
-	   Protected image tooltip system
-	   ============================================= */
-
-	/* Tooltip message box */
-	.photo-tooltip::after {
-
-	  content: attr(data-tooltip);
-
-	  position: absolute;
-
-	  background: rgba(15, 15, 15, 0.95);
-
-	  color: #ffffff;
-
-	  padding: 12px 16px;
-
-	  border-radius: 8px;
-
-	  font-size: 0.8rem;
-
-	  text-align: center;
-
-	  line-height: 1.45;
-
-	  width: max-content;
-
-	  max-width: 250px;
-
-	  z-index: 200;
-
-	  opacity: 0;
-
-	  visibility: hidden;
-
-	  transition: all 0.35s ease;
-
-	  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-
-	  pointer-events: none;
-
-	  /* Tooltip image এর নিচে থাকবে */
-	  top: 100%;
-
-	  left: 50%;
-
-	  transform: translateX(-50%);
-
-	  margin-top: 12px;
-	}
-
-	/* Tooltip arrow */
-	.photo-tooltip::before {
-
-	  content: '';
-
-	  position: absolute;
-
-	  border: 7px solid transparent;
-
-	  opacity: 0;
-
-	  visibility: hidden;
-
-	  transition: all 0.35s ease;
-
-	  /* Arrow image এর দিকে point করবে */
-	  top: 100%;
-
-	  left: 50%;
-
-	  transform: translateX(-50%);
-
-	  border-bottom-color: rgba(15,15,15,0.95);
-
-	  margin-top: -5px;
-	}
-
-    
-    /* ==============================
-       Donor Availability Status
-       Emergency availability badge
-    ============================== */
-    .status {
-
-      text-align: center;
-
-      padding: 10px 25px;
-
-      /* Light green background */
-      background: rgba(6, 214, 160, 0.15);
-
-      color: #06d6a0;
-
-      border-radius: 50px;
-
-      margin: 18px 0;
-
-      font-weight: 500;
-
-    }
-
-
-    /* ==============================
-       Action Buttons Container
-       Call / Copy / Social buttons
-    ============================== */
-    .actions {
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 10px;
-
-      flex-wrap: wrap;
-
-    }
-
-
-    /* ==============================
-       All Action Buttons
-       Shared button style
-    ============================== */
-    .actions button,
-    .actions a {
-
-      padding: 12px 20px;
-
-      border-radius: 50px;
-
-      border: none;
-
-      cursor: pointer;
-
-      font-weight: 600;
-
-      text-decoration: none;
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      transition: all 0.3s;
-
-    }
-
-
-    /* ==============================
-       Call Button
-       Direct phone call button
-    ============================== */
-    .call-btn {
-
-      background: var(--red);
-
-      color: white;
-
-      gap: 8px;
-
-    }
-
-
-    /* ==============================
-       Social Buttons
-       Copy / WhatsApp / Messenger
-    ============================== */
-    .social-btn {
-
-      background: rgba(0,0,0,0.1);
-
-      color: var(--text);
-
-    }
-
-
-    /* WhatsApp hover effect */
-    .social-btn:hover {
-
-      background: #25D366;
-
-      color: white;
-
-      transform: translateY(-2px);
-
-    }
-
-
-    /* Messenger hover effect */
-    .social-btn:nth-child(4):hover {
-
-      background: #0084FF;
-
-      color: white;
-
-      transform: translateY(-2px);
-
-    }
-
-
-	/* ==============================
-	   SEE MORE BUTTON - Special Style
-	   ============================== */
-	.see-more-container {
-	  text-align: center;
-	  margin: 60px 0 40px;
-	}
-
-	.see-more-btn {
-	  position: relative;
-	  overflow: hidden;
-	  padding: 18px 48px;
-	  font-size: 1.2rem;
-	  font-weight: 600;
-	  letter-spacing: 0.5px;
-	  background: linear-gradient(135deg, #ff0000, #c8102e);
-	  color: white;
-	  border: none;
-	  border-radius: 50px;
-	  cursor: pointer;
-	  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
-	  transition: all 0.4s ease;
-	  display: inline-flex;
-	  align-items: center;
-	  gap: 12px;
-	  z-index: 1;
-	}
-
-	.see-more-btn:hover {
-	  transform: scale(1.08) translateY(-4px);
-	  box-shadow: 0 18px 45px rgba(255, 0, 0, 0.55);
-	  background: linear-gradient(135deg, #ff1a1a, #e60000);
-	}
-
-	.see-more-btn i {
-	  transition: all 0.4s ease;
-	}
-
-	.see-more-btn:hover i {
-	  transform: translateY(4px);
-	}
-
-	/* Shine Effect */
-	.see-more-btn::before {
-	  content: '';
-	  position: absolute;
-	  top: -50%;
-	  left: -50%;
-	  width: 40%;
-	  height: 200%;
-	  background: linear-gradient(
-		120deg,
-		transparent,
-		rgba(255,255,255,0.35),
-		transparent
-	  );
-	  transform: skewX(-25deg);
-	  transition: all 0.7s;
-	  opacity: 0;
-	}
-
-	.see-more-btn:hover::before {
-	  left: 120%;
-	  opacity: 1;
-	}
-
-	/* Blood Pulse Effect */
-	.see-more-btn::after {
-	  content: '';
-	  position: absolute;
-	  inset: 0;
-	  border-radius: 50px;
-	  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
-	  opacity: 0;
-	  transition: all 0.6s ease;
-	  z-index: -1;
-	}
-
-	.see-more-btn:hover::after {
-	  animation: bloodPulse 2s infinite;
-	}
-
-	@keyframes bloodPulse {
-	  0%   { transform: scale(0.95); opacity: 0.6; }
-	  50%  { transform: scale(1.06); opacity: 0.25; }
-	  100% { transform: scale(0.95); opacity: 0.6; }
-	}
-
-
-
-    /* ==============================
-       Donor Section Heading
-       Animated heading title
-    ============================== */
-    .donors-heading {
-
-      text-align: center;
-
-      font-size: 2.8rem;
-
-      margin-bottom: 40px;
-
-      opacity: 0;
-
-      transform: translateY(40px);
-
-      transition:
-        all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-    }
-
-
-    /* Visible heading animation */
-    .donors-heading.visible {
-
-      opacity: 1;
-
-      transform: translateY(0);
-
-    }
-
-
-    /* ==============================
-       Scroll Animation Section
-       Scroll এ section animate হবে
-    ============================== */
-    .section-animate {
-
-      opacity: 0;
-
-      transform: translateY(60px);
-
-      transition:
-        all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-    }
-
-
-    /* Section visible animation */
-    .section-animate.visible {
-
-      opacity: 1;
-
-      transform: translateY(0);
-
-    }
-
-
-    /* ==============================
-       Contact / Developer
-       Common section style
-    ============================== */
-    .contact,
-    .developer {
-
-      padding: 100px 20px;
-
-      background: var(--card-bg);
-
-      margin: 40px 0;
-
-    }
-
-
-    /* ==============================
+  <!-- ==============================
        Donor Section
-       Main donor area spacing
-    ============================== */
-    #donors {
+       Available donor cards
+  =============================== -->
+  <section id="donors">
 
-      padding: 50px 20px;
+    <!-- Section Heading -->
+    <h2 class="donors-heading">
 
-      margin: 0 0 40px;
+      Available
+      <span style="color:var(--red)">
+        Donors
+      </span>
 
-    }
-
-
-    /* Section heading style */
-    .contact h2,
-    .developer h2 {
-
-      text-align: center;
-
-      font-size: 2.6rem;
-
-      margin-bottom: 40px;
-
-    }
+    </h2>
 
 
-    /* ==============================
-       Section Grid Layout
-       Responsive content columns
-    ============================== */
-    .contact-content,
-    .developer-content {
-
-      max-width: 1000px;
-
-      margin: 0 auto;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(450px, 1fr));
-
-      gap: 40px;
-
-      text-align: center;
-
-    }
+    <!-- Dynamic Donor Card Container -->
+    <div
+      class="cards"
+      id="cardsContainer"
+    ></div>
 
 
-    /* Section paragraph text */
-    .contact p,
-    .developer p {
-
-      font-size: 1.1rem;
-
-      line-height: 1.8;
-
-      color: var(--text-light);
-
-    }
+	<!-- See More Button -->
+	<div class="see-more-container" id="seeMoreContainer" style="display:none;">
+	  <button onclick="loadMoreDonors()" class="see-more-btn" id="seeMoreBtn">
+		<span>See More Donors</span>
+		<i class="fas fa-chevron-down"></i>
+	  </button>
+	</div>
 
 
-	/* ======================
-		ABOUT US SECTION 
-	====================== */
-	
-	.about-section {
-	  padding: 80px 20px;
-	  background: var(--card-bg);
-	  color: var(--text);
-	}
-
-	.section-header {
-	  text-align: center;
-	  margin-bottom: 60px;
-	}
-
-	.section-header h2 {
-	  font-size: 2.8rem;
-
-	  margin-bottom: 12px;
-	}
-
-	.section-header .subtitle {
-	  font-size: 1.25rem;
-	  color: var(--text-light);
-	  max-width: 700px;
-	  margin: 0 auto;
-	}
-
-	.about-container {
-	  max-width: 1200px;
-	  margin: 0 auto;
-	}
-
-	.mission-wrapper {
-	  display: grid;
-	  grid-template-columns: 1fr 1fr;
-	  gap: 50px;
-	  align-items: center;
-	  background: rgba(255,255,255,0.06);
-	  padding: 45px;
-	  border-radius: 20px;
-	  border: 1px solid var(--border);
-	}
-
-	.mission-content h3 {
-	  font-size: 2.4rem;
-	  margin-bottom: 22px;
-	}
-
-	.mission-content p {
-	  font-size: 1.1rem;
-	  text-align: justify;
-	  line-height: 1.75;
-	  margin-bottom: 10px;
-	  color: var(--text-light);
-	}
-
-	.values {
-	  display: flex;
-	  flex-wrap: wrap;
-	  gap: 0 16px;
-	  margin-top: 25px;
-	}
-
-	.value-item {
-	  display: flex;
-	  align-items: center;
-	  gap: 10px;
-	  background: rgba(255,255,255,0.08);
-	  padding: 12px 20px;
-	  border-radius: 50px;
-	  font-size: 1.02rem;
-	}
-
-	.mission-image img {
-	  width: 100%;
-	  height: 420px;
-	  object-fit: cover;
-	  border-radius: 16px;
-	  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-	}
-
-	/* Impact Stats */
-	.impact-stats {
-	  max-width: 1200px;
-	  margin: 80px auto 70px;
-	  display: flex;
-	  justify-content: center;
-	  gap: 60px;
-	  flex-wrap: wrap;
-	}
-
-	.stat-item h3.count {
-	  font-size: 3.4rem;
-	  color: var(--red);
-	  font-weight: 700;
-	  margin: 0 0 8px 0;
-	}
-
-	/* CTA */
-	.about-cta {
-	  max-width: 1100px;
-	  margin: 0 auto;
-	  padding: 50px 30px;
-	  background: linear-gradient(135deg, var(--red), #8B0000);
-	  border-radius: 20px;
-	  color: white;
-	  text-align: center;
-	}
-
-	.cta-content h3 {
-	  font-size: 2.4rem;
-	  margin-bottom: 12px;
-	}
-
-	/* ====================== 
-	SPECIAL ABOUT DONOR BUTTON 
-	====================== */
-	.about-donor-btn {
-	  position: relative;
-	  overflow: hidden;
-	  padding: 16px 42px;
-	  font-size: 1.25rem;
-	  font-weight: 600;
-	  letter-spacing: 0.5px;
-	  background: linear-gradient(135deg, #ff0000, #c8102e);
-	  color: white;
-	  border: none;
-	  border-radius: 50px;
-	  cursor: pointer;
-	  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
-	  transition: all 0.4s ease;
-	  z-index: 1;
-	}
-
-	.about-donor-btn:hover {
-	  transform: scale(1.08) translateY(-3px);
-	  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.6);
-	  background: linear-gradient(135deg, #ff1a1a, #e60000);
-	}
-
-	.about-donor-btn::before {
-	  content: '';
-	  position: absolute;
-	  top: -50%;
-	  left: -50%;
-	  width: 40%;
-	  height: 200%;
-	  background: linear-gradient(
-		120deg,
-		transparent,
-		rgba(255,255,255,0.4),
-		transparent
-	  );
-	  transform: skewX(-25deg);
-	  transition: all 0.7s;
-	  opacity: 0;
-	}
-
-	.about-donor-btn:hover::before {
-	  left: 120%;
-	  opacity: 1;
-	}
-
-	/* Blood Pulse Effect */
-	.about-donor-btn::after {
-	  content: '';
-	  position: absolute;
-	  inset: 0;
-	  border-radius: 50px;
-	  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-	  opacity: 0;
-	  transition: all 0.6s ease;
-	  z-index: -1;
-	}
-
-	.about-donor-btn:hover::after {
-	  animation: bloodPulse 2s infinite;
-	}
-
-	@keyframes bloodPulse {
-	  0%   { transform: scale(0.95); opacity: 0.6; }
-	  50%  { transform: scale(1.05); opacity: 0.3; }
-	  100% { transform: scale(0.95); opacity: 0.6; }
-	}
+  </section>
 
 
-    /* ==============================
-       Footer Section
-       Bottom copyright area
-    ============================== */
-    footer {
+  <!-- ==============================
+       About Section
+       Mission & platform information
+  =============================== -->
 
-      text-align: center;
+	<section id="about" class="about-section section-animate">
+	  <div class="section-header">
+		<h2><span style="color:var(--red)">
+			About </span>Us </h2>
+		<p class="subtitle">Every Drop Counts. Every Life Matters.</p>
+	  </div>
 
-      padding: 60px 20px 40px;
+	  <div class="about-container">
+		<div class="mission-wrapper">
+		  <!-- Left Side: Mission Text -->
+		  <div class="mission-content">
+			<h3>Our Mission</h3>
+			<p>We are a dedicated volunteer-driven platform working to create a reliable and responsive blood donation ecosystem in Bangladesh. Our mission is to ensure that <strong>no patient ever suffers or dies due to the unavailability of blood</strong>.</p>
+			
+			<p>By building trust, maintaining transparency, and using technology, we aim to make blood donation simple, fast, and respectable. Whether it's an emergency or a planned surgery — we want to be there within minutes.</p>
+			
+			<div class="values">
+			  <div class="value-item">
+				<i class="fas fa-shield-alt"></i>
+				<span>Trust &amp; Transparency</span>
+			  </div>
+			  <div class="value-item">
+				<i class="fas fa-users"></i>
+				<span>Community First</span>
+			  </div>
+			  <div class="value-item">
+				<i class="fas fa-clock"></i>
+				<span>Speed &amp; Efficiency</span>
+			  </div>
+			</div>
+		  </div>
 
-      background: var(--card-bg);
+		  <!-- Right Side: Image -->
+		  <div class="mission-image">
+			<img src="https://www.affinityhealth.co.za/wp-content/uploads/2023/07/close-up-young-black-woman-squeezing-stress-ball-while-giving-blood-donation-center-copy-space.jpg" 
+				 alt="Blood Donation" 
+				 loading="lazy">
+		  </div>
+		</div>
+	  </div>
 
-      border-top: 1px solid var(--border);
+	  <!-- Impact Stats - Same as Hero -->
+	  <div class="impact-stats" id="about-stats">
+		<div class="stat-item">
+		  <h3 class="count" data-target="12480">0</h3>
+		  <p>Active Donors</p>
+		</div>
+		<div class="stat-item">
+		  <h3 class="count" data-target="18750">0</h3>
+		  <p>Lives Saved</p>
+		</div>
+		<div class="stat-item">
+		  <h3 class="count" data-target="3980">0</h3>
+		  <p>Happy Patients</p>
+		</div>
+	  </div>
 
-      color: var(--text-light);
-
-    }
+	  <!-- CTA -->
+	  <div class="about-cta">
+		<div class="cta-content">
+		  <h3>Become a Hero Today</h3>
+		  <p>Join thousands of lifesavers across Bangladesh</p></br>
+		  <button class="donor-bttn about-donor-btn" onclick="navigateToSection(document.querySelector('a[href=\"#donors\"]'))">
+			  Register as Donor
+		   </button>
+		</div>
+	  </div>
+	</section>
 
 
 
-	/* =========================================
+	<!-- =========================================
 	FAQ SECTION
-	Modern Premium FAQ Design
+	Frequently Asked Questions
 	Blood Donor Network
-	========================================= */
+	========================================= -->
 
-	.faq-section{
+	<section id="faq"
+			 class="faq-section section-animate">
 
-	  padding: 100px 20px;
+	  <!-- FAQ Heading -->
+	  <div class="section-title">
 
-	}
+		<h2>
+		  Frequently <span style="color:var(--red)">
+          Asked Questions</span>
+		  <i class="fas fa-circle-question"></i>
+		</h2>
 
-	/* =========================================
-	FAQ Section Heading
-	FAQ heading center align করা হয়েছে
-	========================================= */
+		<p>
+		  Find answers to common questions about
+		  blood donation, donor privacy, emergency
+		  support, donor verification and platform
+		  usage.
+		</p>
 
-	.faq-section .section-title{
+	  </div>
 
-	  text-align:center;
+	  <!-- FAQ Container -->
+	  <div class="faq-container">
 
-	  margin-bottom:45px;
-	}
 
-	.faq-section .section-title h2{
+		<!-- FAQ 1 -->
+		<div class="faq-item">
 
-	  font-size: 2.8rem;
+		  <button class="faq-question">
 
-	  font-weight:700;
+			<span>
+			  <i class="fas fa-droplet"></i>
+			  How can I find a blood donor?
+			</span>
 
-	  margin-bottom: 12px;
+			<i class="fas fa-plus faq-icon"></i>
 
-	  color:var(--text-color);
-	}
+		  </button>
 
+		  <div class="faq-answer">
 
-	.faq-section .section-title p{
+			Our donor directory allows you to search
+			donors by blood group, district, city and
+			availability status.
 
-	  max-width:700px;
+			During an emergency, you can use the search
+			filters to quickly locate suitable donors
+			near your location. Once you find a donor,
+			you may contact them directly through phone,
+			Messenger or WhatsApp depending on the
+			donor's privacy settings.
 
-	  margin:auto;
+		  </div>
 
-	  color:var(--text-secondary);
+		</div>
 
-	  line-height:1.8;
-	}
 
-	/* =========================================
-	FAQ Container
-	========================================= */
+		<!-- FAQ 2 -->
+		<div class="faq-item">
 
-	.faq-container{
+		  <button class="faq-question">
 
-	  max-width:900px;
+			<span>
+			  <i class="fas fa-user-lock"></i>
+			  Are donor phone numbers secure?
+			</span>
 
-	  margin:auto;
-	}
+			<i class="fas fa-plus faq-icon"></i>
 
-	/* =========================================
-	Single FAQ Card
-	প্রতিটি FAQ item এর main card
-	========================================= */
+		  </button>
 
-	.faq-item{
+		  <div class="faq-answer">
 
-	  margin-bottom:18px;
+			Yes.
 
-	  border-radius:18px;
+			Donor privacy is one of our highest
+			priorities.
 
-	  overflow:hidden;
+			Donors may choose to hide or protect their
+			phone numbers from public view. In those
+			cases, alternative communication methods
+			such as Messenger will remain available.
 
-	  transition:.35s ease;
-	}
+			This helps protect donors from spam calls,
+			unwanted contact and misuse of personal
+			information.
 
-	/* =========================================
-	Question Area
-	FAQ Question Box
-	========================================= */
+		  </div>
 
-	.faq-question{
+		</div>
 
-	  width:100%;
 
-	  border:none;
+		<!-- FAQ 3 -->
+		<div class="faq-item">
 
-	  cursor:pointer;
+		  <button class="faq-question">
 
-	  display:flex;
+			<span>
+			  <i class="fas fa-circle-check"></i>
+			  What does "Verified Donor" mean?
+			</span>
 
-	  justify-content:space-between;
+			<i class="fas fa-plus faq-icon"></i>
 
-	  align-items:center;
+		  </button>
 
-	  padding:22px;
+		  <div class="faq-answer">
 
-	  background:#ffffff;
+			A verified donor is a donor whose profile
+			has been manually reviewed by our volunteer
+			team.
 
-	  color:#222;
+			Verification helps increase trust and
+			confidence within the donor network.
 
-	  font-size:16px;
+			While verification does not guarantee donor
+			availability at all times, it helps users
+			identify authentic and active donor
+			profiles more easily.
 
-	  font-weight:600;
+		  </div>
 
-	  box-shadow:
-	  0 4px 18px rgba(0,0,0,.05);
+		</div>
 
-	  transition:.35s ease;
-	}
 
-	/* =========================================
-	Question Hover Effect
-	========================================= */
+		<!-- FAQ 4 -->
+		<div class="faq-item">
 
-	.faq-question:hover{
+		  <button class="faq-question">
 
-	  transform:translateY(-2px);
+			<span>
+			  <i class="fas fa-hand-holding-medical"></i>
+			  Can anyone become a donor?
+			</span>
 
-	  box-shadow:
-	  0 10px 25px rgba(255,59,59,.12);
-	}
+			<i class="fas fa-plus faq-icon"></i>
 
-	/* =========================================
-	Question Content Layout
-	========================================= */
+		  </button>
 
-	.faq-question span{
+		  <div class="faq-answer">
 
-	  display:flex;
+			Most healthy adults can become blood donors.
 
-	  align-items:center;
+			Generally, donors should meet minimum age
+			and health requirements defined by medical
+			authorities.
 
-	  gap:12px;
-	  
-	  font-family: 'Poppins', sans-serif;
-	  
-	  font-size: 1.1rem;
-	}
-	
+			Individuals with certain medical conditions
+			or recent illnesses may need temporary or
+			permanent restrictions.
 
-	/* =========================================
-	Question Left Icon
-	========================================= */
+			Always consult healthcare professionals if
+			you are unsure about your eligibility.
 
-	.faq-question span i{
+		  </div>
 
-	  color:#ff3b3b;
+		</div>
 
-	  font-size:15px;
-	}
 
-	/* =========================================
-	Plus Icon Button
-	ডান পাশে গোলাকার plus button
-	========================================= */
+		<!-- FAQ 5 -->
+		<div class="faq-item">
 
-	.faq-icon{
+		  <button class="faq-question">
 
-	  width:36px;
+			<span>
+			  <i class="fas fa-clock"></i>
+			  How quickly should donors respond during emergencies?
+			</span>
 
-	  height:36px;
+			<i class="fas fa-plus faq-icon"></i>
 
-	  display:flex;
+		  </button>
 
-	  align-items:center;
+		  <div class="faq-answer">
 
-	  justify-content:center;
+			In emergency situations, every minute can
+			be critical.
 
-	  border-radius:50%;
+			We encourage donors to respond as quickly
+			as possible whenever they are available and
+			medically fit to donate.
 
-	  background:
-	  linear-gradient(
-		135deg,
-		#ff4d4d,
-		#ff2424
-	  );
+			Even if you are unable to donate yourself,
+			sharing the request within your network can
+			help save valuable time.
 
-	  color:#ffffff;
+		  </div>
 
-	  font-size:13px;
+		</div>
 
-	  flex-shrink:0;
 
-	  box-shadow:
-	  0 6px 18px rgba(255,59,59,.25);
+		<!-- FAQ 6 -->
+		<div class="faq-item">
 
-	  transition:.35s ease;
-	}
+		  <button class="faq-question">
 
-	/* =========================================
-	Answer Area
-	FAQ Answer Container
-	========================================= */
+			<span>
+			  <i class="fas fa-heart-circle-check"></i>
+			  Is blood donation safe?
+			</span>
 
-	.faq-answer{
+			<i class="fas fa-plus faq-icon"></i>
 
-	  max-height:0;
+		  </button>
 
-	  overflow:hidden;
+		  <div class="faq-answer">
 
-	  background:#ffffff;
+			Yes.
 
-	  border-left:4px solid #ff3b3b;
+			Blood donation is generally considered very
+			safe for healthy individuals.
 
-	  color:#555;
+			Donation procedures follow strict medical
+			standards and sterile equipment is used for
+			every donor.
 
-	  line-height:1.9;
+			Most donors return to their normal routine
+			shortly after donating blood.
 
-	  padding:0 22px;
+		  </div>
 
-	  transition:
-	  max-height .4s ease,
-	  padding .4s ease;
-	}
+		</div>
 
-	/* =========================================
-	Active FAQ Item
-	FAQ open হলে apply হবে
-	========================================= */
 
-	.faq-item.active{
+		<!-- FAQ 7 -->
+		<div class="faq-item">
 
-	  box-shadow:
-	  0 12px 30px rgba(255,59,59,.10);
-	}
+		  <button class="faq-question">
 
-	/* =========================================
-	Active Question Area
-	Open হলে question red gradient হবে
-	========================================= */
+			<span>
+			  <i class="fas fa-shield-heart"></i>
+			  Is my personal information private?
+			</span>
 
-	.faq-item.active .faq-question{
+			<i class="fas fa-plus faq-icon"></i>
 
-	  background:
-	  linear-gradient(
-		135deg,
-		#ff3b3b,
-		#ff5b5b
-	  );
+		  </button>
 
-	  color:#ffffff;
-	}
+		  <div class="faq-answer">
 
-	/* =========================================
-	Active Question Icon
-	========================================= */
+			Yes.
 
-	.faq-item.active
-	.faq-question span i{
+			We respect the privacy of every donor and
+			volunteer.
 
-	  color:#ffffff;
-	}
+			Privacy features such as protected phone
+			numbers, profile controls and secure data
+			management help ensure that personal
+			information remains protected.
 
-	/* =========================================
-	Active Answer Area
-	========================================= */
+		  </div>
 
-	.faq-item.active .faq-answer{
+		</div>
 
-	  max-height:600px;
 
-	  padding:22px;
-	}
+		<!-- FAQ 8 -->
+		<div class="faq-item">
 
-	/* =========================================
-	Active Plus Icon
-	Plus rotate হয়ে X এর মতো দেখাবে
-	========================================= */
+		  <button class="faq-question">
 
-	.faq-item.active .faq-icon{
+			<span>
+			  <i class="fas fa-notes-medical"></i>
+			  Which blood groups can donate to others?
+			</span>
 
-	  background:#ffffff;
+			<i class="fas fa-plus faq-icon"></i>
 
-	  color:#ff3b3b;
+		  </button>
 
-	  transform:rotate(45deg);
-	}
+		  <div class="faq-answer">
 
-	/* =========================================
-	Dark Theme Support
-	Dark mode compatibility
-	========================================= */
+			Blood compatibility is extremely important
+			during transfusion.
 
-	[data-theme="dark"] .faq-question{
+			O− can donate to all blood groups and is
+			known as the Universal Donor.
 
-	  background:#1d1d1d;
+			AB+ can receive blood from all groups and
+			is known as the Universal Recipient.
 
-	  color:#ffffff;
+			General compatibility:
 
-	  box-shadow:
-	  0 4px 18px rgba(0,0,0,.35);
-	}
+			• O− → Everyone
 
-	[data-theme="dark"] .faq-answer{
+			• O+ → O+, A+, B+, AB+
 
-	  background:#252525;
+			• A− → A−, A+, AB−, AB+
 
-	  color:#dddddd;
+			• A+ → A+, AB+
 
-	  border-left:4px solid #ff3b3b;
-	}
+			• B− → B−, B+, AB−, AB+
 
-	[data-theme="dark"]
-	.faq-item.active .faq-question{
+			• B+ → B+, AB+
 
-	  background:
-	  linear-gradient(
-		135deg,
-		#ff3b3b,
-		#ff5b5b
-	  );
-	}
+			• AB− → AB−, AB+
 
+			• AB+ → AB+ only
 
-    /* ==============================
-       Mobile Navbar
-       Menu for mobile devices
-    ============================== */
+			Always follow hospital and physician
+			recommendations before any transfusion.
 
+		  </div>
 
-	.mobile-menu{
+		</div>
 
-	 position:fixed;
+	  </div>
 
-	 top:0;
-	 left:-100%;
+	</section>
 
-	 width:320px;
 
-	 max-width:100%;
 
-	 height:100vh;
 
-	 background:var(--card-bg);
+  <!-- ==============================
+       Contact Section
+       Emergency & general contact info
+  =============================== -->
+  <section
+    id="contact"
+    class="contact section-animate"
+  >
 
-	 z-index:9999;
+    <!-- Section Heading -->
+    <h2>
 
-	 transition:.35s ease;
+      Contact
+      <span>Us</span>
 
-	 display:flex;
+    </h2>
 
-	 flex-direction:column;
-	 
-	 padding-left: 18px;
-	}
 
-	.mobile-menu.active{
+    <div class="contact-content">
 
-	 left:0;
-	}
+      <!-- Emergency Contact -->
+      <div>
 
-	.mobile-menu-header{
+        <h3 style="color:var(--red);">
 
-	 display:flex;
+          Emergency Support
 
-	 justify-content:space-between;
+        </h3>
 
-	 align-items:center;
+        <p>
 
-	 padding: 14px 20px;
+          <strong>Phone:</strong>
+          +880 1711-223344
 
-	 border-bottom:1px solid var(--border);
-	}
+          <br>
 
-	.mobile-menu-header h3{
+          <strong>Hotline:</strong>
+          +880 1911-556677
 
-	 font-size: 1.8rem;
-	 color: var(--red);
-	}
+        </p>
 
-	/* =========================================
-	   Mobile Menu Close Button
-	   FAQ Style Premium Close Button
-	========================================= */
+      </div>
 
-	.mobile-menu-header button{
 
-	  width:36px;
+      <!-- General Inquiry -->
+      <div>
 
-	  height:36px;
+        <h3 style="color:var(--red);">
 
-	  border:none;
+          General Inquiry
 
-	  cursor:pointer;
+        </h3>
 
-	  display:flex;
+        <p>
 
-	  align-items:center;
+          <strong>Email:</strong>
+          info@blooddonor.network
 
-	  justify-content:center;
+          <br>
 
-	  border-radius:50%;
+          <strong>Address:</strong>
+          Dhaka, Bangladesh
 
-	  background:
-	  linear-gradient(
-		135deg,
-		#ff4d4d,
-		#ff2424
-	  );
+        </p>
 
-	  color:#ffffff;
+      </div>
 
-	  font-size:14px;
+    </div>
 
-	  box-shadow:
-		0 6px 18px rgba(255,59,59,.25);
+  </section>
 
-	  transition:.35s ease;
-	}
 
-	/* Hover Effect */
+  <!-- ==============================
+       Developer Section
+       Developer profile information
+  =============================== -->
+  <section
+    id="developer"
+    class="developer section-animate"
+  >
 
-	.mobile-menu-header button:hover{
+    <!-- Section Heading -->
+    <h2>
 
-	  background:#ffffff;
+      App
+      <span>Developer</span>
 
-	  color:#ff3b3b;
+    </h2>
 
-	  transform:rotate(90deg);
-	}
-	
-	
-	
-	.mobile-menu a{
 
-	 padding:18px 25px;
+    <div class="developer-content">
 
-	 text-decoration:none;
+      <!-- Developer Profile Card -->
+      <div>
 
-	 color:var(--text);
+        <!-- Developer Image -->
+        <div
+          class="photo-container"
+          style="
+            width:180px;
+            height:180px;
+            margin:0 auto 20px;
+          "
+        >
 
-	 border-bottom:1px solid var(--border);
-	}
+          <img
+            src="https://mamunexpert.github.io/Portfolio/pic/profile.jpg"
+            class="photo"
+            alt="mamunexpert"
+            style="
+              width:180px;
+              height:180px;
+            "
+          >
 
-	.mobile-menu a:hover{
+        </div>
 
-	 color:var(--red);
-	}
 
-	.mobile-donor-btn{
+        <!-- Developer Name -->
+        <h3
+          class="name"
+          style="font-size:1.8rem;"
+        >
 
-	 margin:25px;
+          MD. AL MAMUN
 
-	 padding:15px;
+        </h3>
 
-	 border:none;
 
-	 border-radius:30px;
+        <!-- Profession -->
+        <p class="profession">
 
-	 background:var(--red);
+          Full Stack Web Developer
 
-	 color:#fff;
+        </p>
 
-	 font-weight:600;
-	}
 
+        <!-- Location -->
+        <div class="info-row">
 
+          <i class="fas fa-map-marker-alt"></i>
 
-	/* ==========================================
-	   Mobile Menu Overlay
-	   Mobile menu open হলে background dark হবে
-	========================================== */
-	.menu-overlay{
+          Gazipur, Bangladesh
 
-	  position:fixed;
-	  inset:0;
+        </div>
 
-	  background:rgba(0,0,0,.55);
 
-	  backdrop-filter:blur(4px);
+        <!-- Experience -->
+        <div class="info-row">
 
-	  opacity:0;
-	  visibility:hidden;
+          <i class="fas fa-user"></i>
 
-	  transition:.3s;
+          5+ Years Experience
 
-	  z-index:9998;
-	}
+        </div>
 
-	.menu-overlay.active{
 
-	  opacity:1;
-	  visibility:visible;
-	}
+        <!-- Phone -->
+        <div class="info-row">
 
+          <i class="fas fa-phone"></i>
 
+          +880 17XX-XXXXXX
 
+        </div>
 
 
-/* =============================================
-   MOBILE RESPONSIVE FIX
-   Mobile device এর জন্য clean & compact layout
-   Responsive UI optimization for phones & tablets
-   ============================================= */
+        <!-- Availability Status -->
+        <div
+          class="status"
+          style="
+            background:rgba(0,200,83,0.15);
+            color:#00c853;
+          "
+        >
 
-	@media (max-width: 768px) {
+          <i class="fas fa-circle"></i>
 
-	  .logo {
+          Available for Projects
 
-		/* Mobile logo size smaller */
-		font-size: 1.3rem;
-	  }
+        </div>
 
+      </div>
 
-	  /* =============================================
-		 HERO SECTION
-		 Top intro section optimization
-		 ============================================= */
 
-	  .hero {
+      <!-- Developer Details -->
+      <div>
 
-		/* Mobile spacing */
-		padding: 50px 15px 0;
-	  }
+        <!-- About Me -->
+        <h3
+          style="
+            color:var(--red);
+            margin-bottom:15px;
+            text-align:left;
+          "
+        >
 
-	  .hero h1 {
+          About Me
 
-		/* Responsive heading size */
-		font-size: 2rem;
+        </h3>
 
-		line-height: 1.3;
-	  }
 
-	  .hero p {
+        <p
+          style="
+            text-align:left;
+            font-size:16px;
+            line-height:1.6;
+          "
+        >
 
-		/* Paragraph readability improve */
-		font-size: 0.8rem;
+          A passionate developer recognized
+          for building platforms that harness
+          technology to save lives.
 
-		padding: 0 35px;
+          Known for creating modern, clean,
+          and responsive web applications,
+          their work reflects a commitment
+          to both innovation and community impact.
 
-		line-height: 1.6;
-	  }
+        </p>
 
 
-	  /* =============================================
-		 STATS SECTION
-		 Counter section spacing adjustment
-		 ============================================= */
+        <!-- Skills Section -->
+        <h3
+          style="
+            color:var(--red);
+            margin-top:25px;
+            margin-bottom:10px;
+            text-align:left;
+          "
+        >
 
-	  .stats {
+          Skills & Expertise
 
-		gap: 20px;
+        </h3>
 
-		margin: 30px 0;
-	  }
 
-	  .stat-number, .stat-item h3.count {
+        <!-- Skill List -->
+        <ul
+          style="
+            text-align:left;
+            font-size:15px;
+            line-height:1.6;
+            list-style-type:disc;
+            margin-left:20px;
+          "
+        >
 
-		font-size: 1.6rem;
-	  }
+          <li>
+            <strong>HTML, CSS, JavaScript</strong>
+            – Building responsive applications.
+          </li>
 
+          <li>
+            <strong>UI/UX Design</strong>
+            – User-friendly interface design.
+          </li>
 
-	  /* =============================================
-		 SEARCH BAR
-		 Mobile search area optimization
-		 ============================================= */
+          <li>
+            <strong>Blood Donation Systems</strong>
+            – Health-focused platform development.
+          </li>
 
-	  .search-bar {
+          <li>
+            <strong>Problem-Solving</strong>
+            – Smart technical solutions.
+          </li>
 
-		/* Vertical layout */
-		flex-direction: column;
+          <li>
+            <strong>Community Impact</strong>
+            – Technology for humanitarian support.
+          </li>
 
-		border-radius: 25px;
+        </ul>
 
-		padding: 16px;
+      </div>
 
-		margin: 30px 15px;
-	  }
+    </div>
 
-	  .search-bar input,
-	  .search-bar select {
+  </section>
 
-		/* Full width inputs */
-		width: 100%;
 
-		min-width: unset;
 
-		padding: 14px;
-	  }
+  <!-- ==============================
+       Footer Section
+       Final message + copyright
+  =============================== -->
+  <footer
+    style="
+      text-align:center;
+      padding:60px 20px;
+      background:var(--card-bg);
+      color:var(--text-light);
+      border-top:1px solid var(--border);
+    "
+  >
 
-	  .search-bar button {
+    <!-- Footer Heading -->
+    <h2>
 
-		/* Full width search button */
-		width: 100%;
+      Your little effort can
+      <span style="color:var(--red)">
+        save a life
+      </span>
 
-		padding: 14px;
-	  }
+    </h2>
 
 
-	  /* =============================================
-		 DONOR CARD SECTION
-		 Single column mobile card layout
-		 ============================================= */
+    <!-- Footer Description -->
+    <p>
 
-	  .cards {
+      Thank you to all blood donors
+      who make the world a better place.
 
-		/* One card per row */
-		grid-template-columns: 1fr;
+    </p>
 
-		padding: 0 15px;
-	  }
 
+    <!-- Copyright -->
+    <p style="margin-top:30px;">
 
-	  /* =============================================
-		 ACTION BUTTONS
-		 Call / Copy / WhatsApp / Messenger buttons
-		 ============================================= */
+      © 2025 Blood Donor Network.
+      All rights reserved.
 
-	  .actions {
+    </p>
+  </footer>
 
-		/* All buttons same line এ থাকবে */
-		flex-wrap: nowrap;
-
-		/* Button gap smaller */
-		gap: 6px;
-	  }
-
-	  .call-btn {
-
-		/* Main call button compact */
-		padding: 10px 14px !important;
-
-		font-size: 0.82rem;
-
-		gap: 5px;
-
-		/* Call button একটু বড় থাকবে */
-		flex: 1;
-	  }
-
-	  .social-btn {
-
-		/* Social buttons smaller */
-		padding: 9px 11px !important;
-
-		min-width: auto;
-
-		font-size: 0.82rem;
-	  }
-
-
-	  /* =============================================
-		 STATUS BADGE
-		 Emergency availability badge
-		 ============================================= */
-
-	  .status {
-
-		font-size: 0.85rem;
-
-		padding: 8px 16px;
-
-		margin: 15px 0;
-	  }
-
-	 /* =============================================
-		 BLUR PHOTO ||  SECURED NUMBER
-		 ============================================= */
-
-	  /* Blur photo hover scale কমানো */
-	  .blurred-photo:hover {
-
-		transform: scale(1.02);
-	  }
-
-	  /* Tooltip box smaller for mobile */
-	  .custom-tooltip::after,
-	  .secured-number[data-tooltip]::after,
-	  .photo-tooltip::after {
-
-		font-size: 0.72rem;
-
-		padding: 10px 12px;
-
-		max-width: 210px;
-
-		line-height: 1.4;
-	  }
-
-	  /* Secured number tooltip center fix */
-	  .secured-number[data-tooltip]::after {
-
-		left: 50%;
-
-		transform: translateX(-50%);
-	  }
-
-	  /* Tooltip arrow center fix */
-	  .secured-number[data-tooltip]::before {
-
-		left: 50%;
-	  }
-
-	  /* Photo tooltip responsive width */
-	  .photo-tooltip::after {
-
-		max-width: 200px;
-	  }
-
-	  /* Mobile এ tooltip overflow prevent */
-	  .photo-container {
-
-		overflow: visible;
-	  }
-
-	  /* Secured text wrap support */
-	  .secured-number {
-
-		flex-wrap: wrap;
-
-		gap: 4px;
-
-		font-size: 0.9rem;
-	  }
-
-
-	  /* =============================================
-		 SECTION HEADINGS
-		 Responsive section title sizing
-		 ============================================= */
-
-	  .donors-heading,
-	  .section-header h2,
-	  .contact h2,
-	  .developer h2 {
-
-		font-size: 2rem;
-		
-	  }
-
-
-
-	/* =============================================
-	   CONTACT / DEVELOPER
-	   Mobile Single Column Layout
-	   About, Contact এবং Developer section
-	   mobile এ এক column এ show হবে
-	============================================= */
-
-	.contact-content,
-	.developer-content {
-
-	  display: grid;
-
-	  grid-template-columns: 1fr;
-
-	  gap: 25px;
-	}
-
-  /* =============================================
-     DONOR CARDS
-     ============================================= */
-	#donors {
-
-    padding: 50px 5px;
-
-	}
-
-
-	.about-section {
-		padding: 70px 15px;
-	  }
-	  
-	  .section-header .subtitle {
-		font-size: 1.1rem;
-	  }
-
-	  .mission-content h3 {
-		font-size: 1.6rem;
-	  }
-	  
-	  .mission-content p {
-		font-size: 1rem;
-		line-height: 1.7;
-	  }
-
-	  .value-item {
-		font-size: 0.98rem;
-		padding: 10px 16px;
-	  }
-
-	  .mission-image img {
-		height: 300px;
-	  }
-
-	  .impact-stats {
-		gap: 20px;
-		margin: 70px auto 60px;
-	  }
-
-
-	  .about-cta {
-		padding: 45px 25px;
-	  }
-
-	  .cta-content h3 {
-		font-size: 2rem;
-	  }
-
-
-	  .faq-section{
-
-		padding:70px 15px;
-	  }
-
-	  .faq-section .section-title h2{
-
-		font-size: 2rem;
-	  }
-
-	  .faq-section .section-title p{
-
-		font-size: 0.8rem;
-	  }
-
-	  .faq-question{
-
-		padding:18px;
-	  }
-
-	  .faq-question span{
-
-		font-size:14px;
-
-		line-height:1.5;
-	  }
-
-	  .faq-answer{
-
-		font-size: .8rem;
-
-		line-height:1.8;
-	  }
-
-	  .faq-icon{
-
-		width:30px;
-
-		height:30px;
-
-		font-size:11px;
-	  }
-	  
-	  
-	  /* =============================================
-		 FOOTER SECTION
-		 Footer heading responsive size
-		 ============================================= */
-
-	  footer h2 {
-
-		font-size: 1.5rem;
-	  }
-	}
-
-
-
-
-
-
-
-
-
-/* =============================================
-   EXTRA SMALL DEVICE FIX
-   320px - 480px small phone optimization
-   ============================================= */
-
-	@media (max-width: 480px) {
-
-	  /* =============================================
-		 HERO SECTION
-		 Extra small heading optimization
-		 ============================================= */
-
-	  .hero h1 {
-
-		font-size: 1.7rem;
-
-	  }
-
-
-	  /* =============================================
-		 NAVBAR LINKS
-		 More compact navigation
-		 ============================================= */
-
-	  .nav-links {
-
-		gap: 1px;
-	  }
-
-	  .nav-links a {
-
-		font-size: 0.82rem;
-
-		padding: 2px 4px;
-	  }
-
-	  nav button {
-
-		padding: 7px 10px !important;
-
-		font-size: 0.6rem;
-	  }
-
-
-	  /* =============================================
-		 SEARCH BAR
-		 Extra small screen margin reduce
-		 ============================================= */
-
-	  .search-bar {
-
-		margin: 25px 10px;
-	  }
-
-
-	  /* =============================================
-		 CARD SECTION
-		 Smaller card padding
-		 ============================================= */
-
-	  .card {
-
-			padding: 25px 14px;
-
-	  }
-
-
-	  /* =============================================
-		 DONOR IMAGE
-		 Profile image responsive size
-		 ============================================= */
-
-	  .photo-container {
-
-		width: 110px;
-		height: 110px;
-	  }
-
-	  .photo {
-
-		width: 110px;
-		height: 110px;
-	  }
-
-
-	  /* =============================================
-		 VERIFIED BADGE
-		 Mobile verified responsive
-		 ============================================= */
-
-	.verified{
-
-		padding: 3px 10px 2px 8px;
-		font-size: 0.72rem;
-		border-radius: 30px;
-		font-weight: 600;
-		border: 1px solid rgba(255, 255, 255, 0.5);
-
-	}
-
-
-	.verified i {
-
-		font-size: .68rem;
-
-	}
-
-	  /* =============================================
-		 BLOOD GROUP BADGE
-		 Mobile badge positioning
-		 ============================================= */
-
-	  .blood-badge {
-
-		left: 70px;
-
-		top: 75px;
-
-		font-size: 0.8rem;
-	  }
-
-
-	  /* =============================================
-		 ACTION BUTTONS
-		 Ultra compact mobile buttons
-		 ============================================= */
-
-	  .call-btn {
-
-		padding: 8px 10px !important;
-
-		font-size: 0.74rem;
-	  }
-
-	  .social-btn {
-
-		padding: 8px 9px !important;
-
-		font-size: 0.74rem;
-	  }
-
-
-	  /* =============================================
-		 STATUS BADGE
-		 Smaller emergency badge
-		 ============================================= */
-
-	  .status {
-
-		font-size: 0.76rem;
-
-		padding: 7px 12px;
-	  }
-	  
-	  
-	  .mission-wrapper {
-		padding: 30px 20px;
-	  }
-
-	  
-	  .about-donor-btn{
-		padding: 16px 36px;
-		font-size: 1.2rem;
-	  }
-	  
-	}
-
-
-
-
-
-
-
-
-
-
-	@media (max-width:992px){
-
-	  section{
-		scroll-margin-top:70px;
-	  }
-	  
-	 .nav-links,
-	 .nav-actions{
-
-	   display:none;
-	 }
-
-	 .menu-toggle{
-
-	   display:flex;
-	 }
-
-	 nav{
-
-	   flex-wrap:nowrap;
-
-	   padding:15px 20px;
-	 }
-
-
-	
-	.contact, .developer, .faq-section {
-		
-    padding: 50px 20px;
-
-	}
-	
-	
-	.mission-wrapper {
-		grid-template-columns: 1fr;
-		gap: 40px;
-		padding: 35px 25px;
-	  }
-	  .mission-image img {
-		height: 340px;
-	  }
-	}
+  <script src="script.js"></script>
+</body>
+</html>
