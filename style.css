@@ -969,307 +969,307 @@
 
     }
 
-/* =============================================
-   BLURRED PHOTO PROTECTION
-   Donor privacy এর জন্য photo blur effect
-   ============================================= */
+	/* =============================================
+	   BLURRED PHOTO PROTECTION
+	   Donor privacy এর জন্য photo blur effect
+	   ============================================= */
 
-/* Protected donor image style */
-.blurred-photo {
+	/* Protected donor image style */
+	.blurred-photo {
 
-  /* Image blur + slightly dark effect */
-  filter: blur(7px) brightness(0.85);
+	  /* Image blur + slightly dark effect */
+	  filter: blur(7px) brightness(0.85);
 
-  /* Smooth hover animation */
-  transition: all 0.4s ease;
+	  /* Smooth hover animation */
+	  transition: all 0.4s ease;
 
-  /* Normal cursor */
-  cursor: default;
-}
+	  /* Normal cursor */
+	  cursor: default;
+	}
 
-/* Hover effect on blurred image */
-.blurred-photo:hover {
+	/* Hover effect on blurred image */
+	.blurred-photo:hover {
 
-  /* Hover এ blur কিছুটা কমবে */
-  filter: blur(5px) brightness(0.95);
+	  /* Hover এ blur কিছুটা কমবে */
+	  filter: blur(5px) brightness(0.95);
 
-  /* Slight zoom effect */
-  transform: scale(1.04);
+	  /* Slight zoom effect */
+	  transform: scale(1.04);
 
-  /* Soft red glow shadow */
-  box-shadow: 0 0 20px rgba(230, 57, 57, 0.5);
-}
+	  /* Soft red glow shadow */
+	  box-shadow: 0 0 20px rgba(230, 57, 57, 0.5);
+	}
 
 
-/* =============================================
-   SECURED NUMBER STYLING
-   Protected phone number UI design
-   ============================================= */
+	/* =============================================
+	   SECURED NUMBER STYLING
+	   Protected phone number UI design
+	   ============================================= */
 
-/* Secured phone text container */
-.secured-number {
+	/* Secured phone text container */
+	.secured-number {
 
-  /* Red highlight color */
-  color: #e63939;
+	  /* Red highlight color */
+	  color: #e63939;
 
-  /* Medium bold text */
-  font-weight: 500;
+	  /* Medium bold text */
+	  font-weight: 500;
 
-  /* Icon + text same line */
-  display: inline-flex;
+	  /* Icon + text same line */
+	  display: inline-flex;
 
-  align-items: center;
+	  align-items: center;
 
-  /* Space between icon and text */
-  gap: 6px;
+	  /* Space between icon and text */
+	  gap: 6px;
 
-  /* Smooth animation */
-  transition: all 0.3s ease;
+	  /* Smooth animation */
+	  transition: all 0.3s ease;
 
-  cursor: default;
+	  cursor: default;
 
-  /* Tooltip positioning support */
-  position: relative;
-}
+	  /* Tooltip positioning support */
+	  position: relative;
+	}
 
-/* Hover effect */
-.secured-number:hover {
+	/* Hover effect */
+	.secured-number:hover {
 
-  /* Lighter red */
-  color: #ff5252;
+	  /* Lighter red */
+	  color: #ff5252;
 
-  /* Slight upward movement */
-  transform: translateY(-1px);
-}
+	  /* Slight upward movement */
+	  transform: translateY(-1px);
+	}
 
-/* Lock icon animation setup */
-.secured-number i {
+	/* Lock icon animation setup */
+	.secured-number i {
 
-  transition: all 0.3s ease;
-}
+	  transition: all 0.3s ease;
+	}
 
-/* Lock icon hover animation */
-.secured-number:hover i {
+	/* Lock icon hover animation */
+	.secured-number:hover i {
 
-  /* Rotate + zoom icon */
-  transform: rotate(25deg) scale(1.2);
-}
+	  /* Rotate + zoom icon */
+	  transform: rotate(25deg) scale(1.2);
+	}
 
 
-/* =============================================
-   MODERN CUSTOM TOOLTIP
-   Reusable tooltip system
-   ============================================= */
+	/* =============================================
+	   MODERN CUSTOM TOOLTIP
+	   Reusable tooltip system
+	   ============================================= */
 
-/* Tooltip parent positioning */
-.custom-tooltip,
-.secured-number[data-tooltip] {
+	/* Tooltip parent positioning */
+	.custom-tooltip,
+	.secured-number[data-tooltip] {
 
-  position: relative;
-}
+	  position: relative;
+	}
 
-/* Main tooltip box */
-.custom-tooltip::after,
-.secured-number[data-tooltip]::after {
+	/* Main tooltip box */
+	.custom-tooltip::after,
+	.secured-number[data-tooltip]::after {
 
-  /* Dynamic tooltip text */
-  content: attr(data-tooltip);
+	  /* Dynamic tooltip text */
+	  content: attr(data-tooltip);
 
-  position: absolute;
+	  position: absolute;
 
-  /* Dark glass style background */
-  background: rgba(15, 15, 15, 0.95);
+	  /* Dark glass style background */
+	  background: rgba(15, 15, 15, 0.95);
 
-  color: #ffffff;
+	  color: #ffffff;
 
-  padding: 12px 16px;
+	  padding: 12px 16px;
 
-  border-radius: 8px;
+	  border-radius: 8px;
 
-  font-size: 0.8rem;
+	  font-size: 0.8rem;
 
-  line-height: 1.45;
+	  line-height: 1.45;
 
-  /* Auto width */
-  width: max-content;
+	  /* Auto width */
+	  width: max-content;
 
-  /* Prevent oversized tooltip */
-  max-width: 280px;
+	  /* Prevent oversized tooltip */
+	  max-width: 280px;
 
-  z-index: 200;
+	  z-index: 200;
 
-  /* Hidden by default */
-  opacity: 0;
-  visibility: hidden;
+	  /* Hidden by default */
+	  opacity: 0;
+	  visibility: hidden;
 
-  /* Smooth fade animation */
-  transition: all 0.35s ease;
+	  /* Smooth fade animation */
+	  transition: all 0.35s ease;
 
-  /* Shadow for depth */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+	  /* Shadow for depth */
+	  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 
-  /* Ignore mouse events */
-  pointer-events: none;
-}
+	  /* Ignore mouse events */
+	  pointer-events: none;
+	}
 
 
-/* =============================================
-   TOOLTIP ARROW / CHEVRON
-   Tooltip এর ছোট arrow design
-   ============================================= */
+	/* =============================================
+	   TOOLTIP ARROW / CHEVRON
+	   Tooltip এর ছোট arrow design
+	   ============================================= */
 
-/* Shared tooltip arrow setup */
-.custom-tooltip::before,
-.secured-number[data-tooltip]::before {
+	/* Shared tooltip arrow setup */
+	.custom-tooltip::before,
+	.secured-number[data-tooltip]::before {
 
-  content: '';
+	  content: '';
 
-  position: absolute;
+	  position: absolute;
 
-  /* Triangle তৈরি করার base */
-  border: 6px solid transparent;
+	  /* Triangle তৈরি করার base */
+	  border: 6px solid transparent;
 
-  opacity: 0;
-  visibility: hidden;
+	  opacity: 0;
+	  visibility: hidden;
 
-  transition: all 0.35s ease;
-}
+	  transition: all 0.35s ease;
+	}
 
 
-/* =============================================
-   SHOW TOOLTIP ON HOVER
-   Mouse hover হলে tooltip visible হবে
-   ============================================= */
+	/* =============================================
+	   SHOW TOOLTIP ON HOVER
+	   Mouse hover হলে tooltip visible হবে
+	   ============================================= */
 
-/* Phone secured tooltip hover */
-.secured-number:hover::after,
-.secured-number:hover::before,
+	/* Phone secured tooltip hover */
+	.secured-number:hover::after,
+	.secured-number:hover::before,
 
-/* Photo tooltip hover */
-.photo-container:hover .photo-tooltip::after,
-.photo-container:hover .photo-tooltip::before {
+	/* Photo tooltip hover */
+	.photo-container:hover .photo-tooltip::after,
+	.photo-container:hover .photo-tooltip::before {
 
-  opacity: 1;
+	  opacity: 1;
 
-  visibility: visible;
-}
+	  visibility: visible;
+	}
 
 
-/* =============================================
-   SECURED NUMBER TOOLTIP POSITION
-   Phone tooltip positioning system
-   ============================================= */
+	/* =============================================
+	   SECURED NUMBER TOOLTIP POSITION
+	   Phone tooltip positioning system
+	   ============================================= */
 
-/* Tooltip message box */
-.secured-number[data-tooltip]::after {
+	/* Tooltip message box */
+	.secured-number[data-tooltip]::after {
 
-  /* Number এর উপরে show হবে */
-  bottom: 100%;
+	  /* Number এর উপরে show হবে */
+	  bottom: 100%;
 
-  /* Center alignment */
-  left: 100%;
+	  /* Center alignment */
+	  left: 100%;
 
-  transform: translateX(-50%);
+	  transform: translateX(-50%);
 
-  /* Space from element */
-  margin-bottom: 10px;
-}
+	  /* Space from element */
+	  margin-bottom: 10px;
+	}
 
-/* Tooltip arrow */
-.secured-number[data-tooltip]::before {
+	/* Tooltip arrow */
+	.secured-number[data-tooltip]::before {
 
-  bottom: 100%;
+	  bottom: 100%;
 
-  left: 50%;
+	  left: 50%;
 
-  transform: translateX(-50%);
+	  transform: translateX(-50%);
 
-  /* Arrow color */
-  border-top-color: rgba(15,15,15,0.95);
+	  /* Arrow color */
+	  border-top-color: rgba(15,15,15,0.95);
 
-  /* Arrow positioning */
-  margin-bottom: -5px;
-}
+	  /* Arrow positioning */
+	  margin-bottom: -5px;
+	}
 
 
-/* =============================================
-   PHOTO BLUR TOOLTIP
-   Protected image tooltip system
-   ============================================= */
+	/* =============================================
+	   PHOTO BLUR TOOLTIP
+	   Protected image tooltip system
+	   ============================================= */
 
-/* Tooltip message box */
-.photo-tooltip::after {
+	/* Tooltip message box */
+	.photo-tooltip::after {
 
-  content: attr(data-tooltip);
+	  content: attr(data-tooltip);
 
-  position: absolute;
+	  position: absolute;
 
-  background: rgba(15, 15, 15, 0.95);
+	  background: rgba(15, 15, 15, 0.95);
 
-  color: #ffffff;
+	  color: #ffffff;
 
-  padding: 12px 16px;
+	  padding: 12px 16px;
 
-  border-radius: 8px;
+	  border-radius: 8px;
 
-  font-size: 0.8rem;
+	  font-size: 0.8rem;
 
-  text-align: center;
+	  text-align: center;
 
-  line-height: 1.45;
+	  line-height: 1.45;
 
-  width: max-content;
+	  width: max-content;
 
-  max-width: 250px;
+	  max-width: 250px;
 
-  z-index: 200;
+	  z-index: 200;
 
-  opacity: 0;
+	  opacity: 0;
 
-  visibility: hidden;
+	  visibility: hidden;
 
-  transition: all 0.35s ease;
+	  transition: all 0.35s ease;
 
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+	  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 
-  pointer-events: none;
+	  pointer-events: none;
 
-  /* Tooltip image এর নিচে থাকবে */
-  top: 100%;
+	  /* Tooltip image এর নিচে থাকবে */
+	  top: 100%;
 
-  left: 50%;
+	  left: 50%;
 
-  transform: translateX(-50%);
+	  transform: translateX(-50%);
 
-  margin-top: 12px;
-}
+	  margin-top: 12px;
+	}
 
-/* Tooltip arrow */
-.photo-tooltip::before {
+	/* Tooltip arrow */
+	.photo-tooltip::before {
 
-  content: '';
+	  content: '';
 
-  position: absolute;
+	  position: absolute;
 
-  border: 7px solid transparent;
+	  border: 7px solid transparent;
 
-  opacity: 0;
+	  opacity: 0;
 
-  visibility: hidden;
+	  visibility: hidden;
 
-  transition: all 0.35s ease;
+	  transition: all 0.35s ease;
 
-  /* Arrow image এর দিকে point করবে */
-  top: 100%;
+	  /* Arrow image এর দিকে point করবে */
+	  top: 100%;
 
-  left: 50%;
+	  left: 50%;
 
-  transform: translateX(-50%);
+	  transform: translateX(-50%);
 
-  border-bottom-color: rgba(15,15,15,0.95);
+	  border-bottom-color: rgba(15,15,15,0.95);
 
-  margin-top: -5px;
-}
+	  margin-top: -5px;
+	}
 
     
     /* ==============================
@@ -1395,70 +1395,94 @@
     }
 
 
-    /* ==============================
-       See More Button Container
-       Load more section
-    ============================== */
-    .see-more-container {
+	/* ==============================
+	   SEE MORE BUTTON - Special Style
+	   ============================== */
+	.see-more-container {
+	  text-align: center;
+	  margin: 60px 0 40px;
+	}
 
-      text-align: center;
+	.see-more-btn {
+	  position: relative;
+	  overflow: hidden;
+	  padding: 18px 48px;
+	  font-size: 1.2rem;
+	  font-weight: 600;
+	  letter-spacing: 0.5px;
+	  background: linear-gradient(135deg, #ff0000, #c8102e);
+	  color: white;
+	  border: none;
+	  border-radius: 50px;
+	  cursor: pointer;
+	  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+	  transition: all 0.4s ease;
+	  display: inline-flex;
+	  align-items: center;
+	  gap: 12px;
+	  z-index: 1;
+	}
 
-      margin: 50px 0 30px;
+	.see-more-btn:hover {
+	  transform: scale(1.08) translateY(-4px);
+	  box-shadow: 0 18px 45px rgba(255, 0, 0, 0.55);
+	  background: linear-gradient(135deg, #ff1a1a, #e60000);
+	}
 
-    }
+	.see-more-btn i {
+	  transition: all 0.4s ease;
+	}
 
+	.see-more-btn:hover i {
+	  transform: translateY(4px);
+	}
 
-    /* ==============================
-       See More Button
-       Extra donor load button
-    ============================== */
-    .see-more-btn {
+	/* Shine Effect */
+	.see-more-btn::before {
+	  content: '';
+	  position: absolute;
+	  top: -50%;
+	  left: -50%;
+	  width: 40%;
+	  height: 200%;
+	  background: linear-gradient(
+		120deg,
+		transparent,
+		rgba(255,255,255,0.35),
+		transparent
+	  );
+	  transform: skewX(-25deg);
+	  transition: all 0.7s;
+	  opacity: 0;
+	}
 
-      background: var(--red);
+	.see-more-btn:hover::before {
+	  left: 120%;
+	  opacity: 1;
+	}
 
-      color: white;
+	/* Blood Pulse Effect */
+	.see-more-btn::after {
+	  content: '';
+	  position: absolute;
+	  inset: 0;
+	  border-radius: 50px;
+	  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+	  opacity: 0;
+	  transition: all 0.6s ease;
+	  z-index: -1;
+	}
 
-      border: 2px solid #ff0d0d;
+	.see-more-btn:hover::after {
+	  animation: bloodPulse 2s infinite;
+	}
 
-      padding: 16px 48px;
+	@keyframes bloodPulse {
+	  0%   { transform: scale(0.95); opacity: 0.6; }
+	  50%  { transform: scale(1.06); opacity: 0.25; }
+	  100% { transform: scale(0.95); opacity: 0.6; }
+	}
 
-      font-size: 1.1rem;
-
-      font-weight: 600;
-
-      border-radius: 50px;
-
-      cursor: pointer;
-
-      transition:
-        all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 12px;
-
-      /* Button glow */
-      box-shadow:
-        0 8px 25px rgba(230, 57, 57, 0.3);
-
-      position: relative;
-
-      overflow: hidden;
-
-    }
-
-
-    /* See More hover effect */
-    .see-more-btn:hover {
-
-      transform: translateY(-4px) scale(1.05);
-
-      box-shadow:
-        0 15px 35px rgba(230, 57, 57, 0.4);
-
-    }
 
 
     /* ==============================
@@ -1520,10 +1544,9 @@
 
 
     /* ==============================
-       About / Contact / Developer
+       Contact / Developer
        Common section style
     ============================== */
-    .about,
     .contact,
     .developer {
 
@@ -1550,7 +1573,6 @@
 
 
     /* Section heading style */
-    .about h2,
     .contact h2,
     .developer h2 {
 
@@ -1567,7 +1589,6 @@
        Section Grid Layout
        Responsive content columns
     ============================== */
-    .about-content,
     .contact-content,
     .developer-content {
 
@@ -1588,7 +1609,6 @@
 
 
     /* Section paragraph text */
-    .about p,
     .contact p,
     .developer p {
 
@@ -1599,6 +1619,193 @@
       color: var(--text-light);
 
     }
+
+
+	/* ======================
+		ABOUT US SECTION 
+	====================== */
+	
+	.about-section {
+	  padding: 80px 20px;
+	  background: var(--card-bg);
+	  color: var(--text);
+	}
+
+	.section-header {
+	  text-align: center;
+	  margin-bottom: 60px;
+	}
+
+	.section-header h2 {
+	  font-size: 2.8rem;
+	  color: var(--red);
+	  margin-bottom: 12px;
+	}
+
+	.section-header .subtitle {
+	  font-size: 1.25rem;
+	  color: var(--text-light);
+	  max-width: 700px;
+	  margin: 0 auto;
+	}
+
+	.about-container {
+	  max-width: 1200px;
+	  margin: 0 auto;
+	}
+
+	.mission-wrapper {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr;
+	  gap: 50px;
+	  align-items: center;
+	  background: rgba(255,255,255,0.06);
+	  padding: 45px;
+	  border-radius: 20px;
+	  border: 1px solid var(--border);
+	}
+
+	.mission-content h3 {
+	  font-size: 2.4rem;
+	  color: var(--red);
+	  margin-bottom: 22px;
+	}
+
+	.mission-content p {
+	  font-size: 1.1rem;
+	  line-height: 1.75;
+	  margin-bottom: 20px;
+	  color: var(--text-light);
+	}
+
+	.values {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 16px;
+	  margin-top: 25px;
+	}
+
+	.value-item {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+	  background: rgba(255,255,255,0.08);
+	  padding: 12px 20px;
+	  border-radius: 50px;
+	  font-size: 1.02rem;
+	}
+
+	.mission-image img {
+	  width: 100%;
+	  height: 420px;
+	  object-fit: cover;
+	  border-radius: 16px;
+	  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+	}
+
+	/* Impact Stats */
+	.impact-stats {
+	  max-width: 1200px;
+	  margin: 80px auto 70px;
+	  display: flex;
+	  justify-content: center;
+	  gap: 60px;
+	  flex-wrap: wrap;
+	}
+
+	.stat-item h3.count {
+	  font-size: 3.4rem;
+	  color: var(--red);
+	  font-weight: 700;
+	  margin: 0 0 8px 0;
+	}
+
+	/* CTA */
+	.about-cta {
+	  max-width: 1100px;
+	  margin: 0 auto;
+	  padding: 50px 30px;
+	  background: linear-gradient(135deg, var(--red), #8B0000);
+	  border-radius: 20px;
+	  color: white;
+	  text-align: center;
+	}
+
+	.cta-content h3 {
+	  font-size: 2.4rem;
+	  margin-bottom: 12px;
+	}
+
+	/* ====================== 
+	SPECIAL ABOUT DONOR BUTTON 
+	====================== */
+	.about-donor-btn {
+	  position: relative;
+	  overflow: hidden;
+	  padding: 16px 42px;
+	  font-size: 1.25rem;
+	  font-weight: 600;
+	  letter-spacing: 0.5px;
+	  background: linear-gradient(135deg, #ff0000, #c8102e);
+	  color: white;
+	  border: none;
+	  border-radius: 50px;
+	  cursor: pointer;
+	  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+	  transition: all 0.4s ease;
+	  z-index: 1;
+	}
+
+	.about-donor-btn:hover {
+	  transform: scale(1.08) translateY(-3px);
+	  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.6);
+	  background: linear-gradient(135deg, #ff1a1a, #e60000);
+	}
+
+	.about-donor-btn::before {
+	  content: '';
+	  position: absolute;
+	  top: -50%;
+	  left: -50%;
+	  width: 40%;
+	  height: 200%;
+	  background: linear-gradient(
+		120deg,
+		transparent,
+		rgba(255,255,255,0.4),
+		transparent
+	  );
+	  transform: skewX(-25deg);
+	  transition: all 0.7s;
+	  opacity: 0;
+	}
+
+	.about-donor-btn:hover::before {
+	  left: 120%;
+	  opacity: 1;
+	}
+
+	/* Blood Pulse Effect */
+	.about-donor-btn::after {
+	  content: '';
+	  position: absolute;
+	  inset: 0;
+	  border-radius: 50px;
+	  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+	  opacity: 0;
+	  transition: all 0.6s ease;
+	  z-index: -1;
+	}
+
+	.about-donor-btn:hover::after {
+	  animation: bloodPulse 2s infinite;
+	}
+
+	@keyframes bloodPulse {
+	  0%   { transform: scale(0.95); opacity: 0.6; }
+	  50%  { transform: scale(1.05); opacity: 0.3; }
+	  100% { transform: scale(0.95); opacity: 0.6; }
+	}
 
 
     /* ==============================
@@ -2352,13 +2559,12 @@
 
 
 	/* =============================================
-	   ABOUT / CONTACT / DEVELOPER
+	   CONTACT / DEVELOPER
 	   Mobile Single Column Layout
 	   About, Contact এবং Developer section
 	   mobile এ এক column এ show হবে
 	============================================= */
 
-	.about-content,
 	.contact-content,
 	.developer-content {
 
@@ -2372,16 +2578,62 @@
   /* =============================================
      DONOR CARDS
      ============================================= */
-#donors {
+	#donors {
 
     padding: 50px 5px;
 
-}
+	}
 
-	/* =========================================
-	Mobile Responsive
-	Mobile device optimization
-	========================================= */
+
+	.about-section {
+		padding: 70px 15px;
+	  }
+	  
+	  .section-header h2 {
+		font-size: 2.2rem;
+	  }
+	  
+	  .section-header .subtitle {
+		font-size: 1.1rem;
+	  }
+
+	  .mission-content h3 {
+		font-size: 1.95rem;
+	  }
+	  
+	  .mission-content p {
+		font-size: 1rem;
+		line-height: 1.7;
+	  }
+
+	  .value-item {
+		font-size: 0.98rem;
+		padding: 10px 16px;
+	  }
+
+	  .mission-image img {
+		height: 300px;
+	  }
+
+	  .impact-stats {
+		gap: 35px;
+		margin: 70px auto 60px;
+	  }
+
+	  .stat-item h3.count {
+		font-size: 2.7rem;
+	  }
+
+	  .about-cta {
+		padding: 45px 25px;
+	  }
+
+	  .cta-content h3 {
+		font-size: 2rem;
+	  }
+
+	
+	
 
 	  .faq-section{
 
@@ -2621,6 +2873,25 @@
 
 		padding: 7px 12px;
 	  }
+	  
+	  
+	  
+	  .mission-wrapper {
+		padding: 30px 20px;
+	  }
+	  
+	  .section-header h2 {
+		font-size: 2rem;
+	  }
+	  
+	  .mission-content h3 {
+		font-size: 1.8rem;
+	  }
+	  
+	  .stat-item h3.count {
+		font-size: 2.4rem;
+	  }
+	  
 	}
 
 
@@ -2656,10 +2927,21 @@
 	   padding:15px 20px;
 	 }
 
-	}
+
 	
-	.about, .contact, .developer, .faq-section {
+	.contact, .developer, .faq-section {
 		
     padding: 50px 20px;
 
+	}
+	
+	
+	.mission-wrapper {
+		grid-template-columns: 1fr;
+		gap: 40px;
+		padding: 35px 25px;
+	  }
+	  .mission-image img {
+		height: 340px;
+	  }
 	}
