@@ -1144,3 +1144,47 @@ document
 	  }
 
 	});
+
+
+
+	// ABOUT STATS ANIMATION - Scroll e trigger hobe
+	function animateAboutStats() {
+	  const counters = document.querySelectorAll('#about-stats .count');
+	  
+	  counters.forEach(counter => {
+		const target = parseInt(counter.getAttribute('data-target'));
+		let count = 0;
+		const increment = Math.ceil(target / 70);
+		
+		const updateCounter = () => {
+		  count += increment;
+		  if (count < target) {
+			counter.textContent = count.toLocaleString() + '+';
+			setTimeout(updateCounter, 25);
+		  } else {
+			counter.textContent = target.toLocaleString() + '+';
+		  }
+		};
+		
+		updateCounter();
+	  });
+	}
+
+	// Scroll kore About section e gele animate hobe
+	function triggerAboutStatsOnScroll() {
+	  const aboutStats = document.getElementById('about-stats');
+	  if (!aboutStats) return;
+
+	  const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting) {
+			animateAboutStats();
+			observer.disconnect(); // ekbar e animate hobe
+		  }
+		});
+	  }, { threshold: 0.4 });
+
+	  observer.observe(aboutStats);
+	}
+
+	window.addEventListener('load', triggerAboutStatsOnScroll);
