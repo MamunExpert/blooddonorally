@@ -1589,8 +1589,8 @@
        Section Grid Layout
        Responsive content columns
     ============================== */
-    .contact-content,
-    .developer-content {
+	.contact-content, 
+	.developer-content {
 
       max-width: 1000px;
 
@@ -1638,7 +1638,7 @@
 
 	.section-header h2 {
 	  font-size: 2.8rem;
-	  color: var(--red);
+
 	  margin-bottom: 12px;
 	}
 
@@ -1667,21 +1667,21 @@
 
 	.mission-content h3 {
 	  font-size: 2.4rem;
-	  color: var(--red);
 	  margin-bottom: 22px;
 	}
 
 	.mission-content p {
 	  font-size: 1.1rem;
+	  text-align: justify;
 	  line-height: 1.75;
-	  margin-bottom: 20px;
+	  margin-bottom: 10px;
 	  color: var(--text-light);
 	}
 
 	.values {
 	  display: flex;
 	  flex-wrap: wrap;
-	  gap: 16px;
+	  gap: 0 16px;
 	  margin-top: 25px;
 	}
 
@@ -1854,19 +1854,15 @@
 
 	.faq-section .section-title h2{
 
-	  font-size:34px;
+	  font-size: 2.8rem;
 
 	  font-weight:700;
 
-	  margin-bottom:10px;
+	  margin-bottom: 12px;
 
 	  color:var(--text-color);
 	}
 
-	.faq-section .section-title h2 i{
-
-	  color:#ff3b3b;
-	}
 
 	.faq-section .section-title p{
 
@@ -1964,7 +1960,12 @@
 	  align-items:center;
 
 	  gap:12px;
+	  
+	  font-family: 'Poppins', sans-serif;
+	  
+	  font-size: 1.1rem;
 	}
+	
 
 	/* =========================================
 	Question Left Icon
@@ -2372,7 +2373,7 @@
 		margin: 30px 0;
 	  }
 
-	  .stat-number {
+	  .stat-number, .stat-item h3.count {
 
 		font-size: 1.6rem;
 	  }
@@ -2548,7 +2549,7 @@
 		 ============================================= */
 
 	  .donors-heading,
-	  .about h2,
+	  .section-header h2,
 	  .contact h2,
 	  .developer h2 {
 
@@ -2589,16 +2590,12 @@
 		padding: 70px 15px;
 	  }
 	  
-	  .section-header h2 {
-		font-size: 2.2rem;
-	  }
-	  
 	  .section-header .subtitle {
 		font-size: 1.1rem;
 	  }
 
 	  .mission-content h3 {
-		font-size: 1.95rem;
+		font-size: 1.6rem;
 	  }
 	  
 	  .mission-content p {
@@ -2616,13 +2613,10 @@
 	  }
 
 	  .impact-stats {
-		gap: 35px;
+		gap: 20px;
 		margin: 70px auto 60px;
 	  }
 
-	  .stat-item h3.count {
-		font-size: 2.7rem;
-	  }
 
 	  .about-cta {
 		padding: 45px 25px;
@@ -2632,8 +2626,6 @@
 		font-size: 2rem;
 	  }
 
-	
-	
 
 	  .faq-section{
 
@@ -2642,12 +2634,12 @@
 
 	  .faq-section .section-title h2{
 
-		font-size:28px;
+		font-size: 2rem;
 	  }
 
 	  .faq-section .section-title p{
 
-		font-size:14px;
+		font-size: 0.8rem;
 	  }
 
 	  .faq-question{
@@ -2664,7 +2656,7 @@
 
 	  .faq-answer{
 
-		font-size:14px;
+		font-size: .8rem;
 
 		line-height:1.8;
 	  }
@@ -2733,28 +2725,6 @@
 
 		padding: 2px 4px;
 	  }
-
-
-	  /* =============================================
-		 LOGO SIZE
-		 Smaller branding text
-
-
-	  .logo {
-
-		font-size: 1.1rem;
-	  }
-
-		.ally{
-		  font-size: .85rem;
-	  }
-		  ============================================= */
-		  
-
-	  /* =============================================
-		 DONOR BUTTON
-		 Small device button adjustment
-		 ============================================= */
 
 	  nav button {
 
@@ -2875,21 +2845,14 @@
 	  }
 	  
 	  
-	  
 	  .mission-wrapper {
 		padding: 30px 20px;
 	  }
+
 	  
-	  .section-header h2 {
-		font-size: 2rem;
-	  }
-	  
-	  .mission-content h3 {
-		font-size: 1.8rem;
-	  }
-	  
-	  .stat-item h3.count {
-		font-size: 2.4rem;
+	  .about-donor-btn{
+		padding: 16px 36px;
+		font-size: 1.2rem;
 	  }
 	  
 	}
