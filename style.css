@@ -247,9 +247,11 @@
 
       display: flex;
 
-     cursor: pointer;
-
       align-items: center;
+	  
+	  text-decoration: none;
+
+      cursor: pointer;
 
       gap: 12px;
 
@@ -265,7 +267,7 @@
       font-family: "Share Tech",  'Poppins',  sans-serif;
        font-weight: 500;
        color: var(--red);
-       font-size: 1.17rem;
+       font-size: 1.4rem
   }
 
     /* ==============================
@@ -1665,8 +1667,16 @@
 	  border: 1px solid var(--border);
 	}
 
+	.mission-wrapper{
+	  margin-bottom:20px;
+	}
+
+	.mission-wrapper:last-child{
+	  margin-bottom:0;
+	}
+	
 	.mission-content h3 {
-	  font-size: 2.4rem;
+	  font-size: 2rem;
 	  margin-bottom: 22px;
 	}
 
@@ -1674,26 +1684,98 @@
 	  font-size: 1.1rem;
 	  text-align: justify;
 	  line-height: 1.75;
-	  margin-bottom: 10px;
+	  margin-bottom: 20px;
 	  color: var(--text-light);
 	}
 
-	.values {
+	/* ==========================================
+	   Badges
+	========================================== */
+
+	.about-badges {
+
 	  display: flex;
+
 	  flex-wrap: wrap;
-	  gap: 0 16px;
-	  margin-top: 25px;
+
+	  gap: 12px;
+
+	  margin-bottom: 12px;
 	}
 
-	.value-item {
-	  display: flex;
-	  align-items: center;
-	  gap: 10px;
-	  background: rgba(255,255,255,0.08);
-	  padding: 12px 20px;
-	  border-radius: 50px;
-	  font-size: 1.02rem;
+	.about-badges span {
+
+	  display:flex;
+	  align-items:center;
+	  gap:10px;
+
+	  padding: 10px 16px;
+
+	  border-radius:50px;
+
+	  background:#fff;
+
+	  border:1px solid rgba(220,38,38,.12);
+
+	  box-shadow:
+	  0 4px 15px rgba(0,0,0,.06);
+
+	  transition:.35s ease;
+
+	  font-size:.92rem;
+	  font-weight:600;
+
+	  color:var(--text-color);
+
+
+	  transition: .3s ease;
 	}
+
+	.about-badges span i{
+
+	  width:34px;
+	  height:34px;
+
+	  display:flex;
+	  align-items:center;
+	  justify-content:center;
+
+	  border-radius:50%;
+
+	  background:rgba(220,38,38,.1);
+
+	  color:var(--primary);
+
+	  font-size:.9rem;
+
+	  transition:.35s ease;
+	}
+
+	.about-badges span:hover{
+
+	  transform:translateY(-2px);
+
+	  box-shadow:
+	  0 10px 25px rgba(220,38,38,.15);
+
+	  border-color:rgba(220,38,38,.25);
+	}
+
+
+	/* ==========================================
+	   Dark Mode (badges)
+	========================================== */
+
+	[data-theme="dark"] .about-badges span {
+
+	  background:
+		rgba(220,38,38,.15);
+
+	  border-color:
+		rgba(220,38,38,.3);
+	}
+
+
 
 	.mission-image img {
 	  width: 100%;
@@ -1806,6 +1888,26 @@
 	  50%  { transform: scale(1.05); opacity: 0.3; }
 	  100% { transform: scale(0.95); opacity: 0.6; }
 	}
+
+
+    /* ==============================
+       Footer Section
+       Bottom copyright area
+    ============================== */
+    footer {
+
+      text-align: center;
+
+      padding: 60px 20px 40px;
+
+      background: var(--card-bg);
+
+      border-top: 1px solid var(--border);
+
+      color: var(--text-light);
+
+    }
+
 
 
     /* ==============================
@@ -2330,7 +2432,10 @@
 		font-size: 1.3rem;
 	  }
 
-
+	  .ally {
+		   font-size: 1.2rem
+	  }
+	  
 	  /* =============================================
 		 HERO SECTION
 		 Top intro section optimization
@@ -2595,7 +2700,7 @@
 	  }
 
 	  .mission-content h3 {
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 	  }
 	  
 	  .mission-content p {
@@ -2603,9 +2708,24 @@
 		line-height: 1.7;
 	  }
 
-	  .value-item {
-		font-size: 0.98rem;
-		padding: 10px 16px;
+	  .about-badges{
+		justify-content:center;
+		gap:10px;
+	  }
+
+	  .about-badges span{
+
+		padding:8px 12px;
+
+		font-size:.6rem;
+	  }
+
+	  .about-badges span i{
+
+		width:22px;
+		height:22px;
+
+		font-size:.6rem;
 	  }
 
 	  .mission-image img {
@@ -2887,7 +3007,7 @@
 
 	   flex-wrap:nowrap;
 
-	   padding:15px 20px;
+	   padding:10px 20px;
 	 }
 
 
