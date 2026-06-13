@@ -171,7 +171,7 @@
     <p>
 
       Connecting blood donors and patients 
-	  through a fast, reliable, and life-saving network. 
+	  through a fast, reliable, and life-saving network. </br>
 	  Search by name, location, or blood group 
 	  to find active donors near you.
 
@@ -809,72 +809,103 @@
        Contact Section
        Emergency & general contact info
   =============================== -->
-  <section
-    id="contact"
-    class="contact section-animate"
-  >
 
-    <!-- Section Heading -->
-    <h2>
+<!-- ====================== CONTACT SECTION ====================== -->
+<!-- =============================================
+   CONTACT SECTION
+   Premium & User-Friendly Contact Page
+   ============================================= -->
+<section id="contact" class="contact-section section-animate">
+  <div class="section-header">
+    <h2><i class="fas fa-headset"></i> Get In 
+			<span style="color:var(--red)">
+			Touch</span></h2>
+    <p class="subtitle">Need support, have feedback, or want to collaborate with us?<br>We'd love to hear from you.</p>
+  </div>
 
-      Contact
-      <span>Us</span>
+  <!-- Emergency Notice -->
+  <div class="contact-notice">
+    <i class="fas fa-heart-circle-bolt"></i>
+    <span>
+      <strong>Need blood urgently?</strong> Please use the 
+      <a href="#donors" onclick="navigateToSection(this)">Donor Search</a> 
+      for immediate assistance. Contact methods are for support, feedback, 
+      partnerships, and volunteer coordination only.
+    </span>
+  </div>
 
-    </h2>
-
-
-    <div class="contact-content">
-
-      <!-- Emergency Contact -->
-      <div>
-
-        <h3 style="color:var(--red);">
-
-          Emergency Support
-
-        </h3>
-
-        <p>
-
-          <strong>Phone:</strong>
-          +880 1711-223344
-
-          <br>
-
-          <strong>Hotline:</strong>
-          +880 1911-556677
-
-        </p>
-
+  <div class="contact-container">
+    <!-- Contact Cards -->
+    <div class="contact-cards">
+      <!-- Email -->
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email Us</h3>
+        <a href="mailto:info@blooddonorally.org">info@blooddonorally.org</a>
       </div>
 
-
-      <!-- General Inquiry -->
-      <div>
-
-        <h3 style="color:var(--red);">
-
-          General Inquiry
-
-        </h3>
-
-        <p>
-
-          <strong>Email:</strong>
-          info@blooddonor.network
-
-          <br>
-
-          <strong>Address:</strong>
-          Dhaka, Bangladesh
-
-        </p>
-
+      <!-- Phone -->
+      <div class="contact-card">
+        <i class="fas fa-phone-volume"></i>
+        <h3>Call Us</h3>
+        <a href="tel:+8801711223344">+880 1711-223344</a>
+        <a href="tel:+8801811223344">+880 1811-223344</a>
       </div>
 
+      <!-- WhatsApp -->
+      <div class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <a href="https://wa.me/8801711223344" target="_blank">Chat on WhatsApp</a>
+      </div>
+
+      <!-- Messenger -->
+      <div class="contact-card">
+        <i class="fab fa-facebook-messenger"></i>
+        <h3>Messenger</h3>
+        <a href="https://m.me/blooddonorally" target="_blank">Chat on Messenger</a>
+      </div>
+
+      <!-- Location -->
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Our Location</h3>
+        <p>Gazipur, Dhaka Division<br>Bangladesh</p>
+      </div>
     </div>
 
-  </section>
+    <!-- Quick Message Form -->
+    <div class="contact-form">
+      <h3>Send a Quick Message</h3>
+      <p class="form-desc">
+        Have a question, suggestion, partnership proposal, or want to join our mission? 
+        Send us a message and we'll get back to you as soon as possible.
+      </p>
+
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number (Optional)">
+        
+        <select name="subject" required>
+          <option value="">Select Subject</option>
+          <option value="emergency">Emergency Blood Support</option>
+          <option value="volunteer">Volunteer Registration</option>
+          <option value="partnership">Partnership / Collaboration</option>
+          <option value="feedback">Feedback / Suggestion</option>
+          <option value="general">General Inquiry</option>
+        </select>
+
+        <textarea name="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit" class="donor-bttn">
+          Send Message <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
 
 
   <!-- ==============================
