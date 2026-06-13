@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title">
-  <meta property="og:description">
-  <meta property="og:image">
-  <meta name="description" content="Find verified blood donors across Bangladesh. Search donors by name, location, or blood group and connect quickly during emergencies.">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title"
+		  content="Blood Donor Alliance">
+	<meta property="og:description"
+		  content="Find verified blood donors across Bangladesh quickly and easily.">
+	<meta property="og:image"
+		  content="https://yourdomain.com/favicon.png">
+    <meta name="description" content="Find verified blood donors across Bangladesh. Search donors by name, location, or blood group and connect quickly during emergencies.">
+	
   <title>Blood Donor Alliance | Find Verified Blood Donors Across Bangladesh</title>
-  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -32,15 +36,15 @@
     <nav>
 
       <!-- Website Logo -->
-	<div class="logo"
-		 onclick="navigateToSection(this)"
-		 href="#home">
+	<a href="#home"
+   class="logo"
+   onclick="navigateToSection(this)">
 
 		<i class="fas fa-tint"></i>
 
         <span>Blood Donor <span class="ally">Alliance</span></span>
 
-      </div>
+      </a>
 
 		  <!-- Mobile Toggle -->
 	<button id="menuToggle" class="menu-toggle">
@@ -116,7 +120,7 @@
 		Available Donors
 	  </a>
 
-	  <a href="#">
+	  <a href="javascript:void(0)">
 		Divisional Volunteer
 	  </a>
 
@@ -470,7 +474,8 @@
 		  <div class="about-cta">
 			<div class="cta-content">
 			  <h3>Become a Hero Today</h3>
-			  <p>Join thousands of lifesavers across Bangladesh</p></br>
+			  <p>Join thousands of lifesavers across Bangladesh</p>
+			  </br>
 			  <button class="donor-bttn about-donor-btn" onclick="navigateToSection(document.querySelector('a[href=\"#donors\"]'))">
 				  Register as Donor
 			   </button>
