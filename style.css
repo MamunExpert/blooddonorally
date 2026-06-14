@@ -1546,137 +1546,124 @@
 
 
 
-/* =============================================
-   CONTACT SECTION - PREMIUM DESIGN
-   Modern card layout with form
-   ============================================= */
-.contact-section {
-  padding: 100px 20px;
-  background: var(--card-bg);
-  color: var(--text);
-}
+	/* =============================================
+	   CONTACT SECTION - PREMIUM DESIGN
+	   Modern card layout with form
+	   ============================================= */
+	.contact-section {
+	  padding: 100px 20px;
+	  background: var(--card-bg);
+	  color: var(--text);
+	}
 
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 60px;
-}
+	.contact-container {
+	  max-width: 1200px;
+	  margin: 0 auto;
+	  display: grid;
+	  grid-template-columns: 1fr 1.05fr;
+	  gap: 60px;
+	}
 
-.contact-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
+	.contact-cards {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	  gap: 22px;
+	}
 
-.contact-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 30px 25px;
-  text-align: center;
-  transition: all 0.4s ease;
-}
+	.contact-card {
+	  background: rgba(255,255,255,0.06);
+	  border: 1px solid var(--border);
+	  border-radius: 20px;
+	  padding: 30px 25px;
+	  text-align: center;
+	  transition: all 0.4s ease;
+	}
 
-.contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(230, 57, 57, 0.18);
-  border-color: var(--red);
-}
+	.contact-card:hover {
+	  transform: translateY(-8px);
+	  box-shadow: 0 15px 35px rgba(230, 57, 57, 0.18);
+	  border-color: var(--red);
+	}
 
-.contact-card i {
-  font-size: 2.6rem;
-  color: var(--red);
-  margin-bottom: 16px;
-}
+	.contact-card i {
+	  font-size: 2.6rem;
+	  color: var(--red);
+	  margin-bottom: 16px;
+	}
 
-.contact-card h3 {
-  margin-bottom: 10px;
-  color: var(--text);
-}
+	.contact-card h3 {
+	  margin-bottom: 10px;
+	  color: var(--text);
+	}
 
-.contact-card a {
-  color: var(--text-light);
-  text-decoration: none;
-}
+	.contact-card a {
+	  color: var(--text-light);
+	  text-decoration: none;
+	}
 
-.contact-card a:hover {
-  color: var(--red);
-}
+	.contact-card a:hover {
+	  color: var(--red);
+	}
 
-/* Form Area */
-.contact-form h3 {
-  margin-bottom: 12px;
-  color: var(--red);
-}
+	/* Form Area */
+	.contact-form h3 {
+	  margin-bottom: 12px;
+	  color: var(--red);
+	}
 
-.form-desc {
-  color: var(--text-light);
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
+	.form-desc {
+	  color: var(--text-light);
+	  margin-bottom: 25px;
+	  line-height: 1.6;
+	}
 
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+	.contact-form form {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 18px;
+	}
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding: 16px 20px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card-bg);
-  color: var(--text);
-  font-size: 1.05rem;
-}
+	.contact-form input,
+	.contact-form select,
+	.contact-form textarea {
+	  padding: 16px 20px;
+	  border: 1px solid var(--border);
+	  border-radius: 12px;
+	  background: var(--card-bg);
+	  color: var(--text);
+	  font-size: 1.05rem;
+	}
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(230,57,57,0.15);
-}
+	.contact-form input:focus,
+	.contact-form select:focus,
+	.contact-form textarea:focus {
+	  outline: none;
+	  border-color: var(--red);
+	  box-shadow: 0 0 0 3px rgba(230,57,57,0.15);
+	}
 
-/* Emergency Notice */
-.contact-notice {
-  max-width: 1100px;
-  margin: 30px auto 50px;
-  padding: 20px 30px;
-  text-align: justify;
-  background: rgba(230, 57, 57, 0.1);
-  border-left: 5px solid var(--red);
-  border-radius: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  color: var(--text-light);
-}
+	/* Emergency Notice */
+	.contact-notice {
+	  max-width: 1100px;
+	  margin: 30px auto 50px;
+	  padding: 20px 30px;
+	  text-align: justify;
+	  background: rgba(230, 57, 57, 0.1);
+	  border-left: 5px solid var(--red);
+	  border-radius: 8px;
+	  display: flex;
+	  align-items: flex-start;
+	  gap: 15px;
+	  color: var(--text-light);
+	}
 
-.contact-notice i {
-  color: var(--red);
-  font-size: 1.6rem;
-  margin-top: 3px;
-}
+	.contact-notice i {
+	  color: var(--red);
+	  font-size: 1.6rem;
+	  margin-top: 3px;
+	}
 
 
-
-    /* ==============================
-       Developer section style
-    ============================== */
-    .developer {
-
-      padding: 100px 20px;
-
-      background: var(--card-bg);
-
-      margin: 40px 0;
-
-    }
 
 
     /* ==============================
@@ -1692,50 +1679,194 @@
     }
 
 
-    /* Section heading style */
-    .developer h2 {
 
-      text-align: center;
+	/* =============================================
+	   VOLUNTEERS LONG VERTICAL CARD
+	   As per your latest requirement
+	   ============================================= */
+	.volunteers-section {
+	  padding: 100px 20px;
+	  background: var(--card-bg);
+	  color: var(--text);
+	}
 
-      font-size: 2.6rem;
+	.staggered-grid {
+	  max-width: 1250px;
+	  margin: 0 auto;
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	  gap: 35px 25px;
+	}
 
-      margin-bottom: 40px;
+	.team-card {
+	  background: var(--card-bg);
+	  border: 1px solid var(--border);
+	  border-radius: 20px;
+	  overflow: hidden;
+	  box-shadow: 0 10px 30px var(--shadow);
+	  transition: all 0.4s ease;
+	  height: 100%;
+	}
 
-    }
+	.team-card:hover {
+	  transform: translateY(-8px);
+	  box-shadow: 0 20px 45px rgba(230, 57, 57, 0.25);
+	  border-color: var(--red);
+	}
+
+	/* Photo - No Padding, Full Width */
+	.team-photo {
+	  width: 100%;
+	  height: 300px;
+	  overflow: hidden;
+	}
+
+	.team-photo img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  transition: transform 0.5s ease;
+	}
+
+	.team-card:hover .team-photo img {
+	  transform: scale(1.05);
+	}
+
+	/* Info Area */
+	.team-info {
+	  padding: 22px 20px 25px;
+	  text-align: center;
+	}
+
+	.team-info h3 {
+	  font-size: 1.4rem;
+	  margin-bottom: 6px;
+	}
+
+	.designation {
+	  color: var(--red);
+	  font-weight: 600;
+	  margin-bottom: 8px;
+	}
+
+	.responsibility {
+	  color: var(--text-light);
+	  font-size: 0.98rem;
+	  margin-bottom: 12px;
+	}
+
+	.short-bio {
+	  color: var(--text-light);
+	  font-size: 0.92rem;
+	  line-height: 1.5;
+	  margin-bottom: 20px;
+	}
+
+	/* Action Buttons */
+	.team-actions {
+	  display: flex;
+	  justify-content: center;
+	  gap: 12px;
+	}
+
+	.team-actions a{
+		text-decoration:none;
+	}
+
+	.action-btn {
+	  width: 32px;
+	  height: 32px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  background: rgba(230, 57, 57, 0.1);
+	  color: var(--red);
+	  border-radius: 50%;
+	  font-size: .8rem;
+	  transition: all 0.3s ease;
+	}
+
+	.action-btn:hover {
+	  background: var(--red);
+	  color: white;
+	  transform: scale(1.1);
+	}
+
+	/* Staggered Effect */
+	.staggered-grid .team-card:nth-child(2n) {
+	  margin-top: 65px;
+	}
+
+	/* =============================================
+	   TEAM CTA BUTTONS 
+	============================================= */
+	.team-cta {
+	  max-width: 800px;
+	  margin: 130px auto 40px;
+	  display: flex;
+	  justify-content: center;
+	  gap: 16px;
+	  flex-wrap: wrap;
+	}
+
+	/* Common Button Style */
+	.team-cta .donor-bttn {
+	  display: inline-flex;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 12px;
+	  padding: 16px 99px 16px 32px;
+	  font-size: 1.15rem;
+	  font-weight: 600;
+	  border: none;
+	  border-radius: 0;
+	  cursor: pointer;
+	  transition: all 0.4s ease;
+	  min-width: 260px;
+	  position: relative;
+	  overflow: hidden;
+	}
+
+	/* Volunteer Button - Dark */
+	.volunteer-btn {
+	  background: #1a1a1a;
+	  color: white;
+	}
+
+	.volunteer-btn:hover {
+	  background: var(--red);
+	  color: white;
+	  transform: translateY(4px);     /* Push down effect */
+	}
+
+	/* Donor Button - Red */
+	.donor-btn {
+	  background: var(--red);
+	  color: white;
+	}
+
+	.donor-btn:hover {
+	  background: #1a1a1a;
+	  color: white;
+	  transform: translateY(4px);     /* Push down effect */
+	}
+
+	/* Arrow Animation */
+	.team-cta .donor-bttn i:last-child {
+	  transition: all 0.4s ease;
+	}
+
+	.team-cta .donor-bttn:hover i:last-child {
+	  transform: translateX(6px);
+	}
+
+	/* Active / Click Push Effect */
+	.team-cta .donor-bttn:active {
+	  transform: translateY(8px) scale(0.97);
+	  transition: all 0.1s ease;
+	}
 
 
-    /* ==============================
-       Section Grid Layout
-       Responsive content columns
-    ============================== */
-	.developer-content {
-
-      max-width: 1000px;
-
-      margin: 0 auto;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(450px, 1fr));
-
-      gap: 40px;
-
-      text-align: center;
-
-    }
-
-
-    /* Section paragraph text */
-    .developer p {
-
-      font-size: 1.1rem;
-
-      line-height: 1.8;
-
-      color: var(--text-light);
-
-    }
 
 
 	/* ======================
@@ -2772,10 +2903,10 @@
 
 	}
 	
-	  /* =============================================
+	/* =============================================
 		 SECTION HEADINGS
 		 Responsive section title sizing
-		 ============================================= */
+	============================================= */
 
 	  .donors-heading,
 	  .section-header h2,
@@ -2786,7 +2917,7 @@
 	  }
 
 
-	.about-section {
+	  .about-section {
 		padding: 70px 15px;
 	  }
 	  
@@ -2886,11 +3017,37 @@
 	  }
 	  
 	 
-	.contact-notice i {
-	  font-size: .8rem;
-	  margin-top: 2px;
+	  .contact-notice i {
+	    font-size: .8rem;
+	    margin-top: 2px;
 	  }
 	  
+
+
+
+	/* =============================================
+		Volunteer Team section
+	=============================================*/
+
+	  .staggered-grid .team-card:nth-child(2n) {
+		margin-top: 0;
+	  }
+	  .team-photo {
+		height: 220px;
+	  }
+	  
+	  .team-cta {
+		margin: 60px auto auto;
+		flex-direction: column;
+		align-items: left;
+	  }
+
+	  .team-cta .donor-bttn {
+		min-width: 210px;
+		padding: 15px 50px 15px 30px;
+	  }
+	  
+
 	  
 	  
 	/* =============================================
@@ -3036,7 +3193,7 @@
 	  /* =============================================
 		 BLOOD GROUP BADGE
 		 Mobile badge positioning
-		 ============================================= */
+	  ============================================= */
 
 	  .blood-badge {
 
@@ -3051,7 +3208,7 @@
 	  /* =============================================
 		 ACTION BUTTONS
 		 Ultra compact mobile buttons
-		 ============================================= */
+	  ============================================= */
 
 	  .call-btn {
 
@@ -3089,6 +3246,11 @@
 	  .about-donor-btn{
 		padding: 16px 36px;
 		font-size: 1.2rem;
+	  }
+	  
+	  
+	  .team-cta .donor-bttn {
+		font-size: .8rem;
 	  }
 	  
 	}
@@ -3161,6 +3323,4 @@
 
 	  }
 	  
-
-
 }
