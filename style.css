@@ -1735,7 +1735,7 @@
 
 	/* Info Area */
 	.team-info {
-	  padding: 22px 20px 10px;
+	  padding: 26px 20px 38px;
 	  text-align: center;
 	}
 
@@ -1796,6 +1796,7 @@
 	/* Staggered Effect */
 	.staggered-grid .team-card:nth-child(2n) {
 	  margin-top: 65px;
+	  margin-bottom: -65px;
 	}
 
 	/* =============================================
@@ -2293,6 +2294,7 @@
 
 	.dev-btn {
 	  font-size: 1.05rem;
+	  font-family: 'Poppins', sans-serif;
 	  padding: 14px 34px;
 	  background: var(--red);
 	  color: white;
@@ -2859,10 +2861,101 @@
 
 
 /* =============================================
-   MOBILE RESPONSIVE FIX
+   TABLET RESPONSIVE
+   Tablet device এর জন্য Responsive UI
+============================================= */
+
+	@media (max-width:992px){
+
+	  section{
+		scroll-margin-top:70px;
+	  }
+	  
+	 .nav-links,
+	 .nav-actions{
+
+	   display:none;
+	 }
+
+	 .menu-toggle{
+
+	   display:flex;
+	 }
+
+	 nav{
+
+	   flex-wrap:nowrap;
+
+	   padding:10px 20px;
+	 }
+
+
+	
+	 .faq-section {
+		
+		padding: 50px 20px;
+
+	  }
+	
+	
+	.mission-wrapper {
+		grid-template-columns: 1fr;
+		gap: 40px;
+		padding: 35px 25px;
+	  }
+	  
+	  .mission-image img {
+		height: 340px;
+	  }
+	  
+	  
+
+	.contact-container {
+		grid-template-columns: 1fr;
+		gap: 50px;
+	  }
+	  
+	.contact-section .section-header{
+		margin-bottom: 30px;
+		}
+		
+	.contact-notice{
+		font-size: .8rem;
+		margin: 0px 15px 30px;
+
+	  }
+	  
+	  
+	.dev-header {
+		padding: 28px 30px;
+	  }
+	  
+	  .dev-photo img {
+		width: 100px;
+		height: 100px;
+	  }
+	  
+
+	  
+	  .dev-title h3 {
+		font-size: 1.55rem;
+	  }
+	  
+}
+
+
+
+
+
+
+
+
+
+/* =============================================
+   MOBILE RESPONSIVE
    Mobile device এর জন্য clean & compact layout
    Responsive UI optimization for phones & tablets
-   ============================================= */
+============================================= */
 
 	@media (max-width: 768px) {
 
@@ -3103,8 +3196,7 @@
 	============================================= */
 
 	  .donors-heading,
-	  .section-header h2,
-	  .developer h2 {
+	  .section-header h2{
 
 		font-size: 2rem;
 		
@@ -3209,8 +3301,32 @@
 
 		font-size:11px;
 	  }
+
+
+
+	.contact-cards {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 18px;
+	  }
 	  
-	 
+	  .contact-card {
+		padding: 22px 18px;
+	  }
+	  
+	  .contact-card i {
+		font-size: 2rem;
+		margin-bottom: 12px;
+	  }
+	  
+	  .contact-card h3 {
+		font-size: 1rem;
+		margin-bottom: 8px;
+	  }
+	  
+	  .contact-card p, .contact-card a {
+		font-size: .8rem;
+	  }
+	  
 	  .contact-notice i {
 	    font-size: .8rem;
 	    margin-top: 2px;
@@ -3222,10 +3338,12 @@
 	=============================================*/
 	  .staggered-grid .team-card:nth-child(2n) {
 		margin-top: 0;
+		margin-bottom: 0;
 	  }
-	  .team-photo {
-		height: 220px;
-	  }
+	  
+		.team-photo {
+			/* height: 220px; */
+		}
 	  
 	  .team-cta {
 		margin: 60px auto auto;
@@ -3257,7 +3375,7 @@
 	  }
 	  
 	  .dev-title {
-		margin-left: 0;
+		margin: 0;
 	  }
 	  
 	  .dev-content.show {
@@ -3281,7 +3399,7 @@
 	  /* =============================================
 		 FOOTER SECTION
 		 Footer heading responsive size
-		 ============================================= */
+	  ============================================= */
 
 	  footer h2 {
 
@@ -3297,8 +3415,8 @@
 
 
 
-/* =============================================
-   EXTRA SMALL DEVICE FIX
+   /* =============================================
+   SMALL DEVICE FIX
    320px - 480px small phone optimization
    ============================================= */
 
@@ -3310,9 +3428,11 @@
 		 ============================================= */
 
 	  .hero h1 {
-
 		font-size: 1.7rem;
-
+	  }
+		  
+	  .hero p {
+	    padding: 0 15px;
 	  }
 
 
@@ -3398,11 +3518,9 @@
 	}
 
 
-	.verified i {
-
-		font-size: .68rem;
-
-	}
+	 .verified i {
+		 font-size: .68rem;
+	  }
 
 	  /* =============================================
 		 BLOOD GROUP BADGE
@@ -3456,113 +3574,97 @@
 		padding: 30px 20px;
 	  }
 
+
+     .about-badges {
+        justify-content: left;
+        gap: 10px;
+      }
+	
+	 .about-badges span {
+        padding: 5px 12px;
+        font-size: .5rem;
+      }
 	  
+	 .about-badges span:hover{
+	    transform:translateY(0);
+	    box-shadow:none;
+	    border-color:0;
+	  }
+	
 	  .about-donor-btn{
 		padding: 16px 36px;
 		font-size: 1.2rem;
 	  }
 	  
+
+
+	  .contact-cards {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	  }
 	  
+	  .contact-card {
+		padding: 10px 8px;
+	  }
+	  
+	  .contact-card i {
+		font-size: 1rem;
+	  }
+	  
+	  .contact-card h3 {
+		font-size: 1rem;
+	  }
+
+	  .contact-card p, .contact-card a {
+		font-size: .7rem;
+	  }
+
 	  .team-cta .donor-bttn {
 		font-size: .8rem;
 	  }
 	  
 	  
-	.dev-photo img {
+	 .dev-photo img {
 		width: 90px;
 		height: 90px;
 	  }
 	  
-	  .dev-title h3 {
+	 .dev-title h3 {
 		font-size: 1.4rem;
 	  }
-		  
+	  
+	 .dev-title p {
+	    font-size: .9rem;
+	  }
+	  
+	.dev-bio p{
+		font-size: .9rem;
 	}
 
-
-
-
-
-
-
-
-
-
-	@media (max-width:992px){
-
-	  section{
-		scroll-margin-top:70px;
-	  }
-	  
-	 .nav-links,
-	 .nav-actions{
-
-	   display:none;
-	 }
-
-	 .menu-toggle{
-
-	   display:flex;
-	 }
-
-	 nav{
-
-	   flex-wrap:nowrap;
-
-	   padding:10px 20px;
-	 }
-
-
-	
-	.contact, .developer, .faq-section {
+    .typing-container {
+        font-size: 1rem;
+    }
 		
-    padding: 50px 20px;
-
-	}
-	
-	
-	.mission-wrapper {
-		grid-template-columns: 1fr;
-		gap: 40px;
-		padding: 35px 25px;
-	  }
-	  .mission-image img {
-		height: 340px;
-	  }
-	  
-	  
-
-	.contact-container {
-		grid-template-columns: 1fr;
-		gap: 20px;
-	  }
-	  
-	.contact-section .section-header{
-		margin-bottom: 30px;
-		}
-		
-	.contact-notice{
+	.dev-skills h4{
 		font-size: .8rem;
-		margin: 0px 15px 30px;
+	}
 
-	  }
-	  
-	  
-	.dev-header {
-		padding: 28px 30px;
-	  }
-	  
-	  .dev-photo img {
-		width: 100px;
-		height: 100px;
-	  }
-	  
-	  .dev-title {
-		margin-left: 25px;
-	  }
-	  
-	  .dev-title h3 {
-		font-size: 1.55rem;
-	  }
-	  
+	.skill-badge{
+		font-size: 0.6rem;
+		Background: none;
+	}
+	
+    .dev-actions {
+        justify-content: left;
+		margin-top: 20px;
+    }
+	
+    .dev-btn {
+		border-radius: 16px;
+        padding: 6px 18px;
+        font-size: .8rem;
+
+    }
+	
 }
+
