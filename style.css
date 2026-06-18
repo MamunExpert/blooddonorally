@@ -3084,7 +3084,7 @@
 
 	.footer-social a {
 	  color: white;
-	  font-size: 1.6rem;
+	  font-size: 1rem;
 	  margin-left: 18px;
 	  transition: 0.3s;
 	}
@@ -3188,7 +3188,6 @@
 	  }
 	  
 	.footer-social a {
-	  font-size: 1rem;
 	  margin-left: 5px;
 	}
 }
