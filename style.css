@@ -2150,7 +2150,7 @@
 	   No heavy glow, soft & professional
 	   ============================================= */
 	.developer-section {
-	  padding: 100px 20px;
+	  padding: 100px 20px 140px;
 	  background: var(--card-bg);
 	  color: var(--text);
 	}
@@ -2831,7 +2831,6 @@
 	  color: white;
 	  padding-top: 140px;
 	  overflow: hidden;
-	  margin-top: 80px;
 	}
 
 	/* Animated Waves */
@@ -2970,15 +2969,72 @@
 	  margin-bottom: 60px;
 	}
 
-	.footer-logo {
-	  font-size: 2.2rem;
-	  font-weight: 700;
+	.footer-logo{
+
+	  display:flex;
+	  flex-direction:column;
+	  gap:18px;
+
 	}
 
-	.footer-logo i {
-	  color: #ffd700;
+	.footer-brand{
+
+	  display:flex;
+	  align-items:center;
+	  gap:16px;
+
 	}
 
+	.footer-logo-circle{
+
+	  width:70px;
+	  height:70px;
+
+	  display:flex;
+	  align-items:center;
+	  justify-content:center;
+
+	  background:#fff;
+
+	  border-radius:50%;
+
+	  box-shadow:
+	  0 10px 25px rgba(0,0,0,.15);
+
+	  flex-shrink:0;
+
+	}
+
+	.footer-logo-circle img{
+
+	  width:42px;
+	  height:42px;
+
+	  object-fit:contain;
+
+	}
+
+	.footer-brand-text h3{
+
+	  margin:0;
+
+	  color:#fff;
+
+	  font-size:1.8rem;
+
+	  font-weight:700;
+
+	}
+
+	.footer-logo p{
+
+	  color:rgba(255,255,255,.9);
+
+	  line-height:1.7;
+
+	  margin:0;
+
+	}
 	.footer-col h4 {
 	  color: #ffd700;
 	  margin-bottom: 18px;
@@ -3045,10 +3101,10 @@
 
 
 
-/* =============================================
-   TABLET RESPONSIVE
-   Tablet device এর জন্য Responsive UI
-============================================= */
+	/* =============================================
+	   TABLET RESPONSIVE
+	   Tablet device এর জন্য Responsive UI
+	============================================= */
 
 	@media (max-width:992px){
 
@@ -3130,6 +3186,11 @@
 	  .footer-grid {
 		grid-template-columns: 1fr 1fr;
 	  }
+	  
+	.footer-social a {
+	  font-size: 1rem;
+	  margin-left: 5px;
+	}
 }
 
 
@@ -3140,10 +3201,10 @@
 
 
 
-/* =============================================
-   MOBILE RESPONSIVE
-   Mobile device এর জন্য clean & compact layout
-============================================= */
+	/* =============================================
+	   MOBILE RESPONSIVE
+	   Mobile device এর জন্য clean & compact layout
+	============================================= */
 
 	@media (max-width: 768px) {
 
@@ -3160,7 +3221,7 @@
 	  /* =============================================
 		 HERO SECTION
 		 Top intro section optimization
-		 ============================================= */
+	  ============================================= */
 
 	  .hero {
 
@@ -3591,9 +3652,36 @@
 		gap: 20px;
 	  }
 	  
-	  .footer-grid {
-		grid-template-columns: 1fr;
+	  
+	  .offer-left p{
+		font-size: 1rem;
 	  }
+	  
+
+	  .footer-brand{
+		justify-content:center;
+	  }
+
+	  .footer-logo{
+		text-align:center;
+	  }
+
+	  .footer-logo-circle{
+		width:60px;
+		height:60px;
+	  }
+
+	  .footer-logo-circle img{
+		width:36px;
+		height:36px;
+	  }
+
+	  .footer-bottom,
+	  .footer-bottom-right span{
+        flex-direction:column;
+        text-align:center;
+		font-size: .9rem;
+      }
 
 	}
 
@@ -3855,6 +3943,41 @@
         font-size: .8rem;
 
     }
+	
+	
+	
+	.top-offer h3 {
+		font-size: 1.8rem;
+	}
+
+	.offer-left p {
+			font-size: .9rem;
+	}
+	
+    .footer-grid{
+      grid-template-columns:1fr;
+      gap:30px;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col{
+      text-align:center;
+    }
+	
+	.footer-col a {
+		font-size: 14px;
+	}
+
+    .footer-col ul{
+      padding:0;
+    }
+
+    .footer-brand{
+      gap: 5px;
+      flex-direction: column;
+    }
+
+
 	
 }
 
