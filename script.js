@@ -435,7 +435,7 @@
 
 																			{ name: "Al Mamun Bidyut", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Manikganj Sadar", age: "", phone: "+8801953205039", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
 
-																			{ name: "MD. SHAHADAT DEWAN", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Kaliakior, Gazipur", age: "", phone: "+8801734571212", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
+																			{ name: "MD. SHAHADAT DEWAN", blood: "A-", photo: "https://i.ibb.co.com/B2j2QByq/shhadat-kaliakoir.jpg", profession: "", location: "Kaliakior, Gazipur", age: "", phone: "+8801734571212", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
 
 																			{ name: "Emon Chowdhury", blood: "A-", photo: "https://i.ibb.co.com/wjy8hHn/male.jpg", profession: "", location: "Dhanmondi", age: "", phone: "+8801747425419", messenger: "", verified: false, protectedNumber: false, blurredPhoto: false },
 
@@ -1191,65 +1191,238 @@ document
 	
 
 
-// =============================================
-// DEVELOPER ACCORDION + TYPING EFFECT
-// =============================================
+	// =====================================================
+	// DEVELOPER SECTION
+	// Accordion Toggle + Dynamic Typing Animation
+	//
+	// Purpose:
+	// - Show/Hide developer portfolio information
+	// - Create modern typing effect for developer roles
+	// =====================================================
 
-// Accordion Toggle
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.getElementById('devHeader');
-  const content = document.getElementById('devContent');
-  const toggleBtn = document.getElementById('devToggleBtn');
 
-  if (header && content && toggleBtn) {
-    header.addEventListener('click', () => {
-      content.classList.toggle('show');
-      toggleBtn.style.transform = content.classList.contains('show') 
-        ? 'rotate(180deg)' 
-        : 'rotate(0deg)';
-    });
-  }
-});
 
-// Typing Effect
-const typingTexts = [
-  "Full Stack Developer",
-  "Problem Solver",
-  "UI/UX Enthusiast",
-  "Open Source Contributor"
-];
+	// =====================================================
+	// Developer card header-এ click করলে
+	// developer information expand/collapse হবে।
+	// =====================================================
 
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+	document.addEventListener('DOMContentLoaded', () => {
 
-function typeEffect() {
-  const typingEl = document.getElementById('typingText');
-  if (!typingEl) return;
+	  const header = document.getElementById('devHeader');
+	  const content = document.getElementById('devContent');
+	  const toggleBtn = document.getElementById('devToggleBtn');
 
-  const current = typingTexts[textIndex];
+	  if (header && content && toggleBtn) {
 
-  if (isDeleting) {
-    charIndex--;
-    typingEl.textContent = current.substring(0, charIndex);
-  } else {
-    charIndex++;
-    typingEl.textContent = current.substring(0, charIndex);
-  }
+		header.addEventListener('click', () => {
 
-  let speed = isDeleting ? 50 : 80;
+		  content.classList.toggle('show');
 
-  if (!isDeleting && charIndex === current.length) {
-    speed = 1500;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    textIndex = (textIndex + 1) % typingTexts.length;
-  }
+		  toggleBtn.style.transform =
+			content.classList.contains('show')
+			  ? 'rotate(180deg)'
+			  : 'rotate(0deg)';
 
-  setTimeout(typeEffect, speed);
-}
+		});
 
-window.addEventListener('load', () => {
-  setTimeout(typeEffect, 800);
-});
+	  }
+
+	});
+
+
+
+	// =====================================================
+	// Developer Typing Animation
+	// Developer-এর বিভিন্ন role ও skill
+	// typing effect-এর মাধ্যমে একের পর এক দেখানো হবে।
+	// =====================================================
+
+	const typingTexts = [
+
+	  "Full Stack Developer",
+	  "Problem Solver",
+	  "UI/UX Enthusiast",
+	  "Open Source Contributor"
+
+	];
+
+	let textIndex = 0;
+	let charIndex = 0;
+	let isDeleting = false;
+
+
+
+	function typeEffect() {
+
+	  const typingEl =
+		document.getElementById('typingText');
+
+	  if (!typingEl) return;
+
+	  const current = typingTexts[textIndex];
+
+	  if (isDeleting) {
+
+		charIndex--;
+
+		typingEl.textContent =
+		  current.substring(0, charIndex);
+
+	  } else {
+
+		charIndex++;
+
+		typingEl.textContent =
+		  current.substring(0, charIndex);
+
+	  }
+
+	  let speed = isDeleting ? 50 : 80;
+
+	  // Pause when full text is completed
+	  if (
+		!isDeleting &&
+		charIndex === current.length
+	  ) {
+
+		speed = 1500;
+		isDeleting = true;
+
+	  }
+
+	  // Move to next title
+	  else if (
+		isDeleting &&
+		charIndex === 0
+	  ) {
+
+		isDeleting = false;
+
+		textIndex =
+		  (textIndex + 1) % typingTexts.length;
+
+	  }
+
+	  setTimeout(typeEffect, speed);
+
+	}
+
+
+
+	// =====================================================
+	// Initialize Developer Typing Effect
+	// Page সম্পূর্ণ load হওয়ার পর
+	// typing animation শুরু হবে।
+	// =====================================================
+
+	window.addEventListener('load', () => {
+
+	  setTimeout(typeEffect, 800);
+
+	});
+
+
+
+
+
+	// =====================================================
+	// FOOTER DEVELOPER SIGNATURE
+	// Footer Typing Text Collection
+	// Footer-এ developer information
+	// পর্যায়ক্রমে typing effect দিয়ে দেখানো হবে।
+	// =====================================================
+
+	const footerTypingTexts = [
+
+	  "Developed by Md. Al Mamun",
+	  "MD. AL MAMUN",
+	  "Full Stack Web Developer"
+
+	];
+
+	let ftIndex = 0;
+	let ftChar = 0;
+	let isFtDeleting = false;
+
+
+
+	// =====================================================
+	// Footer Typing Engine
+	// Footer signature typing effect
+	// control করার মূল function।
+	// =====================================================
+
+	function typeFooterDev() {
+
+	  const el =
+		document.getElementById('footerTyping');
+
+	  if (!el) return;
+
+	  const current =
+		footerTypingTexts[ftIndex];
+
+	  if (isFtDeleting) {
+
+		ftChar--;
+
+		el.textContent =
+		  current.substring(0, ftChar);
+
+	  } else {
+
+		ftChar++;
+
+		el.textContent =
+		  current.substring(0, ftChar);
+
+	  }
+
+	  let speed =
+		isFtDeleting ? 50 : 80;
+
+	  // Pause when current text finishes
+	  if (
+		!isFtDeleting &&
+		ftChar === current.length
+	  ) {
+
+		speed = 2200;
+		isFtDeleting = true;
+
+	  }
+
+	  // Move to next footer text
+	  else if (
+		isFtDeleting &&
+		ftChar === 0
+	  ) {
+
+		isFtDeleting = false;
+
+		ftIndex =
+		  (ftIndex + 1) %
+		  footerTypingTexts.length;
+
+	  }
+
+	  setTimeout(typeFooterDev, speed);
+
+	}
+
+
+
+	// =====================================================
+	// Initialize Footer Typing Effect
+	// Footer typing animation শুরু করবে
+	// page load হওয়ার পর।
+	// =====================================================
+
+	window.addEventListener('load', () => {
+
+	  setTimeout(typeFooterDev, 1200);
+
+	});
+	
+	
