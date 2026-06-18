@@ -1336,7 +1336,7 @@ document
 	const footerTypingTexts = [
 
 	  "Developed by Md. Al Mamun",
-	  "MD. AL MAMUN",
+	  "</> MD. AL MAMUN",
 	  "Full Stack Web Developer"
 
 	];
